@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: c1fd94c6f8e7b5b4db98c841ab6e3ac5
+timeCreated: 1532078791
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Erin_Body
+    100004: Erin_Ear_L
+    100006: Erin_Ear_R
+    100008: Erin_Fringe
+    100010: Erin_Hairback
+    100012: Erin_Head
+    100014: Erin_Pigtail_L
+    100016: Erin_Pigtail_R
+    100018: Erin_Shirt
+    100020: Erin_Skirt
+    100022: Erin_Tie1
+    100024: Erin_Tie2
+    400000: //RootNode
+    400002: Erin_Body
+    400004: Erin_Ear_L
+    400006: Erin_Ear_R
+    400008: Erin_Fringe
+    400010: Erin_Hairback
+    400012: Erin_Head
+    400014: Erin_Pigtail_L
+    400016: Erin_Pigtail_R
+    400018: Erin_Shirt
+    400020: Erin_Skirt
+    400022: Erin_Tie1
+    400024: Erin_Tie2
+    2300000: Erin_Body
+    2300002: Erin_Ear_L
+    2300004: Erin_Ear_R
+    2300006: Erin_Fringe
+    2300008: Erin_Hairback
+    2300010: Erin_Head
+    2300012: Erin_Pigtail_L
+    2300014: Erin_Pigtail_R
+    2300016: Erin_Shirt
+    2300018: Erin_Skirt
+    2300020: Erin_Tie1
+    2300022: Erin_Tie2
+    3300000: Erin_Body
+    3300002: Erin_Ear_L
+    3300004: Erin_Ear_R
+    3300006: Erin_Fringe
+    3300008: Erin_Hairback
+    3300010: Erin_Head
+    3300012: Erin_Pigtail_L
+    3300014: Erin_Pigtail_R
+    3300016: Erin_Shirt
+    3300018: Erin_Skirt
+    3300020: Erin_Tie1
+    3300022: Erin_Tie2
+    4300000: Erin_Body
+    4300002: Erin_Ear_L
+    4300004: Erin_Ear_R
+    4300006: Erin_Pigtail_R
+    4300008: Erin_Pigtail_L
+    4300010: Erin_Skirt
+    4300012: Erin_Shirt
+    4300014: Erin_Tie2
+    4300016: Erin_Tie1
+    4300018: Erin_Hairback
+    4300020: Erin_Head
+    4300022: Erin_Fringe
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 7ed2a567f24c67f4184dccfe4d7e912d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
