@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -12,31 +13,69 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
+        private List<int> controllerid;
+        private float h = 0, v = 0;
+        private KeyCode keyfire;
+        
 
         public Mana manaScript;
 
         //Public variables
         public GameObject bulletPrefab;
         public Transform bulletSpawn;
+        public int PlayerID = 0;
 
         private void Start()
         {
             
+            controllerid = new List<int>();
             m_Character = GetComponent<ThirdPersonCharacter>();
+
+            for (int i = 0; i < Input.GetJoystickNames().Length; i++)
+            {
+                if (Input.GetJoystickNames()[i] != "")
+                {
+                    controllerid.Add(i+1);
+                }
+            }
+
+
         }
 
+        
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
             {
-                Fire();
-                manaScript.UseManaAttack(2.0f);
-                m_Character.AnimAttack(true);
+                if (Input.GetKeyDown(kcode))
+                    Debug.Log("KeyCode down: " + kcode);
             }
-            else if (Input.GetKeyUp(KeyCode.LeftControl))
+
+            if (PlayerID == 1) {
+                if (Input.GetKeyDown("joystick " + controllerid[0] + " button 0"))
+                {
+                    Fire();
+                    manaScript.UseManaAttack(2.0f);
+                    m_Character.AnimAttack(true);
+                }
+                else if (Input.GetKeyUp("joystick " + controllerid[0] + " button 0"))
+                {
+                    m_Character.StopAttack(true);
+                }
+            }
+            if (PlayerID == 2)
             {
-                m_Character.StopAttack(true);
+                if (Input.GetKeyDown("joystick " + controllerid[1] + " button 0"))
+                {
+                    Fire();
+                    manaScript.UseManaAttack(2.0f);
+                    m_Character.AnimAttack(true);
+                }
+                else if (Input.GetKeyUp("joystick " + controllerid[1] + " button 0"))
+                {
+                    m_Character.StopAttack(true);
+                }
             }
 
         }
@@ -62,9 +101,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
+            
+            if (PlayerID == 1)
+            {
+                
+                h = Input.GetAxis("Horizontalp1" + controllerid[0]);
+                v = Input.GetAxis("Verticalp1" + controllerid[0]);
+                //Debug.Log(PlayerID + " h value: " + h + " cotroller id: Horizontalp" + PlayerID + controllerid[0]);
+            }
+
+            else if (PlayerID == 2)
+            {
+                h = Input.GetAxis("Horizontalp2" + controllerid[1]);
+                v = Input.GetAxis("Verticalp2" + controllerid[1]);
+                //Debug.Log(PlayerID + " h value: " + h + " cotroller id: Horizontalp" + PlayerID + controllerid[1]);
+            }
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
             bool crouch = false;
 
             // calculate move direction to pass to character
