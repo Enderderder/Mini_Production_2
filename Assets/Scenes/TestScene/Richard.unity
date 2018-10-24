@@ -113,12 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &378802327 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114301140868508058, guid: 54bafcf9e45aea044b2c77613e73de9e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1873286039}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &696784092
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,76 +381,6 @@ Prefab:
     - target: {fileID: 4266139074953468, guid: 54bafcf9e45aea044b2c77613e73de9e, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114257041102182306, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114257041102182306, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114519391184317026, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114519391184317026, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114442820140447856, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114442820140447856, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321113718497860, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321113718497860, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.7877358
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321113718497860, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.7877358
-      objectReference: {fileID: 0}
-    - target: {fileID: 114212543444708538, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114212543444708538, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.7877358
-      objectReference: {fileID: 0}
-    - target: {fileID: 114212543444708538, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.7877358
-      objectReference: {fileID: 0}
-    - target: {fileID: 114212543444708538, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 378802327}
-    - target: {fileID: 114212543444708538, guid: 54bafcf9e45aea044b2c77613e73de9e,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54bafcf9e45aea044b2c77613e73de9e, type: 2}
