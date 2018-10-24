@@ -1,0 +1,77 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class Enemy : MonoBehaviour {
+
+    [Header("Stats")]
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float maxHealth = 100;
+    [SerializeField] private float attackDamageValue;
+    [SerializeField] private float attackDelayValue;
+
+    //private GameObject Player;
+    private GameObject obelisk;
+    private Animator anim;
+
+    private NavMeshAgent navAgent;
+
+	void Start ()
+    {
+        currentHealth = maxHealth;
+
+        navAgent = GetComponent<NavMeshAgent>();
+        obelisk = GameObject.FindGameObjectWithTag("Obelisk");
+        anim = GetComponentInChildren<Animator>();
+
+        navAgent.destination = obelisk.transform.position;
+	}
+
+	void Update ()
+    {
+        // If no more health, then die
+		if (currentHealth <= 0)
+        {
+            Death();
+        }
+	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        bool bIsAttacking = false;
+
+        if (other.tag == "Player" || other.tag == "Obelisk")
+        {
+            bIsAttacking = true;
+            navAgent.isStopped = true;
+            StartCoroutine(Attack(other.gameObject));
+        }
+        else
+        {
+            navAgent.isStopped = false;
+        }
+
+        anim.SetBool("isAttacking", bIsAttacking);
+    }
+
+    public void TakeDamage(float _fDamage)
+    {
+        currentHealth -= _fDamage;
+    }
+
+    private IEnumerator Attack(GameObject _other)
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        if (_other.tag == "Obelisk")
+        {
+            _other.GetComponent<Obelisk>().TakeDamage(attackDamageValue);
+        }
+    }
+
+    private void Death()
+    {
+
+    }
+}
