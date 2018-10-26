@@ -17,7 +17,10 @@ public class Enemy : MonoBehaviour {
 
     private NavMeshAgent navAgent;
 
-	void Start ()
+    private bool isAttacking = false;
+    private Transform Target = null;
+
+    void Start ()
     {
         currentHealth = maxHealth;
 
@@ -37,22 +40,24 @@ public class Enemy : MonoBehaviour {
         }
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        bool bIsAttacking = false;
-
         if (other.tag == "Player" || other.tag == "Obelisk")
         {
-            bIsAttacking = true;
             navAgent.isStopped = true;
-            StartCoroutine(Attack(other.gameObject));
+
+            isAttacking = true;
+
         }
         else
         {
             navAgent.isStopped = false;
         }
 
-        anim.SetBool("isAttacking", bIsAttacking);
+        if (isAttacking)
+        {
+            anim.SetTrigger("Attacked");
+        }
     }
 
     public void TakeDamage(float _fDamage)
@@ -60,15 +65,30 @@ public class Enemy : MonoBehaviour {
         currentHealth -= _fDamage;
     }
 
-    private IEnumerator Attack(GameObject _other)
+    public void Attack(GameObject _other)
     {
-        yield return new WaitForSeconds(0.3f);
-
+        //yield return new WaitForSeconds(attackSpeed);
         if (_other.tag == "Obelisk")
         {
             _other.GetComponent<Obelisk>().TakeDamage(attackDamageValue);
         }
     }
+
+    public void DoneAttack()
+    {
+        anim.SetBool("Attack", false);
+        isAttacking = false;
+    }
+
+    //private IEnumerator Attack(GameObject _other)
+    //{
+    //    yield return new WaitForSeconds(0.3f);
+
+    //    if (_other.tag == "Obelisk")
+    //    {
+    //        _other.GetComponent<Obelisk>().TakeDamage(attackDamageValue);
+    //    }
+    //}
 
     private void Death()
     {
