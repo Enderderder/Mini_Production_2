@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour {
+public class GoblinEnemy : MonoBehaviour {
 
     [Header("Stats")]
     [SerializeField] private float currentHealth;
@@ -45,18 +45,25 @@ public class Enemy : MonoBehaviour {
         if (other.tag == "Player" || other.tag == "Obelisk")
         {
             navAgent.isStopped = true;
-
             isAttacking = true;
-
+            anim.SetTrigger("Attacked");
+            Target = other.gameObject.transform;
         }
         else
         {
             navAgent.isStopped = false;
+            navAgent.destination = obelisk.transform.position;
+            Target = null;
         }
+    }
 
-        if (isAttacking)
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player" || other.tag == "Obelisk")
         {
-            anim.SetTrigger("Attacked");
+            Target = null;
+            navAgent.isStopped = false;
+            navAgent.destination = obelisk.transform.position;
         }
     }
 
@@ -65,12 +72,14 @@ public class Enemy : MonoBehaviour {
         currentHealth -= _fDamage;
     }
 
-    public void Attack(GameObject _other)
+    public void Attack()
     {
-        //yield return new WaitForSeconds(attackSpeed);
-        if (_other.tag == "Obelisk")
+        if (Target != null)
         {
-            _other.GetComponent<Obelisk>().TakeDamage(attackDamageValue);
+            if (Target.tag == "Obelisk")
+            {
+                Target.GetComponent<Obelisk>().TakeDamage(attackDamageValue);
+            }
         }
     }
 
@@ -79,16 +88,6 @@ public class Enemy : MonoBehaviour {
         anim.SetBool("Attack", false);
         isAttacking = false;
     }
-
-    //private IEnumerator Attack(GameObject _other)
-    //{
-    //    yield return new WaitForSeconds(0.3f);
-
-    //    if (_other.tag == "Obelisk")
-    //    {
-    //        _other.GetComponent<Obelisk>().TakeDamage(attackDamageValue);
-    //    }
-    //}
 
     private void Death()
     {
