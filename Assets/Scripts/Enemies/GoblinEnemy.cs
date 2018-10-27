@@ -9,7 +9,6 @@ public class GoblinEnemy : MonoBehaviour {
     [SerializeField] private float currentHealth;
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float attackDamageValue;
-    [SerializeField] private float attackDelayValue;
 
     //private GameObject Player;
     private GameObject obelisk;
@@ -37,6 +36,15 @@ public class GoblinEnemy : MonoBehaviour {
 		if (currentHealth <= 0)
         {
             Death();
+        }
+
+        if (navAgent.isStopped)
+        {
+            anim.SetBool("isWalking", false);
+        }
+        else
+        {
+            anim.SetBool("isWalking", true);
         }
 	}
 
