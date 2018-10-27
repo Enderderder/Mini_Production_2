@@ -31,14 +31,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             controllerid = new List<int>();
             m_Character = GetComponent<ThirdPersonCharacter>();
 
-            for (int i = 0; i < Input.GetJoystickNames().Length; i++)
-            {
-                if (Input.GetJoystickNames()[i] != "")
+            if (Input.GetJoystickNames().Length > 0) {
+                for (int i = 0; i < Input.GetJoystickNames().Length; i++)
                 {
-                    controllerid.Add(i+1);
+                    if (Input.GetJoystickNames()[i] != "")
+                    {
+                        controllerid.Add(i + 1);
+                    }
                 }
             }
-
 
         }
 
@@ -53,28 +54,62 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
             if (PlayerID == 1) {
-                if (Input.GetKeyDown("joystick " + controllerid[0] + " button 0"))
-                {
-                    Fire();
-                    manaScript.UseManaAttack(2.0f);
-                    m_Character.AnimAttack(true);
+
+                if (controllerid.Count > 0) {
+                    if (Input.GetKeyDown("joystick " + controllerid[0] + " button 0"))
+                    {
+                        Fire();
+                        manaScript.UseManaAttack(2.0f);
+                        m_Character.AnimAttack(true);
+                    }
+                    else if (Input.GetKeyUp("joystick " + controllerid[0] + " button 0"))
+                    {
+                        m_Character.StopAttack(true);
+                    }
                 }
-                else if (Input.GetKeyUp("joystick " + controllerid[0] + " button 0"))
+                else
                 {
-                    m_Character.StopAttack(true);
+                    if (Input.GetKeyDown(KeyCode.LeftControl))
+                    {
+                        Fire();
+                        manaScript.UseManaAttack(2.0f);
+                        m_Character.AnimAttack(true);
+                    }
+                    else if (Input.GetKeyUp(KeyCode.LeftControl))
+                    {
+                        m_Character.StopAttack(true);
+                    }
                 }
+
+                
             }
             if (PlayerID == 2)
             {
-                if (Input.GetKeyDown("joystick " + controllerid[1] + " button 0"))
+                if (controllerid.Count > 1)
                 {
-                    Fire();
-                    manaScript.UseManaAttack(2.0f);
-                    m_Character.AnimAttack(true);
+                    if (Input.GetKeyDown("joystick " + controllerid[1] + " button 0"))
+                    {
+                        Fire();
+                        manaScript.UseManaAttack(2.0f);
+                        m_Character.AnimAttack(true);
+                    }
+                    else if (Input.GetKeyUp("joystick " + controllerid[1] + " button 0"))
+                    {
+                        m_Character.StopAttack(true);
+                    }
                 }
-                else if (Input.GetKeyUp("joystick " + controllerid[1] + " button 0"))
+                else
                 {
-                    m_Character.StopAttack(true);
+                    if (Input.GetKeyDown(KeyCode.RightControl))
+                    {
+                        Fire();
+                        manaScript.UseManaAttack(2.0f);
+                        m_Character.AnimAttack(true);
+                    }
+                    else if (Input.GetKeyUp(KeyCode.RightControl))
+                    {
+                        m_Character.StopAttack(true);
+                    }
                 }
             }
 
@@ -104,16 +139,31 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             
             if (PlayerID == 1)
             {
-                
-                h = Input.GetAxis("Horizontalp1" + controllerid[0]);
-                v = Input.GetAxis("Verticalp1" + controllerid[0]);
+                if (controllerid.Count > 0)
+                {
+                    h = Input.GetAxis("Horizontalp1" + controllerid[0]);
+                    v = Input.GetAxis("Verticalp1" + controllerid[0]);
+                }
+                else
+                {
+                    h = Input.GetAxis("P1Horizontal");
+                    v = Input.GetAxis("P1Vertical");
+                }
                 //Debug.Log(PlayerID + " h value: " + h + " cotroller id: Horizontalp" + PlayerID + controllerid[0]);
             }
 
             else if (PlayerID == 2)
             {
-                h = Input.GetAxis("Horizontalp2" + controllerid[1]);
-                v = Input.GetAxis("Verticalp2" + controllerid[1]);
+                if (controllerid.Count > 1)
+                {
+                    h = Input.GetAxis("Horizontalp2" + controllerid[1]);
+                    v = Input.GetAxis("Verticalp2" + controllerid[1]);
+                }
+                else
+                {
+                    h = Input.GetAxis("P2Horizontal");
+                    v = Input.GetAxis("P2Vertical");
+                }
                 //Debug.Log(PlayerID + " h value: " + h + " cotroller id: Horizontalp" + PlayerID + controllerid[1]);
             }
             // read inputs
