@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - UI
+  - PS
+  - SlimeSpawner
+  - Enemy
+  - SlimePS
+  - PlayerHolder
+  - StaticBullet
+  - Bullet
+  - Obelisk
   layers:
   - Default
   - TransparentFX
