@@ -7,7 +7,7 @@ public class Obelisk : MonoBehaviour {
 
     [SerializeField] private float currentHealth;
     [SerializeField] private float maxHealth = 1000;
-    [SerializeField] private float manaRegenRange;
+    public float manaRegenRange;
 
     private MeshRenderer meshRenderer;
 
@@ -69,5 +69,11 @@ public class Obelisk : MonoBehaviour {
     private void GameOver()
     {
 
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, manaRegenRange);
     }
 }
