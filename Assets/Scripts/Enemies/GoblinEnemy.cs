@@ -71,7 +71,6 @@ public class GoblinEnemy : MonoBehaviour {
         {
             Target = null;
             navAgent.isStopped = false;
-            navAgent.destination = obelisk.transform.position;
         }
     }
 
