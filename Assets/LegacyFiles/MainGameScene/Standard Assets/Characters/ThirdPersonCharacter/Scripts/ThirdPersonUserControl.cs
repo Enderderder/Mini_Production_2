@@ -23,22 +23,24 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private List<Controller> controllerid;
         private float h = 0, v = 0;
 
-        
-
-        public Mana manaScript;
+        //public Mana manaScript;
+        private PlayerHeath playerHealthScript;
 
         //Public variables
         public GameObject bulletPrefab;
         public Transform bulletSpawn;
         public int PlayerID = 0;
+        public float attackMana = 10.0f;
 
         private void Start()
         {
-            
             controllerid = new List<Controller>();
             m_Character = GetComponent<ThirdPersonCharacter>();
 
-            if (Input.GetJoystickNames().Length > 0) {
+            playerHealthScript = GetComponent<PlayerHeath>();
+
+            if (Input.GetJoystickNames().Length > 0)
+            {
                 for (int i = 0; i < Input.GetJoystickNames().Length; i++)
                 {
                     if (Input.GetJoystickNames()[i] != "")
@@ -60,12 +62,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     }
                 }
             }
-
-            
-
         }
-
-        
 
         private void Update()
         {
@@ -75,15 +72,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     Debug.Log("KeyCode down: " + kcode);
             }
 
-            if (PlayerID == 1) {
-
-                if (controllerid.Count > 0) {
-                    if (controllerid[0].xboxController == true) {
+            if (PlayerID == 1)
+            {
+                if (controllerid.Count > 0)
+                {
+                    if (controllerid[0].xboxController == true)
+                    {
                         if (Input.GetKeyDown("joystick " + controllerid[0].id + " button 0"))
                         {
-                            Fire();
-                            manaScript.UseManaAttack(2.0f);
-                            m_Character.AnimAttack(true);
+                            if (playerHealthScript.currentMana >= attackMana)
+                            {
+                                Fire();
+                                //manaScript.UseManaAttack(2.0f);
+                                playerHealthScript.UseMana(attackMana);
+                                m_Character.AnimAttack(true);
+                            }
                         }
                         else if (Input.GetKeyUp("joystick " + controllerid[0].id + " button 0"))
                         {
@@ -94,9 +97,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     {
                         if (Input.GetKeyDown("joystick " + controllerid[0].id + " button 1"))
                         {
-                            Fire();
-                            manaScript.UseManaAttack(2.0f);
-                            m_Character.AnimAttack(true);
+                            if (playerHealthScript.currentMana >= attackMana)
+                            {
+                                Fire();
+                                //manaScript.UseManaAttack(2.0f);
+                                playerHealthScript.UseMana(attackMana);
+                                m_Character.AnimAttack(true);
+                            }
                         }
                         else if (Input.GetKeyUp("joystick " + controllerid[0].id + " button 1"))
                         {
@@ -108,17 +115,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     if (Input.GetKeyDown(KeyCode.LeftControl))
                     {
-                        Fire();
-                        manaScript.UseManaAttack(2.0f);
-                        m_Character.AnimAttack(true);
+                        if (playerHealthScript.currentMana >= attackMana)
+                        {
+                            Fire();
+                            //manaScript.UseManaAttack(2.0f);
+                            playerHealthScript.UseMana(attackMana);
+                            m_Character.AnimAttack(true);
+                        }
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftControl))
                     {
                         m_Character.StopAttack(true);
                     }
                 }
-
-                
             }
             if (PlayerID == 2)
             {
@@ -128,9 +137,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     {
                         if (Input.GetKeyDown("joystick " + controllerid[1].id + " button 0"))
                         {
-                            Fire();
-                            manaScript.UseManaAttack(2.0f);
-                            m_Character.AnimAttack(true);
+                            if (playerHealthScript.currentMana >= attackMana)
+                            {
+                                Fire();
+                                //manaScript.UseManaAttack(2.0f);
+                                playerHealthScript.UseMana(attackMana);
+                                m_Character.AnimAttack(true);
+                            }
                         }
                         else if (Input.GetKeyUp("joystick " + controllerid[1].id + " button 0"))
                         {
@@ -141,9 +154,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     {
                         if (Input.GetKeyDown("joystick " + controllerid[1].id + " button 1"))
                         {
-                            Fire();
-                            manaScript.UseManaAttack(2.0f);
-                            m_Character.AnimAttack(true);
+                            if (playerHealthScript.currentMana >= attackMana)
+                            {
+                                Fire();
+                                //manaScript.UseManaAttack(2.0f);
+                                playerHealthScript.UseMana(attackMana);
+                                m_Character.AnimAttack(true);
+                            }
                         }
                         else if (Input.GetKeyUp("joystick " + controllerid[1].id + " button 1"))
                         {
@@ -155,9 +172,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     if (Input.GetKeyDown(KeyCode.RightControl))
                     {
-                        Fire();
-                        manaScript.UseManaAttack(2.0f);
-                        m_Character.AnimAttack(true);
+                        if (playerHealthScript.currentMana >= attackMana)
+                        {
+                            Fire();
+                            //manaScript.UseManaAttack(2.0f);
+                            playerHealthScript.UseMana(attackMana);
+                            m_Character.AnimAttack(true);
+                        }
                     }
                     else if (Input.GetKeyUp(KeyCode.RightControl))
                     {
@@ -165,7 +186,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     }
                 }
             }
-
         }
         
         void Fire()

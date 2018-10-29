@@ -9,6 +9,8 @@ public class EnemySpawning : MonoBehaviour {
     public int maxEnemyMultiplier = 1;
     public int currentEnemyCount;
     public int maxEnemyCount;
+    public int EnemiesSpawned;
+    public int totalEnemyCount;
 
     public GameObject[] enemies;
 
@@ -24,9 +26,14 @@ public class EnemySpawning : MonoBehaviour {
         maxEnemyCount = currentRound * maxEnemyMultiplier;
         currentEnemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-        if (currentEnemyCount < maxEnemyCount)
+        if (currentEnemyCount < maxEnemyCount && EnemiesSpawned < totalEnemyCount)
         {
             SpawnEnemy();
+        }
+
+        if (EnemiesSpawned == totalEnemyCount && currentEnemyCount == 0)
+        {
+            currentRound++;
         }
     }
 
@@ -35,5 +42,6 @@ public class EnemySpawning : MonoBehaviour {
         int randEnemy = Random.Range(0, enemies.Length);
         int randSpawner = Random.Range(0, spawners.Length);
         Instantiate(enemies[randEnemy], spawners[randSpawner].position, spawners[randSpawner].rotation);
+        EnemiesSpawned++;
     }
 }
