@@ -96,6 +96,20 @@ public class GoblinEnemy : MonoBehaviour {
         Debug.Log(obeliskRange);
 	}
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Bullet")
+        {
+            Destroy(other.gameObject);
+            TakeDamage(5);
+        }
+        else if (other.tag == "StaticBullet")
+        {
+            //Destroy(other.gameObject);
+            TakeDamage(20);
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player" || other.tag == "Obelisk")
@@ -137,7 +151,7 @@ public class GoblinEnemy : MonoBehaviour {
             }
             else if (Target.tag == "Player")
             {
-                Debug.Log("Attacking player");
+                Target.GetComponent<PlayerHeath>().TakeDamage(attackDamageValue);
             }
         }
     }
@@ -150,7 +164,7 @@ public class GoblinEnemy : MonoBehaviour {
 
     private void Death()
     {
-
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()

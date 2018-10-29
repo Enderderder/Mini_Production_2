@@ -18,7 +18,7 @@ public class Obelisk : MonoBehaviour {
         // Set health to max
         currentHealth = maxHealth;
 
-        DrawCircleRange(manaRegenRange);
+        DrawCircleRange(manaRegenRange / 6);
     }
 
     private void Update()
@@ -74,6 +74,6 @@ public class Obelisk : MonoBehaviour {
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, manaRegenRange);
+        Gizmos.DrawWireSphere(transform.position, manaRegenRange / 6);
     }
 }
