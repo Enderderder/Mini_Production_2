@@ -7,9 +7,10 @@ public class GoblinEnemy : MonoBehaviour {
 
     [Header("Stats")]
     [SerializeField] private float currentHealth;
-    [SerializeField] private float maxHealth = 100;
+    [SerializeField] private float maxHealth = 20;
     [SerializeField] private float attackDamageValue;
     [SerializeField] private float lookRadius = 10f;
+    [SerializeField] private SkinnedMeshRenderer meshRenderer;
 
     //private GameObject Player;
     private GameObject obelisk;
@@ -139,6 +140,14 @@ public class GoblinEnemy : MonoBehaviour {
     public void TakeDamage(float _fDamage)
     {
         currentHealth -= _fDamage;
+        StartCoroutine(DamageEffect());
+    }
+
+    private IEnumerator DamageEffect()
+    {
+        meshRenderer.material.color = new Color(1, 0, 0);
+        yield return new WaitForSeconds(0.1f);
+        meshRenderer.material.color = new Color(1, 1, 1);
     }
 
     public void Attack()
