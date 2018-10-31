@@ -8,8 +8,6 @@ public class PauseUI : MonoBehaviour
 {
     public GameObject m_pauseUICanvas;
 
-    private string[] Controllers;
-
     private void Start()
     {
         // Disable the pause menu at the beginning
@@ -18,12 +16,6 @@ public class PauseUI : MonoBehaviour
 
     private void Update()
     {
-        // Detect if the pause button has been pressed
-        if (Input.GetJoystickNames() != null)
-        {
-
-        }
-
         if (Input.GetButtonDown("Esc"))
         {
             TogglePauseMenu();
