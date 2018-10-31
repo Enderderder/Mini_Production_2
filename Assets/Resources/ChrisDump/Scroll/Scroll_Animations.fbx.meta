@@ -1,61 +1,34 @@
 fileFormatVersion: 2
-guid: b2e4a9fc29494914e99fc2f2fad33bf0
+guid: 248ad9c1ad1a46243be9b8f800a88a21
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: group1
-    100002: group2
-    100004: group3
-    100006: group4
-    100008: group5
-    100010: group6
-    100012: joint1
-    100014: joint1 1
-    100016: joint1 2
-    100018: joint1 3
-    100020: joint2
-    100022: joint3
-    100024: polySurface1
-    100026: polySurface2
-    100028: polySurface3
-    100030: polySurface3 1
-    100032: polySurface3 2
-    100034: polySurface3 3
-    100036: //RootNode
-    400000: group1
-    400002: group2
-    400004: group3
-    400006: group4
-    400008: group5
-    400010: group6
-    400012: joint1
-    400014: joint1 1
-    400016: joint1 2
-    400018: joint1 3
-    400020: joint2
-    400022: joint3
-    400024: polySurface1
-    400026: polySurface2
-    400028: polySurface3
-    400030: polySurface3 1
-    400032: polySurface3 2
-    400034: polySurface3 3
-    400036: //RootNode
-    2100000: brow_
-    4300000: polySurface3
-    4300002: polySurface2
-    4300004: polySurface1
-    4300006: polySurface3
-    4300008: polySurface3
-    4300010: polySurface3
-    7400000: Take 001
+    100000: joint1
+    100002: joint2
+    100004: joint3
+    100006: joint4
+    100008: joint5
+    100010: joint6
+    100012: joint7
+    100014: joint8
+    100016: Scroll
+    100018: //RootNode
+    400000: joint1
+    400002: joint2
+    400004: joint3
+    400006: joint4
+    400008: joint5
+    400010: joint6
+    400012: joint7
+    400014: joint8
+    400016: Scroll
+    400018: //RootNode
+    2100000: m_Scroll
+    4300000: Scroll
+    7400000: Unfold
+    7400002: Idle
     9500000: //RootNode
-    13700000: polySurface1
-    13700002: polySurface2
-    13700004: polySurface3
-    13700006: polySurface3 1
-    13700008: polySurface3 2
-    13700010: polySurface3 3
+    13700000: Scroll
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -85,10 +58,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Unfold
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 10
+      firstFrame: 1
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -112,10 +85,38 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 33
+      lastFrame: 82
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 50
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -135,7 +136,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.5
+    previousCalculatedGlobalScale: 0.099999994
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
