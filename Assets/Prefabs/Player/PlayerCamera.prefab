@@ -36,13 +36,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1122569323806102}
-  m_LocalRotation: {x: 0.33909407, y: -0.12265456, z: 0.044642597, w: 0.9316535}
-  m_LocalPosition: {x: 92.08736, y: 50.381195, z: 39.10376}
+  m_LocalRotation: {x: -0.39430583, y: 0.002764374, z: -0.0011860486, w: -0.9189744}
+  m_LocalPosition: {x: 0.6555022, y: 24.229797, z: -30.818586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 40, y: -60, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20276595192163554
 Camera:
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
+  m_SensorSize: {x: 4.8, y: 3.5}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
   m_NormalizedViewPortRect:
@@ -65,9 +65,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 3
+  field of view: 45
+  orthographic: 0
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -101,12 +101,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2777e56852b020e41a1e1076c666772b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DampTime: 0.2
+  DampTime: 0.2
+  CameraOffset: {x: 0, y: 30, z: -25}
+  ZoomMax: 60
+  ZoomMin: 30
+  ZoomLimmit: 30
   m_ScreenEdgeBuffer: 4
   m_MinSize: 2
-  m_Targets:
-  - {fileID: 0}
-  - {fileID: 0}
+  m_playerPos_1: {fileID: 0}
+  m_playerPos_2: {fileID: 0}
+  m_cameraBound:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!124 &124833572631774490
 Behaviour:
   m_ObjectHideFlags: 1

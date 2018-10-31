@@ -48,7 +48,8 @@ public class CameraRig : MonoBehaviour
 
         m_cameraBound = GetEncapsulatingBounds();
         m_DesiredPosition = CalculateDesirePosition();
-        
+        //RotateTowardsDesirePosition();
+
     }
 
     private void LateUpdate()
@@ -78,7 +79,9 @@ public class CameraRig : MonoBehaviour
 
     private void RotateTowardsDesirePosition()
     {
-        Vector3 rotateDir = m_cameraBound.center - this.transform.position;
+        Vector3 centrePosition = Vector3.Lerp(m_playerPos_1.position, m_playerPos_2.position, 0.5f);
+
+        Vector3 rotateDir = centrePosition - this.transform.position;
 
         transform.rotation = Quaternion.LookRotation(rotateDir);
     }
@@ -88,7 +91,7 @@ public class CameraRig : MonoBehaviour
         Vector3 desirePosition = new Vector3();
 
         // Get the centre of the players
-        Vector3 centrePosition = m_cameraBound.center;
+        Vector3 centrePosition = Vector3.Lerp(m_playerPos_1.position, m_playerPos_2.position, 0.5f);
 
         // Set the horizontal offset of the camera
         desirePosition = centrePosition + CameraOffset;
@@ -98,8 +101,8 @@ public class CameraRig : MonoBehaviour
 
     private void Zoom()
     {
-        float greatestDistance = m_cameraBound.size.x;
-        float newZoom = Mathf.Lerp(ZoomMax, ZoomMin, greatestDistance / ZoomLimmit);
+        float greatestDistance = Vector3.Distance(m_playerPos_1.position, m_playerPos_2.position);
+        float newZoom = Mathf.Lerp(ZoomMin, ZoomMax, greatestDistance / ZoomLimmit);
         
         // Smooth zoom of the camera
         m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, newZoom, Time.fixedDeltaTime);

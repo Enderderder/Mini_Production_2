@@ -9910,98 +9910,35 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 32.145935
+      value: 0.6555022
       objectReference: {fileID: 0}
     - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.507641
+      value: 24.229797
       objectReference: {fileID: 0}
     - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -28.411945
+      value: -30.818586
       objectReference: {fileID: 0}
     - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.3848725
+      value: -0.39430583
       objectReference: {fileID: 0}
     - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.31113338
+      value: 0.002764374
       objectReference: {fileID: 0}
     - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.13962078
+      value: -0.0011860486
       objectReference: {fileID: 0}
     - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.85765684
+      value: -0.9189744
       objectReference: {fileID: 0}
     - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4165621748354486, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20276595192163554, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: orthographic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20276595192163554, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: orthographic size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 20276595192163554, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: field of view
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 20276595192163554, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: m_projectionMatrixMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20276595192163554, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: m_SensorSize.x
-      value: 4.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 20276595192163554, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: m_SensorSize.y
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114957407969727056, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: CameraOffset.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114957407969727056, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: CameraOffset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114957407969727056, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: CameraOffset.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114957407969727056, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: ZoomLimmit
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114957407969727056, guid: 4925f0a4ef19c804ca02fd4d6e6c9429,
-        type: 2}
-      propertyPath: ZoomMax
-      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
