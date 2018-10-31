@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - UI
+=======
   - PS
   - SlimeSpawner
   - Enemy
@@ -13,6 +15,7 @@ TagManager:
   - StaticBullet
   - Bullet
   - Obelisk
+>>>>>>> 547da1822ae84255b7169a1216d760a93b6226a8
   layers:
   - Default
   - TransparentFX

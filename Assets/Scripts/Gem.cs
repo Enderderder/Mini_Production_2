@@ -17,7 +17,7 @@ public class Gem : MonoBehaviour {
         startPos = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Sine Wave
         float y = FloatingRange * Mathf.Sin((Time.time * FloatingSpeed) + StartingOffset);

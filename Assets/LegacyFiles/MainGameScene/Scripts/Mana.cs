@@ -33,22 +33,18 @@ public class Mana : MonoBehaviour
             case ManaState.eGAINING:
             {
                 return MStateArray[0];
-                break;
             }
             case ManaState.eHURT:
             {
                 return MStateArray[1];
-                break;
             }
             case ManaState.eATTACK:
             {
                 return MStateArray[2];
-                break;
             }
             case ManaState.eAWAY:
             {
                 return MStateArray[3];
-                break;
             }
             default:
                 return false;
