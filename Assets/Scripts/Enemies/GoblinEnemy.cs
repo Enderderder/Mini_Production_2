@@ -19,28 +19,40 @@ public class GoblinEnemy : MonoBehaviour {
     private NavMeshAgent navAgent;
 
     private bool isAttacking = false;
-    private Transform Target = null;
+    private bool isInAtkRange = false;
+    private GameObject Target = null;
 
     private bool isChasing = false;
-    private Transform player1;
-    private Transform player2;
+    private GameObject player1;
+    private GameObject player2;
 
     private float obeliskRange;
+
+    Coroutine attackAction;
+
+    private void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
+    }
 
     void Start ()
     {
         currentHealth = maxHealth;
 
-        player1 = GameObject.Find("Player1").transform;
-        player2 = GameObject.Find("Player2").transform;
+        player1 = GameObject.Find("Player1");
+        player2 = GameObject.Find("Player2");
 
-        navAgent = GetComponent<NavMeshAgent>();
+        
         obelisk = GameObject.FindGameObjectWithTag("Obelisk");
-        anim = GetComponentInChildren<Animator>();
 
         navAgent.destination = obelisk.transform.position;
 
         obeliskRange = obelisk.GetComponent<Obelisk>().manaRegenRange;
+
+        // Set the initial target
+        Target = obelisk;
+        attackAction = StartCoroutine(AttackAction());
 
         navAgent.speed = Random.Range(navAgent.speed / 1.5f, navAgent.speed * 1.5f);
 	}
@@ -53,49 +65,66 @@ public class GoblinEnemy : MonoBehaviour {
             Death();
         }
 
-        if (navAgent.isStopped)
-        {
-            anim.SetBool("isWalking", false);
-        }
-        else
-        {
-            anim.SetBool("isWalking", true);
-        }
+        //if (navAgent.isStopped)
+        //{
+        //    anim.SetBool("isWalking", false);
+        //}
+        //else
+        //{
+        //    anim.SetBool("isWalking", true);
+        //}
 
-
-        float player1Distance = Vector3.Distance(player1.position, transform.position);
-        float player2Distance = Vector3.Distance(player2.position, transform.position);
+        float player1Distance = Vector3.Distance(player1.transform.position, transform.position);
+        float player2Distance = Vector3.Distance(player2.transform.position, transform.position);
 
         if (player1Distance <= lookRadius && player2Distance <= lookRadius)
         {
-            if (player1Distance >= player2Distance && Vector3.Distance(player2.position, obelisk.transform.position) > obeliskRange)
+            if (player1Distance >= player2Distance && Vector3.Distance(player2.transform.position, obelisk.transform.position) > obeliskRange)
             {
-                navAgent.destination = player2.position;
+                Target = player2;
+                //navAgent.destination = player2.transform.position;
             }
-            else if (Vector3.Distance(player1.position, obelisk.transform.position) > obeliskRange)
+            else if (Vector3.Distance(player1.transform.position, obelisk.transform.position) > obeliskRange)
             {
-                navAgent.destination = player1.position;
+                Target = player1;
+                //navAgent.destination = player1.transform.position;
             }
             else
             {
-                navAgent.destination = obelisk.transform.position;
+                Target = obelisk;
+                //navAgent.destination = obelisk.transform.position;
             }
         }
-        else if (player1Distance <= lookRadius && Vector3.Distance(player1.position, obelisk.transform.position) > obeliskRange)
+        else if (player1Distance <= lookRadius && Vector3.Distance(player1.transform.position, obelisk.transform.position) > obeliskRange)
         {
-            navAgent.destination = player1.position;
+            Target = player1;
+            //navAgent.destination = player1.transform.position;
         }
-        else if (player2Distance <= lookRadius && Vector3.Distance(player2.position, obelisk.transform.position) > obeliskRange)
+        else if (player2Distance <= lookRadius && Vector3.Distance(player2.transform.position, obelisk.transform.position) > obeliskRange)
         {
-            navAgent.destination = player2.position;
+            Target = player2;
+            //navAgent.destination = player2.transform.position;
         }
         else
         {
-            navAgent.destination = obelisk.transform.position;
+            Target = obelisk;
+            //navAgent.destination = obelisk.transform.position;
         }
 
         Debug.Log(obeliskRange);
-	}
+
+        // Check if the agent has reach the destination
+        if (!navAgent.pathPending)
+        {
+            if (navAgent.remainingDistance <= navAgent.stoppingDistance)
+            {
+                if (!navAgent.hasPath || navAgent.velocity.sqrMagnitude == 0.0f)
+                {
+                    anim.SetBool("isWalking", false);
+                }
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -113,27 +142,33 @@ public class GoblinEnemy : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "Obelisk")
+        //if (other.tag == "Player" || other.tag == "Obelisk")
+        if (Target == other.gameObject)
         {
-            navAgent.isStopped = true;
+            //Target = other.gameObject;
             isAttacking = true;
-            anim.SetTrigger("Attacked");
-            Target = other.gameObject.transform;
+            isInAtkRange = true;
         }
         else
         {
-            navAgent.isStopped = false;
-            navAgent.destination = obelisk.transform.position;
-            Target = null;
+            //navAgent.isStopped = false;
+            //navAgent.destination = obelisk.transform.position;
+            //Target = null;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject == Target)
+        {
+            isInAtkRange = false;
+        }
+
+
         if (other.tag == "Player" || other.tag == "Obelisk")
         {
             Target = null;
-            navAgent.isStopped = false;
+            //navAgent.isStopped = false;
         }
     }
 
@@ -167,12 +202,13 @@ public class GoblinEnemy : MonoBehaviour {
 
     public void DoneAttack()
     {
-        anim.SetBool("Attack", false);
+        //anim.SetBool("isAttack", false);
         isAttacking = false;
     }
 
     private void Death()
     {
+        StopCoroutine(attackAction);
         Destroy(gameObject);
     }
 
@@ -180,5 +216,23 @@ public class GoblinEnemy : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+
+
+    private IEnumerator AttackAction()
+    {
+        while (true)
+        {
+            anim.SetBool("isWalking", true);
+            navAgent.SetDestination(Target.transform.position);
+
+            if (isInAtkRange)
+            {
+                navAgent.SetDestination(this.transform.position);
+                anim.SetTrigger("Attacked");
+            }
+
+            yield return null;
+        }
     }
 }

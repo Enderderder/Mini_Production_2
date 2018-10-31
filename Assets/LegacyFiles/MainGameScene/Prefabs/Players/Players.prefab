@@ -587,7 +587,6 @@ GameObject:
   - component: {fileID: 114625617591366264}
   - component: {fileID: 114762727138763496}
   - component: {fileID: 114522359878395594}
-  - component: {fileID: 114017951145030290}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -4085,25 +4084,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114017951145030290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1321556631469166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d642ffcf9b95841a89600badc4af10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 100
-  currentMana: 0
-  maxMana: 100
-  manaRegenAmount: 10
-  manaRegenDelay: 1
-  healthText: {fileID: 0}
-  manaText: {fileID: 0}
 --- !u!114 &114048881204929482
 MonoBehaviour:
   m_ObjectHideFlags: 1
