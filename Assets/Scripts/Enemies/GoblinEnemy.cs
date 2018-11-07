@@ -153,7 +153,8 @@ public class GoblinEnemy : MonoBehaviour {
         {
             //navAgent.isStopped = false;
             //navAgent.destination = obelisk.transform.position;
-            //Target = null;
+            Target = null;
+            isInAtkRange = false;
         }
     }
 
@@ -168,14 +169,18 @@ public class GoblinEnemy : MonoBehaviour {
         if (other.tag == "Player" || other.tag == "Obelisk")
         {
             Target = null;
+            isInAtkRange = false;
             //navAgent.isStopped = false;
         }
     }
 
     public void TakeDamage(float _fDamage)
     {
-        currentHealth -= _fDamage;
-        StartCoroutine(DamageEffect());
+        if (Target != null)
+        {
+            currentHealth -= _fDamage;
+            StartCoroutine(DamageEffect());
+        }
     }
 
     private IEnumerator DamageEffect()
@@ -202,7 +207,6 @@ public class GoblinEnemy : MonoBehaviour {
 
     public void DoneAttack()
     {
-        //anim.SetBool("isAttack", false);
         isAttacking = false;
     }
 

@@ -66,7 +66,7 @@ public class EnemySpawning : MonoBehaviour {
 
         currentWave++;
         maxEnemyCount = currentWave * maxEnemyMultiplier;
-        totalEnemyCount = maxEnemyCount * 4;
+        totalEnemyCount = maxEnemyCount * 3;
         EnemiesSpawned = 0;
 
         yield return new WaitForSeconds(2);
