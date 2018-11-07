@@ -32,13 +32,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public int PlayerID = 0;
         public float attackMana = 10.0f;
 
+        private void Awake()
+        {
+            m_Character = GetComponent<ThirdPersonCharacter>();
+            playerHealthScript = GetComponent<PlayerHeath>();
+        }
+
+
         private void Start()
         {
             controllerid = new List<Controller>();
-            m_Character = GetComponent<ThirdPersonCharacter>();
-
-            playerHealthScript = GetComponent<PlayerHeath>();
-
             if (Input.GetJoystickNames().Length > 0)
             {
                 for (int i = 0; i < Input.GetJoystickNames().Length; i++)
