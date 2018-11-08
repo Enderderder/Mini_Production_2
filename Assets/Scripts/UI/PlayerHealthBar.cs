@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    [SerializeField] private readonly GameObject HealthBarPrefab;
+    [SerializeField] private GameObject HealthBarPrefab;
     [SerializeField] private Vector3 Offeset;
 
-   private Image m_background;
+    private Image m_background;
     private Image m_healthFill;
     private Image m_manaFill;
 
@@ -25,6 +25,16 @@ public class PlayerHealthBar : MonoBehaviour
     private void Update()
     {
         m_background.transform.position
-            = Camera.current.WorldToScreenPoint(this.gameObject.transform.position + Offeset);
+            = Camera.main.WorldToScreenPoint(this.gameObject.transform.position + Offeset);
+    }
+
+    public void ChangeHealth(float _value)
+    {
+        m_healthFill.fillAmount = _value;
+    }
+
+    public void ChangeMana(float _value)
+    {
+        m_manaFill.fillAmount = _value;
     }
 }
