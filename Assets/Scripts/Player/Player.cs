@@ -136,6 +136,15 @@ public class Player : MonoBehaviour
             return;
         }
 
+        foreach (InputControlType key in Enum.GetValues(typeof(InputControlType)))
+        {
+            if (m_controller.GetControl(key).WasPressed)
+            {
+                Debug.Log("Controler input: " + key);
+            }
+        }
+
+
         // Get the input value
         m_horizontalInput = m_moveHorizontalControl.Value;
         m_verticalInput = m_moveVerticalControl.Value;
