@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_ManaRegenDelay = 1.0f;
 
     [Header("Spells")]
-    [SerializeField] private ElementType m_HoldingElement = ElementType.None;
+    [SerializeField] private ElementType m_HoldingElement = ElementType.Earth;
     [SerializeField] private GameObject[] m_RegularSpellPrefab;
     [SerializeField] private Transform m_RegularSpellSpawnPosition;
     [SerializeField] private float m_ManaCostRegSpell = 10.0f;
@@ -188,11 +188,13 @@ public class Player : MonoBehaviour
                 m_currentMana >= m_ManaCostRegSpell)
             {
                 StartCoroutine(CastRegularSpell());
+                UseMana(m_ManaCostRegSpell);
             }
             else if (m_controlFireSpecial.IsPressed &&
                 m_currentMana >= m_ManaCostSpecialSpell)
             {
                 StartCoroutine(CastSpecialSpell());
+                UseMana(m_ManaCostSpecialSpell);
             }
         }
     }
@@ -223,9 +225,7 @@ public class Player : MonoBehaviour
             m_RegularSpellSpawnPosition.position,
             m_RegularSpellSpawnPosition.rotation);
 
-
-
-        yield return null;
+        yield return new WaitForSeconds(m_SpellCastDelay);
 
         // Spell cast action unlock
         m_bCanCastSpell = true;
@@ -247,8 +247,10 @@ public class Player : MonoBehaviour
 
     private void UpdateUI()
     {
-        m_healthBar.ChangeHealth(m_currentHealth);
-        m_healthBar.ChangeMana(m_currentMana);
+        // Update the UI health bar with percentage
+        // becauze UI image fill use 0 - 1 value
+        m_healthBar.ChangeHealth(m_currentHealth / m_MaxHealth);
+        m_healthBar.ChangeMana(m_currentMana / m_MaxMana);
     }
 
     public void TakeDamage(float _damageVal)
@@ -290,6 +292,7 @@ public class Player : MonoBehaviour
         m_canGenerateMana = false;
         yield return new WaitForSeconds(m_ManaRegenDelay);
         m_currentMana = Mathf.Min(m_MaxMana, m_currentMana + m_ManaRegenAmount);
+        UpdateUI();
         m_canGenerateMana = true;
     }
 
@@ -306,6 +309,7 @@ public class Player : MonoBehaviour
 
         // Use the mana and check if it is below 0
         m_currentMana = Mathf.Max(0.0f, m_currentMana - _value);
+        UpdateUI();
     }
 
     private IEnumerator Death()

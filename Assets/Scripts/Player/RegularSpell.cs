@@ -12,9 +12,13 @@ public class RegularSpell : MonoBehaviour
     [SerializeField] private float m_SpellSpeed = 7.0f;
     [SerializeField] private float m_SpellLifeTime = 3.0f;
 
+    // References
     private ParticleSystem[] m_particles;
     private MeshRenderer m_meshRenderer;
     private Rigidbody m_rigidBody;
+
+    // Flag
+    private bool m_isDestroying = false;
 
     private void Awake()
     {
@@ -41,6 +45,12 @@ public class RegularSpell : MonoBehaviour
         StartCoroutine(LifeTimeCountdown());
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // Destroy the projectile on any contact
+        StartCoroutine(DestroySpell());
+    }
+
     private IEnumerator LifeTimeCountdown()
     {
         yield return new WaitForSeconds(m_SpellLifeTime);
@@ -50,14 +60,19 @@ public class RegularSpell : MonoBehaviour
 
     private IEnumerator DestroySpell()
     {
-        StartCoroutine(TrailShrink());
-        // Stop and disable the ball
-        m_rigidBody.velocity = Vector3.zero;
-        m_meshRenderer.enabled = false;
-        yield return new WaitForSeconds(1.0f);
+        if (!m_isDestroying)
+        {
+            m_isDestroying = true;
 
-        StopAllCoroutines();
-        Destroy(this.gameObject);
+            StartCoroutine(TrailShrink());
+            // Stop and disable the ball
+            m_rigidBody.velocity = Vector3.zero;
+            m_meshRenderer.enabled = false;
+            yield return new WaitForSeconds(1.0f);
+
+            StopAllCoroutines();
+            Destroy(this.gameObject);
+        }
     }
 
     private IEnumerator TrailShrink()

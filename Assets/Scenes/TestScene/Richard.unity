@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44742376, g: 0.49284863, b: 0.55097663, a: 1}
+  m_IndirectSpecularColor: {r: 0.4474241, g: 0.49284917, b: 0.55097693, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1344,127 +1344,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 198931711737528046, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
-        type: 2}
-      propertyPath: InitialModule.startLifetime.minMaxState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198931711737528046, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
-        type: 2}
-      propertyPath: InitialModule.maxNumParticles
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 198931711737528046, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
-        type: 2}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574562473050980, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574562473050980, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574562473050980, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574562473050980, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574562473050980, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4460574617445538, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4460574617445538, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4460574617445538, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574562473050980, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4460574617445538, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4460574617445538, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4460574617445538, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23771868142338682, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155056372455550, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155056372455550, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155056372455550, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1701808744725104, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
-      propertyPath: m_Name
-      value: Particle_1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &392911177 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1144537069864348, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
-    type: 2}
-  m_PrefabInternal: {fileID: 392911176}
---- !u!114 &392911178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 392911177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1fecd74d618ea64cbfedabeeb4aacef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SpellDamage: 7
-  m_SpellSpeed: 7
-  m_SpellLifeTime: 3
---- !u!54 &392911179
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 392911177}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &414901268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1702,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 580796845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3d642ffcf9b95841a89600badc4af10, type: 3}
   m_Name: 
@@ -1857,7 +1739,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 580796845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c37a2548f7d354d48861a62feb335e0c, type: 3}
   m_Name: 
@@ -7215,12 +7097,12 @@ MonoBehaviour:
   m_MaxMana: 100
   m_ManaRegenAmount: 10
   m_ManaRegenDelay: 1
-  m_HoldingElement: 4
+  m_HoldingElement: 2
   m_RegularSpellPrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1063972531698038, guid: 58afe1132ee663847a81e120b183871e, type: 2}
+  - {fileID: 1712611912207432, guid: 576dad23d1a90f54d99a40b24e031c80, type: 2}
+  - {fileID: 1144537069864348, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
+  - {fileID: 1658974320218792, guid: a50584ea9dc7c1742920065f06447607, type: 2}
   m_RegularSpellSpawnPosition: {fileID: 1082476785}
   m_ManaCostRegSpell: 10
   m_ManaCostSpecialSpell: 30

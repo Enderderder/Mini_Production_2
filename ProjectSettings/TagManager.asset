@@ -13,6 +13,8 @@ TagManager:
   - StaticBullet
   - Bullet
   - Obelisk
+  - Spawner
+  - ProjectileSpell
   layers:
   - Default
   - TransparentFX
