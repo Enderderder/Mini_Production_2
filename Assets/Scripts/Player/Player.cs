@@ -5,6 +5,18 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using InControl;
 
+enum ElementType
+{
+    Fire,
+    Air,
+    Earth,
+    Water,
+
+    None,
+}
+
+
+
 [RequireComponent(typeof(ThirdPersonCharacter))]
 [RequireComponent(typeof(PlayerHealthBar))]
 public class Player : MonoBehaviour
@@ -19,11 +31,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_ManaRegenDelay = 1.0f;
 
     [Header("Spells")]
+    [SerializeField] private ElementType m_HoldingElement = ElementType.None;
     [SerializeField] private GameObject[] m_RegularSpellPrefab;
     [SerializeField] private Transform m_RegularSpellSpawnPosition;
     [SerializeField] private float m_ManaCostRegSpell = 10.0f;
     [SerializeField] private float m_ManaCostSpecialSpell = 30.0f;
-    [SerializeField] private float m_SpellFireDelay = 0.5f;
+    [SerializeField] private float m_SpellCastDelay = 0.5f;
 
     // Stats in real time
     private float m_currentHealth;
@@ -43,15 +56,15 @@ public class Player : MonoBehaviour
     private Vector3 m_camForward;
 
     // Player shooting
-    
+    private bool m_bCanCastSpell = true;
 
     // Controls
-    private InputControl m_moveHorizontalControl;
-    private InputControl m_moveVerticalControl;
-    private InputControl m_aimHorizontalControl;
-    private InputControl m_aimVerticalControl;
-    private InputControl m_fireRegularControl;
-    private InputControl m_fireSpecialControl;
+    private InputControl m_controlMoveHorizontal;
+    private InputControl m_controlMoveVertical;
+    private InputControl m_controlAimHorizontal;
+    private InputControl m_controlAimVertical;
+    private InputControl m_controlFireRegular;
+    private InputControl m_controlFireSpecial;
 
     // Obelisk reference for mana regen
     private Obelisk m_obelisk;
@@ -111,12 +124,12 @@ public class Player : MonoBehaviour
 
     private void SetupControl()
     {
-        m_moveHorizontalControl = m_controller.GetControl(InputControlType.LeftStickX);
-        m_moveVerticalControl = m_controller.GetControl(InputControlType.LeftStickY);
-        m_aimHorizontalControl = m_controller.GetControl(InputControlType.RightStickX);
-        m_aimVerticalControl = m_controller.GetControl(InputControlType.RightStickY);
-        m_fireRegularControl = m_controller.GetControl(InputControlType.RightTrigger);
-        m_fireSpecialControl = m_controller.GetControl(InputControlType.LeftTrigger);
+        m_controlMoveHorizontal = m_controller.GetControl(InputControlType.LeftStickX);
+        m_controlMoveVertical = m_controller.GetControl(InputControlType.LeftStickY);
+        m_controlAimHorizontal = m_controller.GetControl(InputControlType.RightStickX);
+        m_controlAimVertical = m_controller.GetControl(InputControlType.RightStickY);
+        m_controlFireRegular = m_controller.GetControl(InputControlType.RightTrigger);
+        m_controlFireSpecial = m_controller.GetControl(InputControlType.LeftTrigger);
     }
 
     private void ResetStats()
@@ -136,18 +149,9 @@ public class Player : MonoBehaviour
             return;
         }
 
-        foreach (InputControlType key in Enum.GetValues(typeof(InputControlType)))
-        {
-            if (m_controller.GetControl(key).WasPressed)
-            {
-                Debug.Log("Controler input: " + key);
-            }
-        }
-
-
         // Get the input value
-        m_horizontalInput = m_moveHorizontalControl.Value;
-        m_verticalInput = m_moveVerticalControl.Value;
+        m_horizontalInput = m_controlMoveHorizontal.Value;
+        m_verticalInput = m_controlMoveVertical.Value;
 
         // Calculate move direction to pass to character
         if (m_playerCamera != null)
@@ -176,6 +180,21 @@ public class Player : MonoBehaviour
             return;
         }
 
+        // Shoot while able to react to user input
+        // also while actually holding a element
+        if (m_bCanCastSpell && m_HoldingElement != ElementType.None)
+        {
+            if (m_controlFireRegular.IsPressed &&
+                m_currentMana >= m_ManaCostRegSpell)
+            {
+                StartCoroutine(CastRegularSpell());
+            }
+            else if (m_controlFireSpecial.IsPressed &&
+                m_currentMana >= m_ManaCostSpecialSpell)
+            {
+                StartCoroutine(CastSpecialSpell());
+            }
+        }
     }
 
     private void ProcessManaRegen()
@@ -188,6 +207,42 @@ public class Player : MonoBehaviour
             StartCoroutine(GenerateMana());
         }
 
+    }
+
+    private IEnumerator CastRegularSpell()
+    {
+        // Spell cast action lock
+        m_bCanCastSpell = false;
+
+        GameObject spellToCast = m_RegularSpellPrefab[(int)m_HoldingElement];
+
+        yield return new WaitForSeconds(0.1f); // Small delay waiting for the animation
+
+        // Spawn object
+        GameObject spell = Instantiate(spellToCast,
+            m_RegularSpellSpawnPosition.position,
+            m_RegularSpellSpawnPosition.rotation);
+
+
+
+        yield return null;
+
+        // Spell cast action unlock
+        m_bCanCastSpell = true;
+    }
+
+    private IEnumerator CastSpecialSpell()
+    {
+        // Spell cast action lock
+        m_bCanCastSpell = false;
+
+
+
+        yield return null;
+
+
+        // Spell cast action unlock
+        m_bCanCastSpell = true;
     }
 
     private void UpdateUI()
