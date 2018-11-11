@@ -1344,6 +1344,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 198931711737528046, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
+        type: 2}
+      propertyPath: VelocityModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198931711737528046, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
+        type: 2}
+      propertyPath: VelocityModule.inWorldSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199698225968347846, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199698225968347846, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 198931711737528046, guid: e0ddf0a00972f7542b7ae6a18fba6d56,
+        type: 2}
+      propertyPath: VelocityModule.z.scalar
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
   m_IsPrefabAsset: 0
