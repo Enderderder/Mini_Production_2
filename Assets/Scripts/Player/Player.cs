@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
+using XInputDotNetPure;
 using InControl;
 
 enum ElementType
@@ -14,8 +15,6 @@ enum ElementType
 
     None,
 }
-
-
 
 [RequireComponent(typeof(ThirdPersonCharacter))]
 [RequireComponent(typeof(PlayerHealthBar))]
@@ -116,6 +115,7 @@ public class Player : MonoBehaviour
         }
 
         m_controller = InputManager.Devices[m_PlayerID];
+        StartCoroutine(ControllerVibrate(0.3f, 0.8f, 0.8f));
         Debug.Log("Player" + (m_PlayerID + 1) + " assigned device " + m_controller.Name);
 
         // Set up controls
@@ -225,6 +225,10 @@ public class Player : MonoBehaviour
             m_RegularSpellSpawnPosition.position,
             m_RegularSpellSpawnPosition.rotation);
 
+        // Vibrate the controller
+        StartCoroutine(ControllerVibrate(0.1f, 0.1f, 1.0f));
+
+
         yield return new WaitForSeconds(m_SpellCastDelay);
 
         // Spell cast action unlock
@@ -274,6 +278,9 @@ public class Player : MonoBehaviour
 
     private IEnumerator DamageEffect()
     {
+        // Vibrate the controller
+        StartCoroutine(ControllerVibrate(0.1f, 0.2f, 0.2f));
+
         MeshRenderer[] meshes = 
             this.gameObject.transform.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer mesh in meshes)
@@ -317,4 +324,17 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
+    public void ChangeElement()
+    {
+
+    }
+
+    private IEnumerator ControllerVibrate(float _time, float _leftMotorItens, float _rightMotorItens)
+    {
+        GamePad.SetVibration((PlayerIndex)m_PlayerID, _leftMotorItens, _rightMotorItens);
+
+        yield return new WaitForSeconds(_time);
+
+        GamePad.SetVibration((PlayerIndex)m_PlayerID, 0.0f, 0.0f);
+    }
 }
