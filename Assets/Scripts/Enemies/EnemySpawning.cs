@@ -65,9 +65,23 @@ public class EnemySpawning : MonoBehaviour {
 
     private void SpawnEnemy()
     {
-        int randEnemy = Random.Range(0, enemies.Length);
+        int randEnemy = Random.Range(0, 10);
         int randSpawner = Random.Range(1, spawners.Count);
-        Instantiate(enemies[randEnemy], spawners[randSpawner].position, spawners[randSpawner].rotation);
+        if (currentWave >= 3)
+        {
+            if (randEnemy == 0)
+            {
+                Instantiate(enemies[1], spawners[randSpawner].position, spawners[randSpawner].rotation);
+            }
+            else
+            {
+                Instantiate(enemies[0], spawners[randSpawner].position, spawners[randSpawner].rotation);
+            }
+        }
+        else
+        {
+            Instantiate(enemies[0], spawners[randSpawner].position, spawners[randSpawner].rotation);
+        }
         EnemiesSpawned++;
     }
 

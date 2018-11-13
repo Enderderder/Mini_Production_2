@@ -62,19 +62,41 @@ public class GameStatus : MonoBehaviour {
     {
         if (playerNum == 1)
         {
-            Destroy(player1Object);
-            player1 = null;
+            player1.enabled = false;
+            player1Object.GetComponent<PlayerHealthBar>().enabled = false;
+            foreach (SkinnedMeshRenderer mesh in player1Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                mesh.enabled = false;
+            }
             yield return new WaitForSeconds(respawnRate);
-            player1Object = Instantiate(player1Prefab, p1Spawn.position, p1Spawn.rotation);
-            player1 = player1Object.GetComponent<Player>();
+            player1Object.transform.position = p1Spawn.position;
+            player1.enabled = true;
+            player1.ResetHealth();
+            player1.m_bIsDead = false;
+            foreach (SkinnedMeshRenderer mesh in player1Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                mesh.enabled = true;
+            }
+            player1Object.GetComponent<PlayerHealthBar>().enabled = true;
         }
         else
         {
-            Destroy(player2.gameObject);
-            player2 = null;
+            player2.enabled = false;
+            player2Object.GetComponent<PlayerHealthBar>().enabled = false;
+            foreach (SkinnedMeshRenderer mesh in player2Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                mesh.enabled = false;
+            }
             yield return new WaitForSeconds(respawnRate);
-            player2Object = Instantiate(player2Prefab, p2Spawn.position, p2Spawn.rotation);
-            player2 = player2Object.GetComponent<Player>();
+            player2Object.transform.position = p2Spawn.position;
+            player2.enabled = true;
+            player2.ResetHealth();
+            player2.m_bIsDead = false;
+            foreach (SkinnedMeshRenderer mesh in player2Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                mesh.enabled = true;
+            }
+            player2Object.GetComponent<PlayerHealthBar>().enabled = true;
         }
     }
 
