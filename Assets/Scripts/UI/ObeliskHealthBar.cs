@@ -18,7 +18,7 @@ public class ObeliskHealthBar : MonoBehaviour {
             Instantiate(HealthBarPrefab, GameObject.Find("/HealthUI_Global").transform).GetComponent<Image>();
 
         Transform healthBarTransform = m_background.transform;
-        m_healthFill = healthBarTransform.Find("HealthFill").GetComponent<Image>();
+        m_healthFill = healthBarTransform.Find("Health").GetComponent<Image>();
     }
 
     private void Update()
