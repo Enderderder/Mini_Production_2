@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: 56493a96299d6d14ebaaf7f9262e9e60
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: harrybeard1
+    100004: harrybeard2
+    100006: harrydressback1
+    100008: harrydressback2
+    100010: harrydressback3
+    100012: harrydressfront1
+    100014: harrydressfront2
+    100016: harrydressfront3
+    100018: harrydressleftside1
+    100020: harrydressleftside2
+    100022: harrydressleftside3
+    100024: harrydressrightside1
+    100026: harrydressrightside2
+    100028: harrydressrightside3
+    100030: harryhat tip1
+    100032: harryhat tip2
+    100034: harryhat tip3
+    100036: harryhatback1
+    100038: harryhatback2
+    100040: harryhatfront1
+    100042: harryhatfront2
+    100044: harryhatleftside1
+    100046: harryhatleftside2
+    100048: harryhatrightside1
+    100050: harryhatrightside2
+    100052: harryHead
+    100054: harryLCalf
+    100056: harryLCollarbone
+    100058: harryLDigit11
+    100060: harryLDigit12
+    100062: harryLDigit21
+    100064: harryLDigit22
+    100066: harryLFoot
+    100068: harryLForearm1
+    100070: harryLForearm2
+    100072: harryLPalm
+    100074: harryLThigh
+    100076: harryLUpperarm
+    100078: harryNeck1
+    100080: harryNeck2
+    100082: harryPelvis
+    100084: harryRCalf
+    100086: harryRCollarbone
+    100088: harryRDigit11
+    100090: harryRDigit12
+    100092: harryRDigit21
+    100094: harryRDigit22
+    100096: harryRFoot
+    100098: harryRForearm1
+    100100: harryRForearm2
+    100102: harryRibcage
+    100104: harryRPalm
+    100106: harryRThigh
+    100108: harryRUpperarm
+    100110: harrySpine1
+    100112: harrySpine2
+    100114: harrySpine3
+    100116: harrySpine4
+    100118: harrystaff
+    100120: skin
+    100122: staff skin
+    400000: //RootNode
+    400002: harrybeard1
+    400004: harrybeard2
+    400006: harrydressback1
+    400008: harrydressback2
+    400010: harrydressback3
+    400012: harrydressfront1
+    400014: harrydressfront2
+    400016: harrydressfront3
+    400018: harrydressleftside1
+    400020: harrydressleftside2
+    400022: harrydressleftside3
+    400024: harrydressrightside1
+    400026: harrydressrightside2
+    400028: harrydressrightside3
+    400030: harryhat tip1
+    400032: harryhat tip2
+    400034: harryhat tip3
+    400036: harryhatback1
+    400038: harryhatback2
+    400040: harryhatfront1
+    400042: harryhatfront2
+    400044: harryhatleftside1
+    400046: harryhatleftside2
+    400048: harryhatrightside1
+    400050: harryhatrightside2
+    400052: harryHead
+    400054: harryLCalf
+    400056: harryLCollarbone
+    400058: harryLDigit11
+    400060: harryLDigit12
+    400062: harryLDigit21
+    400064: harryLDigit22
+    400066: harryLFoot
+    400068: harryLForearm1
+    400070: harryLForearm2
+    400072: harryLPalm
+    400074: harryLThigh
+    400076: harryLUpperarm
+    400078: harryNeck1
+    400080: harryNeck2
+    400082: harryPelvis
+    400084: harryRCalf
+    400086: harryRCollarbone
+    400088: harryRDigit11
+    400090: harryRDigit12
+    400092: harryRDigit21
+    400094: harryRDigit22
+    400096: harryRFoot
+    400098: harryRForearm1
+    400100: harryRForearm2
+    400102: harryRibcage
+    400104: harryRPalm
+    400106: harryRThigh
+    400108: harryRUpperarm
+    400110: harrySpine1
+    400112: harrySpine2
+    400114: harrySpine3
+    400116: harrySpine4
+    400118: harrystaff
+    400120: skin
+    400122: staff skin
+    2100000: Wizard_Mat
+    2100002: Staff_Mat
+    4300000: skin
+    4300002: staff skin
+    7400000: Harry_Idle
+    7400002: Harry_Attack
+    7400004: Harry_Run
+    7400006: Harry_Hurt
+    7400008: Harry_Death
+    9500000: //RootNode
+    13700000: skin
+    13700002: staff skin
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Harry_Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Harry_Attack
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 81
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Harry_Run
+      takeName: Take 001
+      firstFrame: 92
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Harry_Hurt
+      takeName: Take 001
+      firstFrame: 111
+      lastFrame: 131
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Harry_Death
+      takeName: Take 001
+      firstFrame: 132
+      lastFrame: 172
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
