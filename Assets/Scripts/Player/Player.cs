@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
     private InputControl m_controlFireRegular;
     private InputControl m_controlFireSpecial;
     private InputControl m_controlSkipWave;
-    private InputControl m_controlPickScroll;
+    public InputControl m_controlPickScroll;
 
     // Obelisk reference for mana regen
     private Obelisk m_obelisk;
