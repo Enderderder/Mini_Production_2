@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
     private InputControl m_controlFireRegular;
     private InputControl m_controlFireSpecial;
     private InputControl m_controlSkipWave;
+    private InputControl m_controlPickScroll;
 
     // Obelisk reference for mana regen
     private Obelisk m_obelisk;
@@ -156,7 +157,8 @@ public class Player : MonoBehaviour
         m_controlAimVertical = m_controller.GetControl(InputControlType.RightStickY);
         m_controlFireRegular = m_controller.GetControl(InputControlType.RightTrigger);
         m_controlFireSpecial = m_controller.GetControl(InputControlType.LeftTrigger);
-        m_controlSkipWave = m_controller.GetControl(InputControlType.Action3); // X Button
+        m_controlSkipWave = m_controller.GetControl(InputControlType.Action4); // Y Button
+        m_controlPickScroll = m_controller.GetControl(InputControlType.Action3); // X button
     }
 
     private void ResetStats()
