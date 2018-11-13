@@ -33,6 +33,9 @@ public class CameraRig : MonoBehaviour
 
     private void Start()
     {
+        // Force this camera to be the main camera
+        this.gameObject.tag = "MainCamera";
+
         // Try to get the reference Location of both player
         GameObject player1 = GameObject.Find("Player1");
         GameObject player2 = GameObject.Find("Player2");
@@ -48,8 +51,6 @@ public class CameraRig : MonoBehaviour
 
         m_cameraBound = GetEncapsulatingBounds();
         m_DesiredPosition = CalculateDesirePosition();
-        //RotateTowardsDesirePosition();
-
     }
 
     private void LateUpdate()

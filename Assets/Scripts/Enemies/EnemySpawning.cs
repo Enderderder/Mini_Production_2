@@ -15,7 +15,7 @@ public class EnemySpawning : MonoBehaviour {
 
     public GameObject[] enemies;
 
-    public Transform[] spawners;
+    public List<Transform> spawners;
 
     public Text WaveText;
 
@@ -23,7 +23,13 @@ public class EnemySpawning : MonoBehaviour {
 
     private void Start()
     {
-        spawners = gameObject.GetComponentsInChildren<Transform>();
+        foreach (Transform child in gameObject.GetComponentsInChildren<Transform>())
+        {
+            if (child.tag == "Spawner")
+            {
+                spawners.Add(child);
+            }
+        }
         StartCoroutine(NewWave());
     }
 
@@ -50,23 +56,16 @@ public class EnemySpawning : MonoBehaviour {
     private void SpawnEnemy()
     {
         int randEnemy = Random.Range(0, enemies.Length);
-        int randSpawner = Random.Range(1, spawners.Length);
+        int randSpawner = Random.Range(1, spawners.Count);
         Instantiate(enemies[randEnemy], spawners[randSpawner].position, spawners[randSpawner].rotation);
         EnemiesSpawned++;
     }
 
     private IEnumerator NewWave()
     {
-        isPaused = true;
-        if (currentWave % 5 == 0 && currentWave != 0) // Every 5 waves...
-        {
-            /* Pop up the shop */
-            yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Space));
-        }
-
         currentWave++;
         maxEnemyCount = currentWave * maxEnemyMultiplier;
-        totalEnemyCount = maxEnemyCount * 4;
+        totalEnemyCount = maxEnemyCount * 3;
         EnemiesSpawned = 0;
 
         yield return new WaitForSeconds(2);
