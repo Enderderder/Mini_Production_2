@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: bff914ee445463e46897ea283a61e88b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: erindressback1
+    100004: erindressback2
+    100006: erindressback3
+    100008: erindressfront1
+    100010: erindressfront2
+    100012: erindressfront3
+    100014: erindressleft1
+    100016: erindressleft2
+    100018: erindressleft3
+    100020: erindressright1
+    100022: erindressright2
+    100024: erindressright3
+    100026: erinhairback1
+    100028: erinhairback2
+    100030: erinhairback3
+    100032: erinhairbangleft1
+    100034: erinhairbangleft2
+    100036: erinhairbangleft3
+    100038: erinhairbangright1
+    100040: erinhairbangright2
+    100042: erinhairbangright3
+    100044: erinhairfringe1
+    100046: erinhairfringe2
+    100048: erinhairleft1
+    100050: erinhairleft2
+    100052: erinhairleft3
+    100054: erinhairright1
+    100056: erinhairright2
+    100058: erinhairright3
+    100060: erinhatback1
+    100062: erinhatback2
+    100064: erinhatfront1
+    100066: erinhatfront2
+    100068: erinhatleft1
+    100070: erinhatleft2
+    100072: erinhatright1
+    100074: erinhatright2
+    100076: erinhattop1
+    100078: erinhattop2
+    100080: erinhattop3
+    100082: erinHead
+    100084: erinLCalf
+    100086: erinLCollarbone
+    100088: erinLDigit11
+    100090: erinLDigit12
+    100092: erinLDigit21
+    100094: erinLDigit22
+    100096: erinLFoot
+    100098: erinLForearm1
+    100100: erinLForearm2
+    100102: erinLPalm
+    100104: erinLThigh
+    100106: erinLUpperarm
+    100108: erinNeck1
+    100110: erinNeck2
+    100112: erinPelvis
+    100114: erinRCalf
+    100116: erinRCollarbone
+    100118: erinRDigit11
+    100120: erinRDigit12
+    100122: erinRDigit21
+    100124: erinRDigit22
+    100126: erinRFoot
+    100128: erinRForearm1
+    100130: erinRForearm2
+    100132: erinRibcage
+    100134: erinRPalm
+    100136: erinRThigh
+    100138: erinRUpperarm
+    100140: erinSpine1
+    100142: erinSpine2
+    100144: erinSpine3
+    100146: erinSpine4
+    100148: skin
+    100150: wand
+    100152: wand 1
+    400000: //RootNode
+    400002: erindressback1
+    400004: erindressback2
+    400006: erindressback3
+    400008: erindressfront1
+    400010: erindressfront2
+    400012: erindressfront3
+    400014: erindressleft1
+    400016: erindressleft2
+    400018: erindressleft3
+    400020: erindressright1
+    400022: erindressright2
+    400024: erindressright3
+    400026: erinhairback1
+    400028: erinhairback2
+    400030: erinhairback3
+    400032: erinhairbangleft1
+    400034: erinhairbangleft2
+    400036: erinhairbangleft3
+    400038: erinhairbangright1
+    400040: erinhairbangright2
+    400042: erinhairbangright3
+    400044: erinhairfringe1
+    400046: erinhairfringe2
+    400048: erinhairleft1
+    400050: erinhairleft2
+    400052: erinhairleft3
+    400054: erinhairright1
+    400056: erinhairright2
+    400058: erinhairright3
+    400060: erinhatback1
+    400062: erinhatback2
+    400064: erinhatfront1
+    400066: erinhatfront2
+    400068: erinhatleft1
+    400070: erinhatleft2
+    400072: erinhatright1
+    400074: erinhatright2
+    400076: erinhattop1
+    400078: erinhattop2
+    400080: erinhattop3
+    400082: erinHead
+    400084: erinLCalf
+    400086: erinLCollarbone
+    400088: erinLDigit11
+    400090: erinLDigit12
+    400092: erinLDigit21
+    400094: erinLDigit22
+    400096: erinLFoot
+    400098: erinLForearm1
+    400100: erinLForearm2
+    400102: erinLPalm
+    400104: erinLThigh
+    400106: erinLUpperarm
+    400108: erinNeck1
+    400110: erinNeck2
+    400112: erinPelvis
+    400114: erinRCalf
+    400116: erinRCollarbone
+    400118: erinRDigit11
+    400120: erinRDigit12
+    400122: erinRDigit21
+    400124: erinRDigit22
+    400126: erinRFoot
+    400128: erinRForearm1
+    400130: erinRForearm2
+    400132: erinRibcage
+    400134: erinRPalm
+    400136: erinRThigh
+    400138: erinRUpperarm
+    400140: erinSpine1
+    400142: erinSpine2
+    400144: erinSpine3
+    400146: erinSpine4
+    400148: skin
+    400150: wand
+    400152: wand 1
+    2100000: lambert2
+    2100002: lambert3
+    2100004: lambert1
+    4300000: skin
+    4300002: wand
+    7400000: Erin_Idle
+    7400002: Erin_Attack
+    7400004: Erin_Run
+    7400006: Erin_Hurt
+    7400008: Erin_Death
+    9500000: //RootNode
+    13700000: skin
+    13700002: wand
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Erin_Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Erin_Attack
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 81
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Erin_Run
+      takeName: Take 001
+      firstFrame: 82
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Erin_Hurt
+      takeName: Take 001
+      firstFrame: 101
+      lastFrame: 121
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Erin_Death
+      takeName: Take 001
+      firstFrame: 122
+      lastFrame: 162
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
