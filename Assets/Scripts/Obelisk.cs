@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class Obelisk : MonoBehaviour {
 
-    [SerializeField] private float currentHealth;
+    public float currentHealth;
     [SerializeField] private float maxHealth = 1000;
     public float manaRegenRange;
 
