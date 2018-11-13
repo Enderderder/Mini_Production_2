@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fecd74d618ea64cbfedabeeb4aacef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpellDamage: 7
+  m_SpellDamage: 10
   m_SpellSpeed: 25
   m_SpellLifeTime: 1.5
 --- !u!135 &135351494128883086

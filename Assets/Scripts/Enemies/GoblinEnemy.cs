@@ -32,6 +32,7 @@ public class GoblinEnemy : KillableEntity {
 
     private void Awake()
     {
+        currentHealth = maxHealth;
         navAgent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
     }

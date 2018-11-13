@@ -1275,7 +1275,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494455689736202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 92.65779, y: -0.00000023841858, z: 84.735535}
+  m_LocalPosition: {x: 87.73453, y: 0, z: 92.66635}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4995672937404772}
@@ -2979,7 +2979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 2000
+  maxHealth: 200
   attackDamageValue: 50
   meshRenderer: {fileID: 137307748846974998}
 --- !u!136 &136905773175070166
