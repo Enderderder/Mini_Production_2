@@ -1,0 +1,338 @@
+fileFormatVersion: 2
+guid: a684c0436e664fb4db4eb05dd55c0563
+timeCreated: 1532484581
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Beard
+    100002: Dress_Back
+    100004: Dress_Back1
+    100006: Dress_Back2
+    100008: Dress_Front1
+    100010: Dress_Front2
+    100012: Dress_Front3
+    100014: Dress_L
+    100016: Dress_L_1
+    100018: Dress_L_2
+    100020: Dress_R
+    100022: Dress_R_1
+    100024: Dress_R_2
+    100026: Erin_Head
+    100028: Erin_Hips
+    100030: Erin_Left_Clavical
+    100032: Erin_Left_Elbow
+    100034: Erin_Left_Hand
+    100036: Erin_Left_Knee
+    100038: Erin_Left_Mit
+    100040: Erin_Left_Shoulder
+    100042: Erin_Left_Thigh
+    100044: Erin_Left_Thumb
+    100046: Erin_Left_Toe
+    100048: Erin_Neck_Base
+    100050: Erin_Right_Clavival
+    100052: Erin_Right_Elbow
+    100054: Erin_Right_Hand
+    100056: Erin_Right_Knee
+    100058: Erin_Right_Mit
+    100060: Erin_Right_Shoulder
+    100062: Erin_Right_Thigh
+    100064: Erin_Right_Thumb
+    100066: Erin_Right_Toe
+    100068: Erin_Root
+    100070: Erin_Spine_1
+    100072: Erin_Spine_2
+    100074: Hair_back_L_1
+    100076: Hair_back_R_1
+    100078: Hair_backL_2
+    100080: Hair_backR_2
+    100082: Hair_Front
+    100084: Hair_Front1
+    100086: Hair_Root
+    100088: Hair_Strand_L_1
+    100090: Hair_Strand_L_2
+    100092: Hair_Strand_L_3
+    100094: Hair_Strand_L_4
+    100096: Hair_Strand_R_1
+    100098: Hair_Strand_R_2
+    100100: Hair_Strand_R_3
+    100102: Hair_Strand_R_4
+    100104: HairBack
+    100106: HairBack1
+    100108: HairBack2
+    100110: HairBack_L
+    100112: HairBack_R
+    100114: Hait3
+    100116: Harry_Head
+    100118: Harry_Hips
+    100120: Harry_Left_Clavical
+    100122: Harry_Left_Elbow
+    100124: Harry_Left_Hand
+    100126: Harry_Left_Knee
+    100128: Harry_Left_Mit
+    100130: Harry_Left_Shoulder
+    100132: Harry_Left_Thigh
+    100134: Harry_Left_Thumb
+    100136: Harry_Left_Toe
+    100138: Harry_Neck_Base
+    100140: Harry_Right_Clavival
+    100142: Harry_Right_Elbow
+    100144: Harry_Right_Hand
+    100146: Harry_Right_Knee
+    100148: Harry_Right_Mit
+    100150: Harry_Right_Shoulder
+    100152: Harry_Right_Thigh
+    100154: Harry_Right_Thumb
+    100156: Harry_Right_Toe
+    100158: Harry_Root2
+    100160: Harry_Spine_1
+    100162: Harry_Spine_2
+    100164: Hat2
+    100166: Hat_Root
+    100168: Robe_Back
+    100170: Robe_Back1
+    100172: Robe_Back2
+    100174: Robe_Front1
+    100176: Robe_Front2
+    100178: Robe_Front3
+    100180: Robe_L
+    100182: Robe_L_1
+    100184: Robe_L_2
+    100186: Robe_R
+    100188: Robe_R_1
+    100190: Robe_R_2
+    100192: SceneDraft
+    100194: Staff1
+    100196: //RootNode
+    100198: Wizard_Hat_Root
+    100200: WizardHait3
+    100202: WizardHat2
+    400000: Beard
+    400002: Dress_Back
+    400004: Dress_Back1
+    400006: Dress_Back2
+    400008: Dress_Front1
+    400010: Dress_Front2
+    400012: Dress_Front3
+    400014: Dress_L
+    400016: Dress_L_1
+    400018: Dress_L_2
+    400020: Dress_R
+    400022: Dress_R_1
+    400024: Dress_R_2
+    400026: Erin_Head
+    400028: Erin_Hips
+    400030: Erin_Left_Clavical
+    400032: Erin_Left_Elbow
+    400034: Erin_Left_Hand
+    400036: Erin_Left_Knee
+    400038: Erin_Left_Mit
+    400040: Erin_Left_Shoulder
+    400042: Erin_Left_Thigh
+    400044: Erin_Left_Thumb
+    400046: Erin_Left_Toe
+    400048: Erin_Neck_Base
+    400050: Erin_Right_Clavival
+    400052: Erin_Right_Elbow
+    400054: Erin_Right_Hand
+    400056: Erin_Right_Knee
+    400058: Erin_Right_Mit
+    400060: Erin_Right_Shoulder
+    400062: Erin_Right_Thigh
+    400064: Erin_Right_Thumb
+    400066: Erin_Right_Toe
+    400068: Erin_Root
+    400070: Erin_Spine_1
+    400072: Erin_Spine_2
+    400074: Hair_back_L_1
+    400076: Hair_back_R_1
+    400078: Hair_backL_2
+    400080: Hair_backR_2
+    400082: Hair_Front
+    400084: Hair_Front1
+    400086: Hair_Root
+    400088: Hair_Strand_L_1
+    400090: Hair_Strand_L_2
+    400092: Hair_Strand_L_3
+    400094: Hair_Strand_L_4
+    400096: Hair_Strand_R_1
+    400098: Hair_Strand_R_2
+    400100: Hair_Strand_R_3
+    400102: Hair_Strand_R_4
+    400104: HairBack
+    400106: HairBack1
+    400108: HairBack2
+    400110: HairBack_L
+    400112: HairBack_R
+    400114: Hait3
+    400116: Harry_Head
+    400118: Harry_Hips
+    400120: Harry_Left_Clavical
+    400122: Harry_Left_Elbow
+    400124: Harry_Left_Hand
+    400126: Harry_Left_Knee
+    400128: Harry_Left_Mit
+    400130: Harry_Left_Shoulder
+    400132: Harry_Left_Thigh
+    400134: Harry_Left_Thumb
+    400136: Harry_Left_Toe
+    400138: Harry_Neck_Base
+    400140: Harry_Right_Clavival
+    400142: Harry_Right_Elbow
+    400144: Harry_Right_Hand
+    400146: Harry_Right_Knee
+    400148: Harry_Right_Mit
+    400150: Harry_Right_Shoulder
+    400152: Harry_Right_Thigh
+    400154: Harry_Right_Thumb
+    400156: Harry_Right_Toe
+    400158: Harry_Root2
+    400160: Harry_Spine_1
+    400162: Harry_Spine_2
+    400164: Hat2
+    400166: Hat_Root
+    400168: Robe_Back
+    400170: Robe_Back1
+    400172: Robe_Back2
+    400174: Robe_Front1
+    400176: Robe_Front2
+    400178: Robe_Front3
+    400180: Robe_L
+    400182: Robe_L_1
+    400184: Robe_L_2
+    400186: Robe_R
+    400188: Robe_R_1
+    400190: Robe_R_2
+    400192: SceneDraft
+    400194: Staff1
+    400196: //RootNode
+    400198: Wizard_Hat_Root
+    400200: WizardHait3
+    400202: WizardHat2
+    2300000: SceneDraft
+    3300000: SceneDraft
+    4300000: SceneDraft
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baxckground
+    second: {fileID: 2100000, guid: 0155e8ebc0c60704c94a5d9a2fd59033, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hill
+    second: {fileID: 2100000, guid: 381354b0d936884418d7bbdf9d7839be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wizard_Mat
+    second: {fileID: 2100000, guid: e8c596a5ca6beda49a6c105d51baf805, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 85d719aefed5a324db05f58ae76c4685, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert22
+    second: {fileID: 2100000, guid: 7fce94ffc7c7a7a4489b44bce3fbecd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert23
+    second: {fileID: 2100000, guid: ac39e7bb948964c46961164921110bd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__lambert14
+    second: {fileID: 2100000, guid: 72cb6b0d63d90f245b316bb1a03f0a63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tree
+    second: {fileID: 2100000, guid: f619cbd5ac9079041a9e0337d1643cdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: witch
+    second: {fileID: 2100000, guid: 77e902f8a299a3d46a9e9db437e11ac1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

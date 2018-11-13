@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 795a97beced5d144d98184c801e61e1d
+timeCreated: 1532328189
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Beard
+    100002: Beard 1
+    100004: Hait3
+    100006: Harry_Head
+    100008: Harry_Hips
+    100010: Harry_Left_Clavical
+    100012: Harry_Left_Elbow
+    100014: Harry_Left_Hand
+    100016: Harry_Left_Knee
+    100018: Harry_Left_Mit
+    100020: Harry_Left_Shoulder
+    100022: Harry_Left_Thigh
+    100024: Harry_Left_Thumb
+    100026: Harry_Left_Toe
+    100028: Harry_Neck_Base
+    100030: Harry_Right_Clavival
+    100032: Harry_Right_Elbow
+    100034: Harry_Right_Hand
+    100036: Harry_Right_Knee
+    100038: Harry_Right_Mit
+    100040: Harry_Right_Shoulder
+    100042: Harry_Right_Thigh
+    100044: Harry_Right_Thumb
+    100046: Harry_Right_Toe
+    100048: Harry_Root2
+    100050: Harry_Spine_1
+    100052: Harry_Spine_2
+    100054: Hat2
+    100056: Hat_Root
+    100058: Robe_Back
+    100060: Robe_Back1
+    100062: Robe_Back2
+    100064: Robe_Front1
+    100066: Robe_Front2
+    100068: Robe_Front3
+    100070: Robe_L
+    100072: Robe_L_1
+    100074: Robe_L_2
+    100076: Robe_R
+    100078: Robe_R_1
+    100080: Robe_R_2
+    100082: Staff
+    100084: Staff1
+    100086: //RootNode
+    100088: Wizard_Body
+    100090: Wizard_Hat
+    100092: Wizard_Head
+    100094: Wizard_Robe
+    400000: Beard
+    400002: Beard 1
+    400004: Hait3
+    400006: Harry_Head
+    400008: Harry_Hips
+    400010: Harry_Left_Clavical
+    400012: Harry_Left_Elbow
+    400014: Harry_Left_Hand
+    400016: Harry_Left_Knee
+    400018: Harry_Left_Mit
+    400020: Harry_Left_Shoulder
+    400022: Harry_Left_Thigh
+    400024: Harry_Left_Thumb
+    400026: Harry_Left_Toe
+    400028: Harry_Neck_Base
+    400030: Harry_Right_Clavival
+    400032: Harry_Right_Elbow
+    400034: Harry_Right_Hand
+    400036: Harry_Right_Knee
+    400038: Harry_Right_Mit
+    400040: Harry_Right_Shoulder
+    400042: Harry_Right_Thigh
+    400044: Harry_Right_Thumb
+    400046: Harry_Right_Toe
+    400048: Harry_Root2
+    400050: Harry_Spine_1
+    400052: Harry_Spine_2
+    400054: Hat2
+    400056: Hat_Root
+    400058: Robe_Back
+    400060: Robe_Back1
+    400062: Robe_Back2
+    400064: Robe_Front1
+    400066: Robe_Front2
+    400068: Robe_Front3
+    400070: Robe_L
+    400072: Robe_L_1
+    400074: Robe_L_2
+    400076: Robe_R
+    400078: Robe_R_1
+    400080: Robe_R_2
+    400082: Staff
+    400084: Staff1
+    400086: //RootNode
+    400088: Wizard_Body
+    400090: Wizard_Hat
+    400092: Wizard_Head
+    400094: Wizard_Robe
+    4300000: Wizard_Hat
+    4300002: Wizard_Head
+    4300004: Wizard_Robe
+    4300006: Wizard_Body
+    4300008: Beard
+    4300010: Staff
+    9500000: //RootNode
+    13700000: Beard
+    13700002: Staff
+    13700004: Wizard_Body
+    13700006: Wizard_Hat
+    13700008: Wizard_Head
+    13700010: Wizard_Robe
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Staff_Mat
+    second: {fileID: 2100000, guid: 60e00f7c74ea3764a8182e4b3ed805f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wizard_Mat
+    second: {fileID: 2100000, guid: 984219b4f437ad54092b83e403e7fc74, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Harry_Root2
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

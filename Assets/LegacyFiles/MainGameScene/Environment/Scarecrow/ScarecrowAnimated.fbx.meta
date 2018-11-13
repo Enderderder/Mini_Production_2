@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 616dbcd69a2e6e44cbcf1762019f05ef
+timeCreated: 1532234430
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: cross
+    100002: hair
+    100004: Head
+    100006: Scarecrow
+    100008: Scarecrow1
+    100010: Scarecrow2
+    100012: Scarecrow3
+    100014: Scarecrow4
+    100016: Scarecrow_Front
+    100018: Scarecrow_HairStrand_L_1
+    100020: Scarecrow_HairStrand_L_2
+    100022: Scarecrow_L_Sleeve
+    100024: Scarecrow_R_Sleeve
+    100026: //RootNode
+    100028: ScarecrowBack_1
+    100030: ScarecrowBack_2
+    100032: ScarecrowDress
+    100034: ScarecrowHair_Root
+    100036: ScarecrowHairBack
+    100038: ScarecrowHairBack_3
+    100040: ScarecrowHairStrand_L_3
+    100042: ScarecrowHairStrand_R_1
+    100044: ScarecrowHairStrand_R_2
+    100046: ScarecrowHairStrand_R_3
+    100048: ScarecrowHead
+    400000: cross
+    400002: hair
+    400004: Head
+    400006: Scarecrow
+    400008: Scarecrow1
+    400010: Scarecrow2
+    400012: Scarecrow3
+    400014: Scarecrow4
+    400016: Scarecrow_Front
+    400018: Scarecrow_HairStrand_L_1
+    400020: Scarecrow_HairStrand_L_2
+    400022: Scarecrow_L_Sleeve
+    400024: Scarecrow_R_Sleeve
+    400026: //RootNode
+    400028: ScarecrowBack_1
+    400030: ScarecrowBack_2
+    400032: ScarecrowDress
+    400034: ScarecrowHair_Root
+    400036: ScarecrowHairBack
+    400038: ScarecrowHairBack_3
+    400040: ScarecrowHairStrand_L_3
+    400042: ScarecrowHairStrand_R_1
+    400044: ScarecrowHairStrand_R_2
+    400046: ScarecrowHairStrand_R_3
+    400048: ScarecrowHead
+    2300000: cross
+    3300000: cross
+    4300000: cross
+    4300002: hair
+    4300004: ScarecrowDress
+    4300006: Head
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: hair
+    13700002: Head
+    13700004: ScarecrowDress
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert10
+    second: {fileID: 2100000, guid: b3d1858925d4c65419b67335c5f76a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: 737f135b74f73a34d9762a05fe8fe150, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: 98ce51bce7a722744a9d70870da23086, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
