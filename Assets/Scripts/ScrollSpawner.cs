@@ -20,22 +20,56 @@ public class ScrollSpawner : MonoBehaviour {
 
         int random = Random.Range(0, 3);
 
-		if(this.GetComponent<EnemySpawning>().wavedowntimeui.activeSelf == true && spawned == false)
+        if (random == 0)
+        {
+            element1 = ElementType.Fire;
+        }
+        else if (random == 1)
+        {
+            element1 = ElementType.Air;
+        }
+        else if (random == 2)
+        {
+            element1 = ElementType.Earth;
+        }
+        else if (random == 3)
+        {
+            element1 = ElementType.Water;
+        }
+
+        if (this.GetComponent<EnemySpawning>().wavedowntimeui.activeSelf == true && spawned == false)
         {
             location1 = Random.Range(0, SpawnLocation.Length);
             location2 = Random.Range(0, SpawnLocation.Length);
 
-            if (location1 != location2)
+            if (location1 != location2 && spawned == false)
             {
-                GameObject scroll1 = Instantiate(scroll, SpawnLocation[location1]);
-                GameObject scroll2 = Instantiate(scroll, SpawnLocation[location2]);
-                element1 = (ElementType)random;
+                spawned = true;
+                GameObject scroll1 = Instantiate(scroll, SpawnLocation[location1]).GetComponent<GameObject>();
+                GameObject scroll2 = Instantiate(scroll, SpawnLocation[location2]).GetComponent<GameObject>();
+                
                 scroll1.GetComponent<ScrollUI>().SetElement(element1);
 
                 random = Random.Range(0, 3);
-                element2 = (ElementType)random;
+                if (random == 0)
+                {
+                    element2 = ElementType.Fire;
+                }
+                else if (random == 1)
+                {
+                    element2 = ElementType.Air;
+                }
+                else if (random == 2)
+                {
+                    element2 = ElementType.Earth;
+                }
+                else if (random == 3)
+                {
+                    element2 = ElementType.Water;
+                }
+
                 scroll2.GetComponent<ScrollUI>().SetElement(element2);
-                spawned = true;
+                
             }
         }
 

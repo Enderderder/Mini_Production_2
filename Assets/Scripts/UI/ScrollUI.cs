@@ -10,7 +10,7 @@ public class ScrollUI : MonoBehaviour {
     [SerializeField] private GameObject button;
     [SerializeField] private Animator anim;
     private Image buttonImage;
-    private Text Info;
+    public Text Info;
     // Use this for initialization
     void Start () {
         anim = this.GetComponent<Animator>();
