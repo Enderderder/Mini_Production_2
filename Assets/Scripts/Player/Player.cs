@@ -258,6 +258,12 @@ public class Player : MonoBehaviour
         m_healthBar.ChangeMana(m_currentMana / m_MaxMana);
     }
 
+    public void ResetHealth()
+    {
+        m_currentHealth = m_MaxHealth;
+        m_currentMana = m_MaxMana;
+    }
+
     public void TakeDamage(float _damageVal)
     {
         if (m_currentHealth > 0.0f)
