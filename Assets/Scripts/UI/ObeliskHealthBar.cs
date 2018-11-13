@@ -7,7 +7,7 @@ public class ObeliskHealthBar : MonoBehaviour {
 
     [SerializeField] private GameObject HealthBarPrefab;
     [SerializeField] private Vector3 Offeset;
-
+    [SerializeField] private Text damagetxt;
     private Image m_background;
     private Image m_healthFill;
 

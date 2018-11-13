@@ -254,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1213383163313342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.51106, y: 0.4, z: 94.07248}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4748532991868486}
@@ -338,6 +338,7 @@ MonoBehaviour:
   element: 3
   button: {fileID: 1388519300596556, guid: 631824c29fd7f6940bc97f5eeacbe589, type: 2}
   anim: {fileID: 95106713368528872}
+  Info: {fileID: 0}
 --- !u!135 &135712384388536472
 SphereCollider:
   m_ObjectHideFlags: 1
