@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     [Range(0, 1)] public int m_PlayerID;
 
     [Header("Stats")]
+    public bool m_bIsDead = false;
     [SerializeField] private float m_MaxHealth = 100.0f;
     [SerializeField] private float m_MaxMana = 100.0f;
     [SerializeField] private float m_ManaRegenAmount = 10.0f;
@@ -306,6 +307,7 @@ public class Player : MonoBehaviour
     {
         if (m_currentHealth <= 0.0f)
         {
+            m_bIsDead = true;
             Death();
         }
     }
