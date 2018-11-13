@@ -61,6 +61,7 @@ public class GoblinEnemy : KillableEntity {
         if (currentHealth <= 0)
         {
             Dead();
+            return;
         }
 
         float player1Distance = Vector3.Distance(player1.transform.position, transform.position);

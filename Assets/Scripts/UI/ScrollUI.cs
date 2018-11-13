@@ -86,13 +86,14 @@ public class ScrollUI : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        Player player = other.gameObject.GetComponent<Player>();
+        if (player && player.m_controlPickScroll)
         {
             buttonImage.enabled = true;
-            if (other.GetComponent<Player>().m_controlPickScroll.IsPressed)
+            if (player.m_controlPickScroll.IsPressed)
             {
                 anim.SetTrigger("Unfiold");
-                other.GetComponent<Player>().ChangeElement(element);
+                player.ChangeElement(element);
             }
 
         }
