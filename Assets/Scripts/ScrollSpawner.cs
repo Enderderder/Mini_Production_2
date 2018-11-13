@@ -45,8 +45,8 @@ public class ScrollSpawner : MonoBehaviour {
             if (location1 != location2 && spawned == false)
             {
                 spawned = true;
-                GameObject scroll1 = Instantiate(scroll, SpawnLocation[location1]).GetComponent<GameObject>();
-                GameObject scroll2 = Instantiate(scroll, SpawnLocation[location2]).GetComponent<GameObject>();
+                GameObject scroll1 = Instantiate(scroll, SpawnLocation[location1]);
+                GameObject scroll2 = Instantiate(scroll, SpawnLocation[location2]);
                 
                 scroll1.GetComponent<ScrollUI>().SetElement(element1);
 
