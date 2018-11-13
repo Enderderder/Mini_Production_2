@@ -616,7 +616,6 @@ MonoBehaviour:
   maxEnemyCount: 0
   EnemiesSpawned: 0
   totalEnemyCount: 0
-  downTimeForNextWave: 0
   enemies:
   - {fileID: 1101939072054722, guid: 01181a9a2395d0e4793be7f218158a96, type: 2}
   spawners: []

@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b637c663f7d856142bf312fc475111a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBarPrefab: {fileID: 1201416620822322, guid: b3d99bcd4a018aa46a6a7d5f3fb478d7,
+  HealthBarPrefab: {fileID: 1022271729810696, guid: 21484dfa0c61a3f4fbe959ee4ea06930,
     type: 2}
   Offeset: {x: 0, y: 5, z: 0}
 --- !u!114 &114772257170094890

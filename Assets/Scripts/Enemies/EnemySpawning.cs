@@ -12,6 +12,7 @@ public class EnemySpawning : MonoBehaviour {
     public int maxEnemyCount;
     public int EnemiesSpawned;
     public int totalEnemyCount;
+    public int downTimeForNextWave;
 
     public GameObject[] enemies;
 
