@@ -2582,7 +2582,7 @@ MonoBehaviour:
   m_ManaRegenAmount: 10
   m_ManaRegenDelay: 1
   m_MoveSpd: 300
-  m_HoldingElement: 2
+  m_HoldingElement: 1
   m_RegularSpellPrefab:
   - {fileID: 1063972531698038, guid: 58afe1132ee663847a81e120b183871e, type: 2}
   - {fileID: 1712611912207432, guid: 576dad23d1a90f54d99a40b24e031c80, type: 2}
