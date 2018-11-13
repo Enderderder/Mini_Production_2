@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 using XInputDotNetPure;
 using InControl;
 
-enum ElementType
+public enum ElementType
 {
     Fire,
     Air,
