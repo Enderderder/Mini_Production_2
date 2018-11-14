@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireHeavySpell : SpecialSpell
+public class WaterHeavySpell : SpecialSpell
 {
     [SerializeField] private float m_DamageTick = 0.5f;
 
