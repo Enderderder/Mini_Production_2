@@ -11,15 +11,18 @@ public class PlayerHealthBar : MonoBehaviour
     private Image m_background;
     private Image m_healthFill;
     private Image m_manaFill;
+    private RawImage m_elementIcon;
 
-    private void Start()
+    private void Awake()
     {
+        // Instantiate the UI and make sure the reference
         m_background =
             Instantiate(HealthBarPrefab, GameObject.Find("/HealthUI_Global").transform).GetComponent<Image>();
 
         Transform healthBarTransform = m_background.transform;
         m_healthFill = healthBarTransform.Find("HealthFill").GetComponent<Image>();
         m_manaFill = healthBarTransform.Find("ManaFill").GetComponent<Image>();
+        m_elementIcon = healthBarTransform.Find("ElementIcon").GetComponent<RawImage>();
     }
 
     private void Update()
@@ -34,7 +37,6 @@ public class PlayerHealthBar : MonoBehaviour
         {
             m_healthFill.fillAmount = _value;
         }
-        
     }
 
     public void ChangeMana(float _value)
@@ -42,6 +44,14 @@ public class PlayerHealthBar : MonoBehaviour
         if (m_manaFill)
         {
             m_manaFill.fillAmount = _value;
+        }
+    }
+
+    public void SwapElementIcon(Texture _icon)
+    {
+        if (m_elementIcon)
+        {
+            m_elementIcon.texture = _icon;
         }
     }
 }

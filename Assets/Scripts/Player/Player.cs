@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
 
     [Header("Spells")]
     [SerializeField] private ElementType m_HoldingElement = ElementType.Earth;
+    [SerializeField] private Texture[] m_ElementIcons;
     [SerializeField] private GameObject[] m_RegularSpellPrefab;
     [SerializeField] private Transform m_RegularSpellSpawnPosition;
     [SerializeField] private float m_ManaCostRegSpell = 10.0f;
@@ -293,12 +294,14 @@ public class Player : MonoBehaviour
         // becauze UI image fill use 0 - 1 value
         m_healthBar.ChangeHealth(m_currentHealth / m_MaxHealth);
         m_healthBar.ChangeMana(m_currentMana / m_MaxMana);
+        m_healthBar.SwapElementIcon(m_ElementIcons[(int)m_HoldingElement]);
     }
 
     public void ResetHealth()
     {
         m_currentHealth = m_MaxHealth;
         m_currentMana = m_MaxMana;
+        UpdateUI();
     }
 
     public void TakeDamage(float _damageVal)
@@ -372,6 +375,7 @@ public class Player : MonoBehaviour
     public void ChangeElement(ElementType _type)
     {
         m_HoldingElement = _type;
+        UpdateUI();
     }
 
     private IEnumerator ControllerVibrate(float _time, float _leftMotorItens, float _rightMotorItens)

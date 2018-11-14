@@ -59,7 +59,9 @@ public class RegularSpell : MonoBehaviour
 
         // Destroy the projectile on any contact
         StartCoroutine(DestroySpell());
-        Instantiate(m_HitEffectPrefab, this.gameObject.transform.position, Quaternion.identity);
+
+        // Spawn a quick hit effect on to the thing
+        Instantiate(m_HitEffectPrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
 
         //
         //if (other.tag == "Enemy")

@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 198575985943865678}
   - component: {fileID: 199667490978939430}
   - component: {fileID: 114157048285549164}
+  - component: {fileID: 135109900545429874}
   m_Layer: 0
   m_Name: AirHeavy
   m_TagString: Untagged
@@ -156,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1743022022510808}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -43.48, y: -2.37, z: -18}
+  m_LocalPosition: {x: 23.3, y: 0.4, z: -7.43}
   m_LocalScale: {x: 9.026471, y: 9.026511, z: 9.026512}
   m_Children:
   - {fileID: 4414761724796126}
@@ -178,6 +179,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!135 &135109900545429874
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743022022510808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198305000534137046
 ParticleSystem:
   m_ObjectHideFlags: 1

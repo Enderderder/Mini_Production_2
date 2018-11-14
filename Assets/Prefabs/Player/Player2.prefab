@@ -3544,6 +3544,12 @@ MonoBehaviour:
   m_ManaRegenDelay: 1
   m_MoveSpd: 300
   m_HoldingElement: 2
+  m_ElementIcons:
+  - {fileID: 2800000, guid: 057b79761bad702459fbe73374f3c79b, type: 3}
+  - {fileID: 2800000, guid: 66dc22d8091c4dd48831a994249e7996, type: 3}
+  - {fileID: 2800000, guid: 2c6fe085992bc18469bad986a66500fb, type: 3}
+  - {fileID: 2800000, guid: 9cdfee5e62c589848ad533322b70e12b, type: 3}
+  - {fileID: 2800000, guid: 16c094728c15b904eb32550f03a6265e, type: 3}
   m_RegularSpellPrefab:
   - {fileID: 1063972531698038, guid: 58afe1132ee663847a81e120b183871e, type: 2}
   - {fileID: 1712611912207432, guid: 576dad23d1a90f54d99a40b24e031c80, type: 2}
