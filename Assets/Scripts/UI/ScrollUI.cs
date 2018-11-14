@@ -16,6 +16,7 @@ public class ScrollUI : MonoBehaviour {
     public Material earthscrollmaterial;
     public Material airscrollmaterial;
     private Image buttonImage;
+    public GameObject countdown;
     public Text Info;
     // Use this for initialization
     void Start () {
@@ -23,7 +24,7 @@ public class ScrollUI : MonoBehaviour {
         buttonImage = Instantiate(button, GameObject.Find("/HealthUI_Global").transform).GetComponent<Image>();
         buttonImage.enabled = false;
         Info = Instantiate(Textprefab, GameObject.Find("/HealthUI_Global").transform).GetComponent<Text>();
-
+        countdown = GameObject.FindGameObjectWithTag("CoolDown");
         skinrender = scrollobject.GetComponent<SkinnedMeshRenderer>();
 
         if (element == ElementType.Earth)
@@ -57,6 +58,11 @@ public class ScrollUI : MonoBehaviour {
         buttonImage.transform.position
             = Camera.main.WorldToScreenPoint(this.gameObject.transform.position + Offeset + new Vector3(0,3,0));
         Info.transform.position = Camera.main.WorldToScreenPoint(this.gameObject.transform.position + Offeset);
+
+        if (countdown.activeSelf == false)
+        {
+            DestroySelf();
+        }
         
     }
 

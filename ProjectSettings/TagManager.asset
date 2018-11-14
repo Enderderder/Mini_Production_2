@@ -15,6 +15,7 @@ TagManager:
   - Obelisk
   - Spawner
   - ProjectileSpell
+  - CoolDown
   layers:
   - Default
   - TransparentFX
