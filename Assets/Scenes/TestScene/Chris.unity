@@ -9904,6 +9904,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 1030496872679686, guid: 0b46a51c74ff94147a014117c8ee2b49, type: 2}
+      propertyPath: m_Name
+      value: ScrollPickupWater
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b46a51c74ff94147a014117c8ee2b49, type: 2}
   m_IsPrefabAsset: 0
@@ -24886,6 +24890,10 @@ Prefab:
     - target: {fileID: 4258016972361528, guid: 475a8de38ba719a40a1fb1da1b56d648, type: 2}
       propertyPath: m_RootOrder
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632654783431066, guid: 475a8de38ba719a40a1fb1da1b56d648, type: 2}
+      propertyPath: m_Name
+      value: ScrollPickupEarth
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475a8de38ba719a40a1fb1da1b56d648, type: 2}
