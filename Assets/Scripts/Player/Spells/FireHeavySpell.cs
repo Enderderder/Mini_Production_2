@@ -34,7 +34,7 @@ public class FireHeavySpell : SpecialSpell
         base.DamageEffectOnEnter(other);
 
         KillableEntity enemy = other.gameObject.GetComponent<KillableEntity>();
-        if (enemy != null)
+        if (enemy != null && !m_inRangeEntity.Contains(enemy))
         {
             m_inRangeEntity.Add(enemy);
         }
@@ -63,13 +63,16 @@ public class FireHeavySpell : SpecialSpell
         {
             foreach (var enemy in m_inRangeEntity)
             {
-                if (((MonoBehaviour)enemy).gameObject.tag == "BigEnemy")
+                if (((MonoBehaviour)enemy))
                 {
-                    enemy.TakeDamage(m_SpellDamage * m_BigEnemyDmgMulplier);
-                }
-                else
-                {
-                    enemy.TakeDamage(m_SpellDamage);
+                    if (((MonoBehaviour)enemy).gameObject.tag == "BigEnemy")
+                    {
+                        enemy.TakeDamage(m_SpellDamage * m_BigEnemyDmgMulplier);
+                    }
+                    else
+                    {
+                        enemy.TakeDamage(m_SpellDamage);
+                    }
                 }
             }
 

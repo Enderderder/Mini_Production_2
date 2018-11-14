@@ -1,19 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WaterHeavySpell : SpecialSpell
 {
     [SerializeField] private float m_DamageTick = 0.5f;
+    [SerializeField] private float m_HealingPerTick = 2.0f;
+    [SerializeField] private float m_SlowMultiplier = 0.8f;
 
     private List<KillableEntity> m_inRangeEntity;
+    private List<Player> m_inRangePlayer;
     private Coroutine m_unleashDmgCoroutine;
+
+    private void Awake()
+    {
+        m_inRangeEntity = new List<KillableEntity>();
+        m_inRangePlayer = new List<Player>();
+    }
 
     protected override void Start()
     {
         base.Start();
 
-        m_inRangeEntity = new List<KillableEntity>();
         this.gameObject.transform.position += new Vector3(0.0f, m_SpawnOffsetHeight, 0.0f);
         m_rigidBody.velocity = transform.forward * m_SpellSpeed;
         m_unleashDmgCoroutine = StartCoroutine(UnleashDamage());
@@ -26,6 +35,13 @@ public class WaterHeavySpell : SpecialSpell
 
     private void OnDestroy()
     {
+        foreach (var enemy in m_inRangeEntity)
+        {
+            if (((MonoBehaviour)enemy))
+            {
+                ((MonoBehaviour)enemy).GetComponent<NavMeshAgent>().speed /= m_SlowMultiplier;
+            }
+        }
         StopAllCoroutines();
     }
 
@@ -34,16 +50,24 @@ public class WaterHeavySpell : SpecialSpell
         base.DamageEffectOnEnter(other);
 
         KillableEntity enemy = other.gameObject.GetComponent<KillableEntity>();
-        if (enemy != null)
+        if (enemy != null && !m_inRangeEntity.Contains(enemy))
         {
             m_inRangeEntity.Add(enemy);
+            ((MonoBehaviour)enemy).GetComponent<NavMeshAgent>().speed *= m_SlowMultiplier;
+        }
+        else
+        {
+            Player player = other.gameObject.GetComponent<Player>();
+            if (player != null && !m_inRangePlayer.Contains(player))
+            {
+                m_inRangePlayer.Add(player);
+            }
         }
     }
 
     protected override void DamageEffectOnStay(Collider other)
     {
         base.DamageEffectOnStay(other);
-
     }
 
     protected override void DamageEffectOnExit(Collider other)
@@ -54,7 +78,17 @@ public class WaterHeavySpell : SpecialSpell
         if (enemy != null && m_inRangeEntity.Contains(enemy))
         {
             m_inRangeEntity.Remove(enemy);
+            ((MonoBehaviour)enemy).GetComponent<NavMeshAgent>().speed /= m_SlowMultiplier;
         }
+        else
+        {
+            Player player = other.gameObject.GetComponent<Player>();
+            if (player != null && m_inRangePlayer.Contains(player))
+            {
+                m_inRangePlayer.Remove(player);
+            }
+        }
+
     }
 
     private IEnumerator UnleashDamage()
@@ -63,13 +97,24 @@ public class WaterHeavySpell : SpecialSpell
         {
             foreach (var enemy in m_inRangeEntity)
             {
-                if (((MonoBehaviour)enemy).gameObject.tag == "BigEnemy")
+                if (((MonoBehaviour)enemy))
                 {
-                    enemy.TakeDamage(m_SpellDamage * m_BigEnemyDmgMulplier);
+                    if (((MonoBehaviour)enemy).gameObject.tag == "BigEnemy")
+                    {
+                        enemy.TakeDamage(m_SpellDamage * m_BigEnemyDmgMulplier);
+                    }
+                    else
+                    {
+                        enemy.TakeDamage(m_SpellDamage);
+                    }
                 }
-                else
+            }
+
+            foreach (var player in m_inRangePlayer)
+            {
+                if (player)
                 {
-                    enemy.TakeDamage(m_SpellDamage);
+                    player.Heal(m_HealingPerTick);
                 }
             }
 

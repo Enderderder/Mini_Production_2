@@ -342,12 +342,28 @@ public class Player : MonoBehaviour
         if (m_currentHealth > 0.0f)
         {
             m_currentHealth = Mathf.Max(0.0f, m_currentHealth - _damageVal);
-            GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+            m_currentHealth = Mathf.Min(m_MaxHealth, m_currentHealth); // Make sure when taking 
+            GameObject dmgobject = 
+                Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
             dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + _damageVal;
             Destroy(dmgobject, 1);
             StartCoroutine(DamageEffect());
             UpdateUI();
             CheckDeath();
+        }
+    }
+
+    public void Heal(float _healVal)
+    {
+        if (m_currentHealth < m_MaxHealth)
+        {
+            m_currentHealth = Mathf.Min(m_MaxHealth, m_currentHealth); // Make sure when taking
+            GameObject dmgobject =
+                    Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+            dmgobject.GetComponentInChildren<TextMeshPro>().text = "+" + _healVal;
+            dmgobject.GetComponentInChildren<TextMeshPro>().color = Color.green;
+            Destroy(dmgobject, 1);
+            UpdateUI();
         }
     }
 
@@ -397,7 +413,6 @@ public class Player : MonoBehaviour
             Debug.Log("Insufficient amount of mana, this should not happened, its a bug");
             return;
         }
-
 
         GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
         dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + _value;
