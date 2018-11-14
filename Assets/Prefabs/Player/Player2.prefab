@@ -2099,7 +2099,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000440088184810}
   m_LocalRotation: {x: -0, y: -0.38268343, z: -0, w: -0.92387956}
-  m_LocalPosition: {x: 22.75, y: 2.840501e-16, z: -14.16}
+  m_LocalPosition: {x: 102.445984, y: 0, z: 94.03722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4467066556227758}
@@ -3652,9 +3652,11 @@ MonoBehaviour:
   m_ManaCostRegSpell: 10
   m_ManaCostSpecialSpell: 30
   m_SpellCastDelay: 0.5
+  countdown: {fileID: 0}
   m_AudioBasicSpellCast: {fileID: 0}
   m_AudioSpecialSpellCast: {fileID: 0}
   m_AudioHurt: {fileID: 0}
+  damagetxt: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c, type: 2}
 --- !u!114 &114201919838123548
 MonoBehaviour:
   m_ObjectHideFlags: 1
