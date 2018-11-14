@@ -67,6 +67,8 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
 
 	void Update ()
     {
+        
+
         if (currentHealth <= 0)
         {
             Dead();
@@ -132,11 +134,14 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
         {
             isAttacking = true;
             isInAtkRange = true;
+
+
         }
         else
         {
             Target = null;
             isInAtkRange = false;
+            isAttacking = false;
         }
     }
 

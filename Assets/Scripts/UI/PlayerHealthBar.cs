@@ -39,6 +39,11 @@ public class PlayerHealthBar : MonoBehaviour
         }
     }
 
+    public void SetBarActive(bool _bar)
+    {
+        m_background.gameObject.SetActive(_bar);
+    }
+
     public void ChangeMana(float _value)
     {
         if (m_manaFill)

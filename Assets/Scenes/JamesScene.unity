@@ -697,13 +697,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWave: 0
-  roundsBeforePauseNum: 5
   maxEnemyMultiplier: 2
   currentEnemyCount: 0
   maxEnemyCount: 0
   EnemiesSpawned: 0
   totalEnemyCount: 0
   downTimeForNextWave: 0
+  wavedowntimeui: {fileID: 0}
+  cooldowntxt: {fileID: 0}
   enemies:
   - {fileID: 1101939072054722, guid: 01181a9a2395d0e4793be7f218158a96, type: 2}
   - {fileID: 1494455689736202, guid: 838c9de1cc844c24fb83395779e7786c, type: 2}
@@ -770,12 +771,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b2e98100a3e4c44088d714e72302fe3, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &793232482 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114536224275842274, guid: 913b7363f09515448b9db09fc7111f32,
-    type: 2}
-  m_PrefabInternal: {fileID: 2012842630}
-  m_Script: {fileID: 11500000, guid: d3ab1de4f37be9345a284b6899a87967, type: 3}
 --- !u!1 &808431276
 GameObject:
   m_ObjectHideFlags: 0
@@ -15912,11 +15907,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114633499769715268, guid: 913b7363f09515448b9db09fc7111f32,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4876613566022644, guid: 913b7363f09515448b9db09fc7111f32, type: 2}
       propertyPath: m_LocalPosition.x
       value: 92.62414
@@ -15948,44 +15938,6 @@ Prefab:
     - target: {fileID: 4876613566022644, guid: 913b7363f09515448b9db09fc7111f32, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224015828654203666, guid: 913b7363f09515448b9db09fc7111f32,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114633499769715268, guid: 913b7363f09515448b9db09fc7111f32,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114633499769715268, guid: 913b7363f09515448b9db09fc7111f32,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114633499769715268, guid: 913b7363f09515448b9db09fc7111f32,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 793232482}
-    - target: {fileID: 114633499769715268, guid: 913b7363f09515448b9db09fc7111f32,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Button_GameOver_ReturnToMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 114633499769715268, guid: 913b7363f09515448b9db09fc7111f32,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4386776720859602, guid: 913b7363f09515448b9db09fc7111f32, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -20.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999986770395900, guid: 913b7363f09515448b9db09fc7111f32, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -20.57
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 913b7363f09515448b9db09fc7111f32, type: 2}

@@ -495,7 +495,6 @@ GameObject:
   - component: {fileID: 4925505729149568}
   - component: {fileID: 33490247149232882}
   - component: {fileID: 23893042871514248}
-  - component: {fileID: 64645661713087468}
   m_Layer: 0
   m_Name: DirectionIndication
   m_TagString: Untagged
@@ -1473,8 +1472,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000440088184810}
-  m_LocalRotation: {x: -0, y: -0.38268343, z: -0, w: -0.92387956}
-  m_LocalPosition: {x: 98, y: 0, z: 94.56}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.37, y: 0, z: -20.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4724778115400436}
@@ -2513,20 +2512,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!64 &64645661713087468
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1365553641949050}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65131498984355822
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2688,7 +2673,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1682386015125230, guid: ba7ddc1d42fa781439c6ae270c246b9a, type: 2}
   m_RegularSpellSpawnPosition: {fileID: 4154091461516916}
-  m_ManaCostRegSpell: 10
+  m_ManaCostRegSpell: 5
   m_ManaCostSpecialSpell: 30
   m_SpellCastDelay: 0.5
   countdown: {fileID: 0}

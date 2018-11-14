@@ -24,6 +24,10 @@ public class GameStatus : MonoBehaviour {
     private Obelisk obelisk;
     private AudioSource audioSource;
     private bool hasDied;
+    public float respawnplayer1 = 5;
+    public float respawnplayer2 = 5;
+    public Transform[] playerobjs;
+    public Transform[] player2objs;
 
     private void Start()
     {
@@ -33,6 +37,8 @@ public class GameStatus : MonoBehaviour {
         player2 = player2Object.GetComponent<Player>();
         obelisk = GameObject.Find("Obelisk").GetComponent<Obelisk>();
         audioSource = GetComponent<AudioSource>();
+        playerobjs = player1Object.GetComponentsInChildren<Transform>();
+        player2objs = player2Object.GetComponentsInChildren<Transform>();
 
         gameOverCanvas.enabled = false;
     }
@@ -49,7 +55,13 @@ public class GameStatus : MonoBehaviour {
         {
             if (player1.m_bIsDead)
             {
-                StartCoroutine(RespawnPlayer(1));
+                DeSpawnPlayer(1);
+                respawnplayer1 -= 1 * Time.deltaTime;
+                if (respawnplayer1 <= 0)
+                {
+                RespawnPlayer(1);
+
+                }
             }
         }
 
@@ -57,54 +69,135 @@ public class GameStatus : MonoBehaviour {
         {
             if (player2.m_bIsDead)
             {
-                StartCoroutine(RespawnPlayer(2));
+                DeSpawnPlayer(2);
+                respawnplayer2 -= 1 * Time.deltaTime;
+                if (respawnplayer2 <= 0)
+                {
+                    RespawnPlayer(2);
+
+                }
             }
         }
     }
 
-    IEnumerator RespawnPlayer(int playerNum)
+    void DeSpawnPlayer(int playerNum)
     {
         if (playerNum == 1)
         {
-            player1.enabled = false;
-            player1Object.GetComponent<PlayerHealthBar>().enabled = false;
-            foreach (SkinnedMeshRenderer mesh in player1Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+            
+            foreach (Transform objs in playerobjs)
             {
-                mesh.enabled = false;
+                if (objs.gameObject != player1Object) {
+                    objs.gameObject.SetActive(false);
+                }
             }
-            yield return new WaitForSeconds(respawnRate);
-            player1Object.transform.position = p1Spawn.position;
-            player1.enabled = true;
-            player1.ResetHealth();
-            player1.m_bIsDead = false;
-            foreach (SkinnedMeshRenderer mesh in player1Object.GetComponentsInChildren<SkinnedMeshRenderer>())
-            {
-                mesh.enabled = true;
-            }
-            player1Object.GetComponent<PlayerHealthBar>().enabled = true;
+
+            player1Object.GetComponent<PlayerHealthBar>().SetBarActive(false);
+
         }
-        else
+        else if (playerNum == 2)
         {
-            player2.enabled = false;
-            player2Object.GetComponent<PlayerHealthBar>().enabled = false;
-            foreach (SkinnedMeshRenderer mesh in player2Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+            foreach (Transform objs in player2objs)
             {
-                mesh.enabled = false;
+                if (objs.gameObject != player2Object)
+                {
+                    objs.gameObject.SetActive(false);
+                }
             }
-            yield return new WaitForSeconds(respawnRate);
-            player2Object.transform.position = p2Spawn.position;
-            player2.enabled = true;
-            player2.ResetHealth();
-            player2.m_bIsDead = false;
-            foreach (SkinnedMeshRenderer mesh in player2Object.GetComponentsInChildren<SkinnedMeshRenderer>())
-            {
-                mesh.enabled = true;
-            }
-            player2Object.GetComponent<PlayerHealthBar>().enabled = true;
+
+            player2Object.GetComponent<PlayerHealthBar>().SetBarActive(false);
+
         }
     }
 
-    private void GameOver()
+    void RespawnPlayer(int playerNum)
+    {
+        if (playerNum == 1)
+        {
+            respawnplayer1 = 5;
+            player1.ResetHealth();
+            player1.m_bIsDead = false;
+            player1Object.transform.position = p1Spawn.position;
+            foreach (Transform objs in playerobjs)
+            {
+                    objs.gameObject.SetActive(true);
+                
+            }
+
+            player1Object.GetComponent<PlayerHealthBar>().SetBarActive(true);
+
+        }
+        else if (playerNum == 2)
+        {
+            respawnplayer2 = 5;
+            player2.ResetHealth();
+            player2.m_bIsDead = false;
+            player2Object.transform.position = p2Spawn.position;
+            foreach (Transform objs in player2objs)
+            {
+                objs.gameObject.SetActive(true);
+
+            }
+
+            player2Object.GetComponent<PlayerHealthBar>().SetBarActive(true);
+        }
+    }
+
+
+    //IEnumerator RespawnPlayer(int playerNum)
+    //{
+    //    if (playerNum == 1)
+    //    {
+    //        Transform[] playerobjs = player1Object.GetComponentsInChildren<Transform>();
+
+//        player1Object.GetComponent<PlayerHealthBar>().SetBarActive(false);
+//        foreach (SkinnedMeshRenderer mesh in player1Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+//        {
+//            mesh.enabled = false;
+//        }
+//        yield return new WaitForSeconds(respawnRate);
+//        if (player1Object.transform.position != p1Spawn.position)
+//        {
+//            player1Object.transform.position = p1Spawn.position;
+//        }
+//        foreach (Transform objs in playerobjs)
+//        {
+//            objs.gameObject.SetActive(true);
+//        }
+
+//        player1.enabled = true;
+//        player1Object.SetActive(true);
+
+//        player1.m_bIsDead = false;
+//        player1.ResetHealth();
+//        foreach (SkinnedMeshRenderer mesh in player1Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+//        {
+//            mesh.enabled = true;
+//        }
+//        player1Object.GetComponent<PlayerHealthBar>().SetBarActive(true);
+//    }
+//    else
+//    {
+//        player2.enabled = false;
+//        player2Object.GetComponent<PlayerHealthBar>().SetBarActive(false);
+//        foreach (SkinnedMeshRenderer mesh in player2Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+//        {
+//            mesh.enabled = false;
+//        }
+//        yield return new WaitForSeconds(respawnRate);
+//        player2Object.transform.position = p2Spawn.position;
+//        player2.enabled = true;
+//        player2.ResetHealth();
+//        player2.m_bIsDead = false;
+//        foreach (SkinnedMeshRenderer mesh in player2Object.GetComponentsInChildren<SkinnedMeshRenderer>())
+//        {
+//            mesh.enabled = true;
+//        }
+//        player2Object.GetComponent<PlayerHealthBar>().SetBarActive(true);
+//    }
+//}
+
+private void GameOver()
     {
         audioSource.Play();
 

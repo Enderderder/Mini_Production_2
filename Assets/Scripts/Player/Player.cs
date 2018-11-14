@@ -113,11 +113,14 @@ public class Player : MonoBehaviour
 
     private void Update ()
     {
-        ProcessMovementControl();
-        ProcessSpellControl();
-        ProcessManaRegen();
+        if (!m_bIsDead)
+        {
+            ProcessMovementControl();
+            ProcessSpellControl();
+            ProcessManaRegen();
+        }
 
-        if (countdown.activeSelf == true)
+        if (countdown && countdown.activeSelf == true)
         {
             if (m_controlSkipWave.IsPressed)
             {
@@ -128,6 +131,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log("Im working!");
         // Process the movement animation
         m_character.Move(m_movementVec, m_aimRotateVec);
 
@@ -357,7 +361,7 @@ public class Player : MonoBehaviour
     {
         if (m_currentHealth < m_MaxHealth)
         {
-            m_currentHealth = Mathf.Min(m_MaxHealth, m_currentHealth); // Make sure when taking
+            m_currentHealth = Mathf.Min(m_MaxHealth, m_currentHealth + _healVal); // Make sure when taking
             GameObject dmgobject =
                     Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
             dmgobject.GetComponentInChildren<TextMeshPro>().text = "+" + _healVal;
