@@ -7,18 +7,28 @@ using UnityEngine.SceneManagement;
 public class PauseUI : MonoBehaviour
 {
     public GameObject m_pauseUICanvas;
+    public GameObject m_howToPlayCanvas;
 
     private void Start()
     {
         // Disable the pause menu at the beginning
         m_pauseUICanvas.SetActive(false);
+        m_howToPlayCanvas.SetActive(false);
     }
 
     private void Update()
     {
         if (Input.GetButtonDown("Esc"))
         {
-            TogglePauseMenu();
+            if (m_howToPlayCanvas.activeSelf)
+            {
+                m_pauseUICanvas.SetActive(true);
+                m_howToPlayCanvas.SetActive(false);
+            }
+            else
+            {
+                TogglePauseMenu();
+            }
         }
     }
 
@@ -30,11 +40,13 @@ public class PauseUI : MonoBehaviour
         if (m_pauseUICanvas.activeSelf)
         {
             m_pauseUICanvas.SetActive(false);
+            m_howToPlayCanvas.SetActive(false);
             Time.timeScale = 1.0f;
         }
         else
         {
             m_pauseUICanvas.SetActive(true);
+            m_howToPlayCanvas.SetActive(false);
             Time.timeScale = 0.0f;
         }
     }
@@ -48,6 +60,12 @@ public class PauseUI : MonoBehaviour
         m_pauseUICanvas.SetActive(false);
     }
 
+    public void ControlsButton()
+    {
+        m_howToPlayCanvas.SetActive(true);
+        m_pauseUICanvas.SetActive(false);
+    }
+
     /*
      * Go back to main menu
      */
@@ -58,7 +76,7 @@ public class PauseUI : MonoBehaviour
         m_pauseUICanvas.SetActive(false);
 
         // Load the scene back to main menu
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Menu");
     }
 
 

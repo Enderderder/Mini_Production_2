@@ -6,7 +6,14 @@ using UnityEngine.UI;
 
 public class Mainmenu : MonoBehaviour {
 
-    //public Image 
+    public GameObject menuCanvas;
+    public GameObject howToPlayCanvas;
+
+    private void Start()
+    {
+        menuCanvas.SetActive(true);
+        howToPlayCanvas.SetActive(false);
+    }
 
     public void Button_Start()
     {
@@ -14,9 +21,23 @@ public class Mainmenu : MonoBehaviour {
         Time.timeScale = 1;
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Esc"))
+        {
+            if (howToPlayCanvas.activeSelf)
+            {
+                menuCanvas.SetActive(true);
+                howToPlayCanvas.SetActive(false);
+            }
+        }
+    }
+
     public void Button_Controls()
     {
         // Change to controls menu
+        menuCanvas.SetActive(false);
+        howToPlayCanvas.SetActive(true);
     }
 
     public void Button_Exit()

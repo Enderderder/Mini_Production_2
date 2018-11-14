@@ -107,6 +107,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log("Im working!");
         // Process the movement animation
         m_character.Move(m_movementVec, m_aimRotateVec);
 
