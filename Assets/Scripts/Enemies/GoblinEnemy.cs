@@ -27,6 +27,7 @@ public class GoblinEnemy : KillableEntity {
     private GameObject player2;
     private Player player1Script;
     private Player player2Script;
+    private AudioSource audioSource;
 
     private float obeliskRange;
 
@@ -45,7 +46,7 @@ public class GoblinEnemy : KillableEntity {
         player2 = GameObject.Find("Player2");
         player1Script = player1.GetComponent<Player>();
         player2Script = player2.GetComponent<Player>();
-
+        audioSource = GetComponent<AudioSource>();
         
         obelisk = GameObject.FindGameObjectWithTag("Obelisk");
 
@@ -186,6 +187,13 @@ public class GoblinEnemy : KillableEntity {
     public override void Dead()
     {
         StopCoroutine(attackAction);
+        StartCoroutine(Death());
+    }
+
+    private IEnumerator Death()
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
         Destroy(gameObject);
     }
 

@@ -22,9 +22,12 @@ public class EnemySpawning : MonoBehaviour {
     public Text WaveText;
 
     private bool isPaused = false;
+    private AudioSource audioSource;
+    private bool newRound = false;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         wavedowntimeui.SetActive(false);
         foreach (Transform child in gameObject.GetComponentsInChildren<Transform>())
         {
@@ -51,6 +54,11 @@ public class EnemySpawning : MonoBehaviour {
 
             if (EnemiesSpawned == totalEnemyCount && currentEnemyCount == 0)
             {
+                if (!newRound)
+                {
+                    audioSource.Play();
+                    newRound = true;
+                }
                 wavedowntimeui.SetActive(true);
                 downTimeForNextWave -= 1 * Time.deltaTime;
                 cooldowntxt.text = (Mathf.Round(downTimeForNextWave * 100f) / 100f).ToString();
