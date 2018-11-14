@@ -345,6 +345,10 @@ MonoBehaviour:
     type: 2}
   player2Prefab: {fileID: 1000440088184810, guid: 2986545a337dd7d46a2dc8ee4a237e5a,
     type: 2}
+  respawnplayer1: 5
+  respawnplayer2: 5
+  playerobjs: []
+  player2objs: []
 --- !u!114 &114554465950416816
 MonoBehaviour:
   m_ObjectHideFlags: 1
