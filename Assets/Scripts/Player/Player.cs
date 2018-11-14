@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
         // Process the movement animation
         m_character.Move(m_movementVec, m_aimRotateVec);
 
+        // Dont do anything to the movement when there is no input
         if (m_movementVec == Vector3.zero)
         {
             return;
@@ -292,6 +293,12 @@ public class Player : MonoBehaviour
         // becauze UI image fill use 0 - 1 value
         m_healthBar.ChangeHealth(m_currentHealth / m_MaxHealth);
         m_healthBar.ChangeMana(m_currentMana / m_MaxMana);
+    }
+
+    public void ResetHealth()
+    {
+        m_currentHealth = m_MaxHealth;
+        m_currentMana = m_MaxMana;
     }
 
     public void TakeDamage(float _damageVal)

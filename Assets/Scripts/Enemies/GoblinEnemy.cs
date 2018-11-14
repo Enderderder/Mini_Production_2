@@ -25,6 +25,8 @@ public class GoblinEnemy : KillableEntity {
     private bool isChasing = false;
     private GameObject player1;
     private GameObject player2;
+    private Player player1Script;
+    private Player player2Script;
 
     private float obeliskRange;
 
@@ -41,6 +43,8 @@ public class GoblinEnemy : KillableEntity {
     {
         player1 = GameObject.Find("Player1");
         player2 = GameObject.Find("Player2");
+        player1Script = player1.GetComponent<Player>();
+        player2Script = player2.GetComponent<Player>();
 
         
         obelisk = GameObject.FindGameObjectWithTag("Obelisk");
@@ -64,9 +68,19 @@ public class GoblinEnemy : KillableEntity {
             return;
         }
 
-        float player1Distance = Vector3.Distance(player1.transform.position, transform.position);
-        float player2Distance = Vector3.Distance(player2.transform.position, transform.position);
+        float player1Distance = 10000;
+        float player2Distance = 10000;
         float obeliskDistance = Vector3.Distance(obelisk.transform.position, transform.position);
+
+        if (!player1Script.m_bIsDead)
+        {
+            player1Distance = Vector3.Distance(player1.transform.position, transform.position);
+        }
+        if (!player2Script.m_bIsDead)
+        {
+            player2Distance = Vector3.Distance(player2.transform.position, transform.position);
+        }
+
 
         if (player1Distance < player2Distance && player1Distance < obeliskDistance)
         {
