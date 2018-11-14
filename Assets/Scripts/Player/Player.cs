@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
         // Process the movement animation
         m_character.Move(m_movementVec, m_aimRotateVec);
 
+        // Dont do anything to the movement when there is no input
         if (m_movementVec == Vector3.zero)
         {
             return;
