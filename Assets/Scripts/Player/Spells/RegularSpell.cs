@@ -12,6 +12,8 @@ public class RegularSpell : MonoBehaviour
     [SerializeField] private float m_SpellSpeed = 7.0f;
     [SerializeField] private float m_SpellLifeTime = 3.0f;
 
+    [SerializeField] private GameObject m_HitEffectPrefab;
+
     // References
     private ParticleSystem[] m_particles;
     private MeshRenderer m_meshRenderer;
@@ -57,6 +59,7 @@ public class RegularSpell : MonoBehaviour
 
         // Destroy the projectile on any contact
         StartCoroutine(DestroySpell());
+        Instantiate(m_HitEffectPrefab, this.gameObject.transform.position, Quaternion.identity);
 
         //
         //if (other.tag == "Enemy")
@@ -86,6 +89,7 @@ public class RegularSpell : MonoBehaviour
             // Stop and disable the ball
             m_rigidBody.velocity = Vector3.zero;
             m_meshRenderer.enabled = false;
+            GetComponent<SphereCollider>().enabled = false;
             yield return new WaitForSeconds(1.0f);
 
             StopAllCoroutines();
