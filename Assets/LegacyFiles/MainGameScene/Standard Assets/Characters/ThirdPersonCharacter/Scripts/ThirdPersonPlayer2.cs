@@ -29,7 +29,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 Fire();
                 manaScript.UseManaAttack(1.0f);
-                m_Character.AnimAttack(false);
+                //m_Character.AnimAttack(false);
             }
             else if (Input.GetKeyUp(KeyCode.RightControl))
             {
@@ -80,7 +80,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			#endif
 
 			// pass all parameters to the character control script
-			m_Character.Move(m_Move, crouch, m_Jump);
+			//m_Character.Move(m_Move, crouch, m_Jump);
 			m_Jump = false;
 		}
 	}

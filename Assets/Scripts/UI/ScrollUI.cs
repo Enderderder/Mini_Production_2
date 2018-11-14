@@ -8,10 +8,12 @@ public class ScrollUI : MonoBehaviour {
     [SerializeField] private Vector3 Offeset;
     [SerializeField] private ElementType element;
     [SerializeField] private GameObject button;
+    [SerializeField] private Animator anim;
     private Image buttonImage;
-    private Text Info;
+    public Text Info;
     // Use this for initialization
     void Start () {
+        anim = this.GetComponent<Animator>();
         buttonImage = Instantiate(button, GameObject.Find("/HealthUI_Global").transform).GetComponent<Image>();
         buttonImage.enabled = false;
         Info = Instantiate(Textprefab, GameObject.Find("/HealthUI_Global").transform).GetComponent<Text>();
@@ -75,11 +77,25 @@ public class ScrollUI : MonoBehaviour {
         return element;
     }
 
+    public void DestroySelf()
+    {
+        Destroy(Info);
+        Destroy(buttonImage);
+        Destroy(this.gameObject);
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        Player player = other.gameObject.GetComponent<Player>();
+        if (player)
         {
             buttonImage.enabled = true;
+            if (player.m_controlPickScroll.IsPressed)
+            {
+                anim.SetTrigger("Unfiold");
+                player.ChangeElement(element);
+            }
+
         }
     }
 

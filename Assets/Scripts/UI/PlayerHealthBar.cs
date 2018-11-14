@@ -30,11 +30,18 @@ public class PlayerHealthBar : MonoBehaviour
 
     public void ChangeHealth(float _value)
     {
-        m_healthFill.fillAmount = _value;
+        if (m_healthFill)
+        {
+            m_healthFill.fillAmount = _value;
+        }
+        
     }
 
     public void ChangeMana(float _value)
     {
-        m_manaFill.fillAmount = _value;
+        if (m_manaFill)
+        {
+            m_manaFill.fillAmount = _value;
+        }
     }
 }

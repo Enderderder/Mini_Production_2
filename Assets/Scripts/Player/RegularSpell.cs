@@ -47,17 +47,26 @@ public class RegularSpell : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        // Check if the game object belongs to KillableEntity
+        // Deal damage if it is
+        KillableEntity killableEntity = other.gameObject.GetComponent<KillableEntity>();
+        if (killableEntity)
         {
-            other.GetComponent<GoblinEnemy>().TakeDamage(m_SpellDamage);
-        }
-        else if (other.tag == "BigEnemy")
-        {
-            other.GetComponent<BigEnemy>().TakeDamage(m_SpellDamage);
+            killableEntity.TakeDamage(m_SpellDamage);
         }
 
         // Destroy the projectile on any contact
         StartCoroutine(DestroySpell());
+
+        //
+        //if (other.tag == "Enemy")
+        //{
+        //    other.GetComponent<GoblinEnemy>().TakeDamage(m_SpellDamage);
+        //}
+        //else if (other.tag == "BigEnemy")
+        //{
+        //    other.GetComponent<BigEnemy>().TakeDamage(m_SpellDamage);
+        //}
     }
 
     private IEnumerator LifeTimeCountdown()
