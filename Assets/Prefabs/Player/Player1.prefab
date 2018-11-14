@@ -1473,8 +1473,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000440088184810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.37, y: 0, z: -20.5}
+  m_LocalRotation: {x: -0, y: -0.38268343, z: -0, w: -0.92387956}
+  m_LocalPosition: {x: 98, y: 0, z: 94.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4724778115400436}
@@ -2670,7 +2670,7 @@ MonoBehaviour:
   m_ManaRegenAmount: 10
   m_ManaRegenDelay: 1
   m_MoveSpd: 300
-  m_HoldingElement: 0
+  m_HoldingElement: 3
   m_ElementIcons:
   - {fileID: 2800000, guid: 057b79761bad702459fbe73374f3c79b, type: 3}
   - {fileID: 2800000, guid: 66dc22d8091c4dd48831a994249e7996, type: 3}
@@ -2691,9 +2691,11 @@ MonoBehaviour:
   m_ManaCostRegSpell: 10
   m_ManaCostSpecialSpell: 30
   m_SpellCastDelay: 0.5
+  countdown: {fileID: 0}
   m_AudioBasicSpellCast: {fileID: 0}
   m_AudioSpecialSpellCast: {fileID: 0}
   m_AudioHurt: {fileID: 0}
+  damagetxt: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c, type: 2}
 --- !u!114 &114201919838123548
 MonoBehaviour:
   m_ObjectHideFlags: 1

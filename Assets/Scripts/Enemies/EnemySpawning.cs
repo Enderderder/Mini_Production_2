@@ -64,7 +64,7 @@ public class EnemySpawning : MonoBehaviour {
                 cooldowntxt.text = ((int)(Mathf.RoundToInt(downTimeForNextWave * 100f) / 100f)).ToString();
                 if (downTimeForNextWave <= 0) {
                     StartCoroutine(NewWave());
-                    downTimeForNextWave = 5;
+                    downTimeForNextWave = 15;
                     wavedowntimeui.SetActive(false);
                 }
             }

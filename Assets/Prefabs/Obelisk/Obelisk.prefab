@@ -1168,7 +1168,7 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 1821980763086444, guid: c1633ced5e2e67d46b02caa5c1d39f96,
     type: 2}
   Offeset: {x: 0, y: 8, z: 0}
-  damagetxt: {fileID: 0}
+  damagetxt: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c, type: 2}
 --- !u!137 &137036670405302414
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
