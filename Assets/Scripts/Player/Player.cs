@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 using XInputDotNetPure;
 using InControl;
 
-enum ElementType
+public enum ElementType
 {
     Fire,
     Air,
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_MaxMana = 100.0f;
     [SerializeField] private float m_ManaRegenAmount = 10.0f;
     [SerializeField] private float m_ManaRegenDelay = 1.0f;
+    [SerializeField] private float m_MoveSpd = 10.0f;
 
     [Header("Spells")]
     [SerializeField] private ElementType m_HoldingElement = ElementType.Earth;
@@ -47,11 +48,15 @@ public class Player : MonoBehaviour
     private InputDevice m_controller = null;
     private ThirdPersonCharacter m_character;
     private PlayerHealthBar m_healthBar;
+    private Rigidbody m_rigidBody;
 
     // Player movement
-    private float m_horizontalInput;
-    private float m_verticalInput;
+    private float m_hMoveInput;
+    private float m_vMoveInput;
+    private float m_hAimInput;
+    private float m_vAimInput;
     private Vector3 m_movementVec;
+    private Vector3 m_aimRotateVec;
     private Transform m_playerCamera;
     private Vector3 m_camForward;
 
@@ -65,6 +70,8 @@ public class Player : MonoBehaviour
     private InputControl m_controlAimVertical;
     private InputControl m_controlFireRegular;
     private InputControl m_controlFireSpecial;
+    private InputControl m_controlSkipWave;
+    public InputControl m_controlPickScroll;
 
     // Obelisk reference for mana regen
     private Obelisk m_obelisk;
@@ -73,6 +80,7 @@ public class Player : MonoBehaviour
     {
         m_character = GetComponent<ThirdPersonCharacter>();
         m_healthBar = GetComponent<PlayerHealthBar>();
+        m_rigidBody = GetComponent<Rigidbody>();
     }
 
     private void Start ()
@@ -99,12 +107,30 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Set value for the character scipt move
-        // do not change these value
-        bool jump = false;
-        bool crouch = false;
-        // Process the movement using the character script
-        m_character.Move(m_movementVec, crouch, jump);
+        // Process the movement animation
+        m_character.Move(m_movementVec, m_aimRotateVec);
+
+        if (m_movementVec == Vector3.zero)
+        {
+            return;
+        }
+
+        if (m_movementVec.magnitude > 1)
+        {
+            Vector3.Normalize(m_movementVec);
+        }
+        
+        // Preserve the y velocity and apply xz velocity
+        Vector3 velocityVec = m_movementVec * m_MoveSpd * Time.fixedDeltaTime;
+        velocityVec.y = m_rigidBody.velocity.y;
+
+        m_rigidBody.velocity = velocityVec;
+    }
+
+    private void OnDestroy()
+    {
+        // Make sure the controller reset the vibration when not controlling
+        GamePad.SetVibration((PlayerIndex)m_PlayerID, 0.0f, 0.0f);
     }
 
     private void AssignController()
@@ -131,6 +157,8 @@ public class Player : MonoBehaviour
         m_controlAimVertical = m_controller.GetControl(InputControlType.RightStickY);
         m_controlFireRegular = m_controller.GetControl(InputControlType.RightTrigger);
         m_controlFireSpecial = m_controller.GetControl(InputControlType.LeftTrigger);
+        m_controlSkipWave = m_controller.GetControl(InputControlType.Action4); // Y Button
+        m_controlPickScroll = m_controller.GetControl(InputControlType.Action3); // X button
     }
 
     private void ResetStats()
@@ -151,8 +179,10 @@ public class Player : MonoBehaviour
         }
 
         // Get the input value
-        m_horizontalInput = m_controlMoveHorizontal.Value;
-        m_verticalInput = m_controlMoveVertical.Value;
+        m_hMoveInput = m_controlMoveHorizontal.Value;
+        m_vMoveInput = m_controlMoveVertical.Value;
+        m_hAimInput = m_controlAimHorizontal.Value;
+        m_vAimInput = m_controlAimVertical.Value;
 
         // Calculate move direction to pass to character
         if (m_playerCamera != null)
@@ -161,13 +191,17 @@ public class Player : MonoBehaviour
             m_camForward = 
                 Vector3.Scale(m_playerCamera.forward, new Vector3(1, 0, 1)).normalized;
             m_movementVec = 
-                m_verticalInput * m_camForward + m_horizontalInput * m_playerCamera.right;
+                m_vMoveInput * m_camForward + m_hMoveInput * m_playerCamera.right;
+            m_aimRotateVec =
+                m_vAimInput * m_camForward + m_hAimInput * m_playerCamera.right;
         }
         else
         {
             // Use world-relative directions in the case of no main camera
             m_movementVec = 
-                m_verticalInput * Vector3.forward + m_horizontalInput * Vector3.right;
+                m_vMoveInput * Vector3.forward + m_hMoveInput * Vector3.right;
+            m_aimRotateVec =
+                m_vAimInput * Vector3.forward + m_hAimInput * Vector3.right;
         }
     }
 
@@ -189,13 +223,12 @@ public class Player : MonoBehaviour
                 m_currentMana >= m_ManaCostRegSpell)
             {
                 StartCoroutine(CastRegularSpell());
-                UseMana(m_ManaCostRegSpell);
+                
             }
             else if (m_controlFireSpecial.IsPressed &&
                 m_currentMana >= m_ManaCostSpecialSpell)
             {
                 StartCoroutine(CastSpecialSpell());
-                UseMana(m_ManaCostSpecialSpell);
             }
         }
     }
@@ -209,13 +242,14 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(GenerateMana());
         }
-
     }
 
     private IEnumerator CastRegularSpell()
     {
         // Spell cast action lock
         m_bCanCastSpell = false;
+
+        m_character.AnimAttack();
 
         GameObject spellToCast = m_RegularSpellPrefab[(int)m_HoldingElement];
 
@@ -226,9 +260,10 @@ public class Player : MonoBehaviour
             m_RegularSpellSpawnPosition.position,
             m_RegularSpellSpawnPosition.rotation);
 
-        // Vibrate the controller
-        StartCoroutine(ControllerVibrate(0.1f, 0.1f, 1.0f));
+        UseMana(m_ManaCostRegSpell);
 
+        // Vibrate the controller
+        StartCoroutine(ControllerVibrate(0.1f, 0.0f, 1.0f));
 
         yield return new WaitForSeconds(m_SpellCastDelay);
 
@@ -241,10 +276,11 @@ public class Player : MonoBehaviour
         // Spell cast action lock
         m_bCanCastSpell = false;
 
+        yield return new WaitForSeconds(0.2f); // Small delay waiting for the animation
 
+        UseMana(m_ManaCostSpecialSpell);
 
-        yield return null;
-
+        yield return new WaitForSeconds(m_SpellCastDelay);
 
         // Spell cast action unlock
         m_bCanCastSpell = true;
@@ -332,9 +368,9 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
-    public void ChangeElement()
+    public void ChangeElement(ElementType _type)
     {
-
+        m_HoldingElement = _type;
     }
 
     private IEnumerator ControllerVibrate(float _time, float _leftMotorItens, float _rightMotorItens)

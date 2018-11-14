@@ -88,7 +88,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                                 Fire();
                                 //manaScript.UseManaAttack(2.0f);
                                 playerHealthScript.UseMana(attackMana);
-                                m_Character.AnimAttack(true);
+                                //m_Character.AnimAttack(true);
                             }
                         }
                         else if (Input.GetKeyUp("joystick " + controllerid[0].id + " button 0"))
@@ -105,7 +105,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                                 Fire();
                                 //manaScript.UseManaAttack(2.0f);
                                 playerHealthScript.UseMana(attackMana);
-                                m_Character.AnimAttack(true);
+                                //m_Character.AnimAttack(true);
                             }
                         }
                         else if (Input.GetKeyUp("joystick " + controllerid[0].id + " button 1"))
@@ -123,7 +123,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                             Fire();
                             //manaScript.UseManaAttack(2.0f);
                             playerHealthScript.UseMana(attackMana);
-                            m_Character.AnimAttack(true);
+                            //m_Character.AnimAttack(true);
                         }
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftControl))
@@ -145,7 +145,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                                 Fire();
                                 //manaScript.UseManaAttack(2.0f);
                                 playerHealthScript.UseMana(attackMana);
-                                m_Character.AnimAttack(true);
+                                //m_Character.AnimAttack(true);
                             }
                         }
                         else if (Input.GetKeyUp("joystick " + controllerid[1].id + " button 0"))
@@ -162,7 +162,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                                 Fire();
                                 //manaScript.UseManaAttack(2.0f);
                                 playerHealthScript.UseMana(attackMana);
-                                m_Character.AnimAttack(true);
+                                //m_Character.AnimAttack(true);
                             }
                         }
                         else if (Input.GetKeyUp("joystick " + controllerid[1].id + " button 1"))
@@ -180,7 +180,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                             Fire();
                             //manaScript.UseManaAttack(2.0f);
                             playerHealthScript.UseMana(attackMana);
-                            m_Character.AnimAttack(true);
+                            //m_Character.AnimAttack(true);
                         }
                     }
                     else if (Input.GetKeyUp(KeyCode.RightControl))
@@ -263,7 +263,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 #endif
 
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, m_Jump);
+            //m_Character.Move(m_Move, crouch, m_Jump);
             m_Jump = false;
         }
     }

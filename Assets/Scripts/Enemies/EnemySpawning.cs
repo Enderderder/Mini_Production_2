@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class EnemySpawning : MonoBehaviour {
 
     public int currentWave = 0;
-    public int roundsBeforePauseNum = 5;
     public int maxEnemyMultiplier = 1;
     public int currentEnemyCount;
     public int maxEnemyCount;
     public int EnemiesSpawned;
     public int totalEnemyCount;
-    public int downTimeForNextWave;
+    public float downTimeForNextWave = 5;
+    public GameObject wavedowntimeui;
+    public Text cooldowntxt;
 
     public GameObject[] enemies;
 
@@ -24,6 +25,7 @@ public class EnemySpawning : MonoBehaviour {
 
     private void Start()
     {
+        wavedowntimeui.SetActive(false);
         foreach (Transform child in gameObject.GetComponentsInChildren<Transform>())
         {
             if (child.tag == "Spawner")
@@ -49,7 +51,14 @@ public class EnemySpawning : MonoBehaviour {
 
             if (EnemiesSpawned == totalEnemyCount && currentEnemyCount == 0)
             {
-                StartCoroutine(NewWave());
+                wavedowntimeui.SetActive(true);
+                downTimeForNextWave -= 1 * Time.deltaTime;
+                cooldowntxt.text = (Mathf.Round(downTimeForNextWave * 100f) / 100f).ToString();
+                if (downTimeForNextWave <= 0) {
+                    StartCoroutine(NewWave());
+                    downTimeForNextWave = 5;
+                    wavedowntimeui.SetActive(false);
+                }
             }
         }
     }

@@ -65,6 +65,7 @@ public class GoblinEnemy : KillableEntity {
         if (currentHealth <= 0)
         {
             Dead();
+            return;
         }
 
         float player1Distance = 10000;
