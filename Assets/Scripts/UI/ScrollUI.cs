@@ -9,6 +9,12 @@ public class ScrollUI : MonoBehaviour {
     [SerializeField] private ElementType element;
     [SerializeField] private GameObject button;
     [SerializeField] private Animator anim;
+    public GameObject scrollobject;
+    public SkinnedMeshRenderer skinrender;
+    public Material firescrollmaterial;
+    public Material waterscrollmaterial;
+    public Material earthscrollmaterial;
+    public Material airscrollmaterial;
     private Image buttonImage;
     public Text Info;
     // Use this for initialization
@@ -17,25 +23,32 @@ public class ScrollUI : MonoBehaviour {
         buttonImage = Instantiate(button, GameObject.Find("/HealthUI_Global").transform).GetComponent<Image>();
         buttonImage.enabled = false;
         Info = Instantiate(Textprefab, GameObject.Find("/HealthUI_Global").transform).GetComponent<Text>();
+
+        skinrender = scrollobject.GetComponent<SkinnedMeshRenderer>();
+
         if (element == ElementType.Earth)
         {
             Info.text = "Earth Element";
             Info.color = Color.green;
+            skinrender.material = earthscrollmaterial;
         }
         else if (element == ElementType.Air)
         {
             Info.text = "Air Element";
             Info.color = Color.white;
+            skinrender.material = airscrollmaterial;
         }
         else if (element == ElementType.Fire)
         {
             Info.text = "Fire Element";
             Info.color = Color.red;
+            skinrender.material = firescrollmaterial;
         }
         else if (element == ElementType.Water)
         {
             Info.text = "Water Element";
             Info.color = Color.blue;
+            skinrender.material = waterscrollmaterial;
         }
     }
 	
@@ -54,21 +67,25 @@ public class ScrollUI : MonoBehaviour {
         {
             Info.text = "Earth Element";
             Info.color = Color.green;
+            skinrender.material = earthscrollmaterial;
         }
         else if (element == ElementType.Air)
         {
             Info.text = "Air Element";
             Info.color = Color.white;
+            skinrender.material = airscrollmaterial;
         }
         else if (element == ElementType.Fire)
         {
             Info.text = "Fire Element";
             Info.color = Color.red;
+            skinrender.material = firescrollmaterial;
         }
         else if (element == ElementType.Water)
         {
             Info.text = "Water Element";
             Info.color = Color.blue;
+            skinrender.material = waterscrollmaterial;
         }
     }
 
