@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_ManaCostRegSpell = 10.0f;
     [SerializeField] private float m_ManaCostSpecialSpell = 30.0f;
     [SerializeField] private float m_SpellCastDelay = 0.5f;
-
+    public GameObject countdown;
 
     [SerializeField] private GameObject damagetxt;
     // Stats in real time
@@ -97,6 +97,8 @@ public class Player : MonoBehaviour
         // Try assign a controller on the start
         AssignController();
 
+        countdown = GameObject.FindGameObjectWithTag("CoolDown");
+
         // Reset to make sure everything is fresh
         ResetStats();
     }
@@ -106,6 +108,14 @@ public class Player : MonoBehaviour
         ProcessMovementControl();
         ProcessSpellControl();
         ProcessManaRegen();
+
+        if (countdown.activeSelf == true)
+        {
+            if (m_controlSkipWave.IsPressed)
+            {
+                GameObject.FindGameObjectWithTag("EnemyWave").GetComponent<EnemySpawning>().downTimeForNextWave = 0;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -129,6 +139,8 @@ public class Player : MonoBehaviour
         velocityVec.y = m_rigidBody.velocity.y;
 
         m_rigidBody.velocity = velocityVec;
+
+        
     }
 
     private void OnDestroy()
@@ -218,6 +230,8 @@ public class Player : MonoBehaviour
             AssignController();
             return;
         }
+
+        
 
         // Shoot while able to react to user input
         // also while actually holding a element

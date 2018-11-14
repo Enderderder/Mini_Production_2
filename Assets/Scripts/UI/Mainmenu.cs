@@ -11,6 +11,7 @@ public class Mainmenu : MonoBehaviour {
     public void Button_Start()
     {
         SceneManager.LoadScene("DarrenScene");
+        Time.timeScale = 1;
     }
 
     public void Button_Controls()

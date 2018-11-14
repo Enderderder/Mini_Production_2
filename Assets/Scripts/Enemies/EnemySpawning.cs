@@ -11,7 +11,7 @@ public class EnemySpawning : MonoBehaviour {
     public int maxEnemyCount;
     public int EnemiesSpawned;
     public int totalEnemyCount;
-    public float downTimeForNextWave = 5;
+    public float downTimeForNextWave = 15;
     public GameObject wavedowntimeui;
     public Text cooldowntxt;
 
@@ -22,9 +22,12 @@ public class EnemySpawning : MonoBehaviour {
     public Text WaveText;
 
     private bool isPaused = false;
+    private AudioSource audioSource;
+    private bool newRound = false;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         wavedowntimeui.SetActive(false);
         foreach (Transform child in gameObject.GetComponentsInChildren<Transform>())
         {
@@ -51,9 +54,14 @@ public class EnemySpawning : MonoBehaviour {
 
             if (EnemiesSpawned == totalEnemyCount && currentEnemyCount == 0)
             {
+                if (!newRound)
+                {
+                    audioSource.Play();
+                    newRound = true;
+                }
                 wavedowntimeui.SetActive(true);
                 downTimeForNextWave -= 1 * Time.deltaTime;
-                cooldowntxt.text = (Mathf.Round(downTimeForNextWave * 100f) / 100f).ToString();
+                cooldowntxt.text = ((int)(Mathf.RoundToInt(downTimeForNextWave * 100f) / 100f)).ToString();
                 if (downTimeForNextWave <= 0) {
                     StartCoroutine(NewWave());
                     downTimeForNextWave = 5;

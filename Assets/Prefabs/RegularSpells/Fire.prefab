@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063972531698038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.39, y: 2.22, z: -0.42}
+  m_LocalPosition: {x: 108.252556, y: 0.13732, z: 98.799}
   m_LocalScale: {x: 0.27464, y: 0.27464, z: 0.48005018}
   m_Children:
   - {fileID: 4520598179122090}
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fecd74d618ea64cbfedabeeb4aacef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpellDamage: 10
+  m_SpellDamage: 20
   m_SpellSpeed: 25
   m_SpellLifeTime: 1.5
   m_HitEffectPrefab: {fileID: 1570932368799950, guid: f1a999cc24680ec47a409baf194aac9b,

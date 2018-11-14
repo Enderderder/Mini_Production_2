@@ -16,6 +16,8 @@ TagManager:
   - Spawner
   - ProjectileSpell
   - CoolDown
+  - BigEnemy
+  - EnemyWave
   layers:
   - Default
   - TransparentFX
