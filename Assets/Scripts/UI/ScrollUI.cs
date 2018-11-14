@@ -17,6 +17,10 @@ public class ScrollUI : MonoBehaviour {
     public Material airscrollmaterial;
     private Image buttonImage;
     public GameObject countdown;
+    public GameObject earthpartices;
+    public GameObject waterpartices;
+    public GameObject firepartices;
+    public GameObject airpartices;
     public Text Info;
     // Use this for initialization
     void Start () {
@@ -117,6 +121,25 @@ public class ScrollUI : MonoBehaviour {
             {
                 anim.SetTrigger("Unfiold");
                 player.ChangeElement(element);
+                if (element == ElementType.Earth) {
+                    GameObject partices = Instantiate(earthpartices, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), Quaternion.identity);
+                    Destroy(partices, 1);
+                }
+                else if (element == ElementType.Air)
+                {
+                    GameObject partices = Instantiate(airpartices, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), Quaternion.identity);
+                    Destroy(partices, 1);
+                }
+                else if (element == ElementType.Water)
+                {
+                    GameObject partices = Instantiate(waterpartices, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), Quaternion.identity);
+                    Destroy(partices, 1);
+                }
+                else if (element == ElementType.Fire)
+                {
+                    GameObject partices = Instantiate(firepartices, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), Quaternion.identity);
+                    Destroy(partices, 1);
+                }
             }
 
         }

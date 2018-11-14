@@ -345,6 +345,14 @@ MonoBehaviour:
   earthscrollmaterial: {fileID: 2100000, guid: 36ed6014e4ee33347b4ef5082d1d2fc4, type: 2}
   airscrollmaterial: {fileID: 2100000, guid: cf4c87e294b929346bf4aaaa071dbd25, type: 2}
   countdown: {fileID: 0}
+  earthpartices: {fileID: 1632654783431066, guid: 9bcb4e4a14c56df46bbe3f8d961d2a29,
+    type: 2}
+  waterpartices: {fileID: 1030496872679686, guid: 9d54c69024d068d4fa4c3fb75d3b2580,
+    type: 2}
+  firepartices: {fileID: 1860159910330778, guid: e531b19406bbea84b8d0f68c8fc16a0c,
+    type: 2}
+  airpartices: {fileID: 1038789954297660, guid: a10a66f8526f34348bb0215f2a812d51,
+    type: 2}
   Info: {fileID: 114483835419808460, guid: 5d0d0bbebf13f0d44980c84bdba96796, type: 2}
 --- !u!135 &135275062094605274
 SphereCollider:
