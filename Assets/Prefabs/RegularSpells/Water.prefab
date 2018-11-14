@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1762797687353308}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.4}
+  m_LocalPosition: {x: 0, y: 0, z: -0.36}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4946456753896370}
@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1658974320218792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.2560005, y: 2.22, z: -0.42}
+  m_LocalPosition: {x: 107.31594, y: 0.13732047, z: 99.68247}
   m_LocalScale: {x: 0.27464, y: 0.27464, z: 0.48005018}
   m_Children:
   - {fileID: 4529630667836852}
@@ -205,11 +205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fecd74d618ea64cbfedabeeb4aacef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpellDamage: 10
+  m_SpellDamage: 20
   m_SpellSpeed: 25
   m_SpellLifeTime: 1.5
   m_HitEffectPrefab: {fileID: 1570932368799950, guid: f1a999cc24680ec47a409baf194aac9b,
     type: 2}
+  m_element: 3
+  damagetxt: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c, type: 2}
 --- !u!135 &135782737114670090
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -22,6 +22,8 @@ public class GameStatus : MonoBehaviour {
     private GameObject player1Object;
     private GameObject player2Object;
     private Obelisk obelisk;
+    private AudioSource audioSource;
+    private bool hasDied;
 
     private void Start()
     {
@@ -30,15 +32,17 @@ public class GameStatus : MonoBehaviour {
         player1 = player1Object.GetComponent<Player>();
         player2 = player2Object.GetComponent<Player>();
         obelisk = GameObject.Find("Obelisk").GetComponent<Obelisk>();
+        audioSource = GetComponent<AudioSource>();
 
         gameOverCanvas.enabled = false;
     }
 
     private void Update()
     {
-        if (obelisk.currentHealth <= 0)
+        if (obelisk.currentHealth <= 0 && !hasDied)
         {
             GameOver();
+            hasDied = true;
         }
 
         if (player1 != null)
@@ -102,6 +106,8 @@ public class GameStatus : MonoBehaviour {
 
     private void GameOver()
     {
+        audioSource.Play();
+
         gameOverCanvas.enabled = true;
         Time.timeScale = 0;
     }

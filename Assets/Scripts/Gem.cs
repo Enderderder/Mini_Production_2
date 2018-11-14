@@ -8,7 +8,9 @@ public class Gem : MonoBehaviour {
     public float FloatingRange = 0.5f;
     public float FloatingSpeed = 2f;
     public float StartingOffset;
-    public float spinMultiplier;
+    public float spinMultiplierX;
+    public float spinMultiplierY;
+    public float spinMultiplierZ;
 
     private Vector3 startPos;
 
@@ -25,6 +27,6 @@ public class Gem : MonoBehaviour {
         Vector3 resultVec = startPos;
         resultVec.y += y;
         transform.position = resultVec;
-        transform.Rotate(new Vector3(0, spinMultiplier, 0));
+        transform.Rotate(new Vector3(spinMultiplierX, spinMultiplierY, spinMultiplierZ));
     }
 }

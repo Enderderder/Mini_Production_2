@@ -39,6 +39,7 @@ public class Obelisk : MonoBehaviour {
         currentHealth -= _fDamage;
         StartCoroutine(DamageEffect());
         UpdateUI();
+
     }
 
     private IEnumerator DamageEffect()

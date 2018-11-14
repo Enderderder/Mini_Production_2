@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using XInputDotNetPure;
 using InControl;
+using TMPro;
 
 public enum ElementType
 {
@@ -40,12 +41,15 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_ManaCostRegSpell = 10.0f;
     [SerializeField] private float m_ManaCostSpecialSpell = 30.0f;
     [SerializeField] private float m_SpellCastDelay = 0.5f;
+    public GameObject countdown;
 
     [Header("Audio")]
     [SerializeField] private AudioClip m_AudioBasicSpellCast;
     [SerializeField] private AudioClip m_AudioSpecialSpellCast;
     [SerializeField] private AudioClip m_AudioHurt;
 
+    [Header("Visual")]
+    [SerializeField] private GameObject damagetxt;
     // Stats in real time
     private float m_currentHealth;
     private float m_currentMana;
@@ -101,6 +105,8 @@ public class Player : MonoBehaviour
         // Try assign a controller on the start
         AssignController();
 
+        countdown = GameObject.FindGameObjectWithTag("CoolDown");
+
         // Reset to make sure everything is fresh
         ResetStats();
     }
@@ -110,6 +116,14 @@ public class Player : MonoBehaviour
         ProcessMovementControl();
         ProcessSpellControl();
         ProcessManaRegen();
+
+        if (countdown.activeSelf == true)
+        {
+            if (m_controlSkipWave.IsPressed)
+            {
+                GameObject.FindGameObjectWithTag("EnemyWave").GetComponent<EnemySpawning>().downTimeForNextWave = 0;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -133,6 +147,8 @@ public class Player : MonoBehaviour
         velocityVec.y = m_rigidBody.velocity.y;
 
         m_rigidBody.velocity = velocityVec;
+
+        
     }
 
     private void OnDestroy()
@@ -222,6 +238,8 @@ public class Player : MonoBehaviour
             AssignController();
             return;
         }
+
+        
 
         // Shoot while able to react to user input
         // also while actually holding a element
@@ -324,6 +342,9 @@ public class Player : MonoBehaviour
         if (m_currentHealth > 0.0f)
         {
             m_currentHealth = Mathf.Max(0.0f, m_currentHealth - _damageVal);
+            GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+            dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + _damageVal;
+            Destroy(dmgobject, 1);
             StartCoroutine(DamageEffect());
             UpdateUI();
             CheckDeath();
@@ -377,6 +398,11 @@ public class Player : MonoBehaviour
             return;
         }
 
+
+        GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+        dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + _value;
+        dmgobject.GetComponentInChildren<TextMeshPro>().color = Color.blue;
+        Destroy(dmgobject, 1);
         // Use the mana and check if it is below 0
         m_currentMana = Mathf.Max(0.0f, m_currentMana - _value);
         UpdateUI();

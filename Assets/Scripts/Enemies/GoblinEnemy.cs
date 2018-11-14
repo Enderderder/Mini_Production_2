@@ -28,6 +28,7 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
     private GameObject player2;
     private Player player1Script;
     private Player player2Script;
+    private AudioSource audioSource;
 
     private float obeliskRange;
 
@@ -49,7 +50,7 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
         player2 = GameObject.Find("Player2");
         player1Script = player1.GetComponent<Player>();
         player2Script = player2.GetComponent<Player>();
-
+        audioSource = GetComponent<AudioSource>();
         
         obelisk = GameObject.FindGameObjectWithTag("Obelisk");
 
@@ -190,6 +191,14 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
     public void Dead()
     {
         StopCoroutine(attackAction);
+        StartCoroutine(Death());
+        Destroy(gameObject);
+    }
+
+    private IEnumerator Death()
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
         Destroy(gameObject);
     }
 

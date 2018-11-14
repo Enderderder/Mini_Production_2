@@ -337,13 +337,22 @@ MonoBehaviour:
   Offeset: {x: 0, y: 2, z: 0}
   element: 3
   button: {fileID: 1388519300596556, guid: 631824c29fd7f6940bc97f5eeacbe589, type: 2}
-  anim: {fileID: 95106713368528872, guid: e17f5963f53cdaa48a19d46b3fd9dd77, type: 2}
+  anim: {fileID: 0}
   scrollobject: {fileID: 1154925680692872}
   skinrender: {fileID: 137592195247909810}
   firescrollmaterial: {fileID: 2100000, guid: 0f6a27de2dee5274c942f198026d2446, type: 2}
   waterscrollmaterial: {fileID: 2100000, guid: e1751af8e3e2d344096b95cb524a0da9, type: 2}
   earthscrollmaterial: {fileID: 2100000, guid: 36ed6014e4ee33347b4ef5082d1d2fc4, type: 2}
   airscrollmaterial: {fileID: 2100000, guid: cf4c87e294b929346bf4aaaa071dbd25, type: 2}
+  countdown: {fileID: 0}
+  earthpartices: {fileID: 1632654783431066, guid: 9bcb4e4a14c56df46bbe3f8d961d2a29,
+    type: 2}
+  waterpartices: {fileID: 1030496872679686, guid: 9d54c69024d068d4fa4c3fb75d3b2580,
+    type: 2}
+  firepartices: {fileID: 1860159910330778, guid: e531b19406bbea84b8d0f68c8fc16a0c,
+    type: 2}
+  airpartices: {fileID: 1038789954297660, guid: a10a66f8526f34348bb0215f2a812d51,
+    type: 2}
   Info: {fileID: 114483835419808460, guid: 5d0d0bbebf13f0d44980c84bdba96796, type: 2}
 --- !u!135 &135275062094605274
 SphereCollider:

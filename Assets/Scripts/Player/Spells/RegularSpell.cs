@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(SphereCollider))]
@@ -13,12 +14,12 @@ public class RegularSpell : MonoBehaviour
     [SerializeField] private float m_SpellLifeTime = 3.0f;
 
     [SerializeField] private GameObject m_HitEffectPrefab;
-
+    [SerializeField] private ElementType m_element;
     // References
     private ParticleSystem[] m_particles;
     private MeshRenderer m_meshRenderer;
     private Rigidbody m_rigidBody;
-
+    [SerializeField] private GameObject damagetxt;
     // Flag
     private bool m_isDestroying = false;
 
@@ -55,6 +56,25 @@ public class RegularSpell : MonoBehaviour
         if (killableEntity != null)
         {
             killableEntity.TakeDamage(m_SpellDamage);
+            GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+            dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + m_SpellDamage;
+
+            if (m_element == ElementType.Water) {
+                dmgobject.GetComponentInChildren<TextMeshPro>().color = new Color(0.5F, 1.0F, 1.0F);
+            }
+            else if (m_element == ElementType.Fire)
+            {
+                dmgobject.GetComponentInChildren<TextMeshPro>().color = new Color(1.0F, 0.64F, 0.16F);
+            }
+            else if (m_element == ElementType.Earth)
+            {
+                dmgobject.GetComponentInChildren<TextMeshPro>().color = Color.gray;
+            }
+            else if (m_element == ElementType.Air)
+            {
+                dmgobject.GetComponentInChildren<TextMeshPro>().color = Color.white;
+            }
+            Destroy(dmgobject, 1);
         }
 
         // Destroy the projectile on any contact
