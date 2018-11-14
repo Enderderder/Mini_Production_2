@@ -35,10 +35,16 @@ public class Player : MonoBehaviour
     [SerializeField] private ElementType m_HoldingElement = ElementType.Earth;
     [SerializeField] private Texture[] m_ElementIcons;
     [SerializeField] private GameObject[] m_RegularSpellPrefab;
+    [SerializeField] private GameObject[] m_SpecialSpellPrefab;
     [SerializeField] private Transform m_RegularSpellSpawnPosition;
     [SerializeField] private float m_ManaCostRegSpell = 10.0f;
     [SerializeField] private float m_ManaCostSpecialSpell = 30.0f;
     [SerializeField] private float m_SpellCastDelay = 0.5f;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip m_AudioBasicSpellCast;
+    [SerializeField] private AudioClip m_AudioSpecialSpellCast;
+    [SerializeField] private AudioClip m_AudioHurt;
 
     // Stats in real time
     private float m_currentHealth;
@@ -278,7 +284,16 @@ public class Player : MonoBehaviour
         // Spell cast action lock
         m_bCanCastSpell = false;
 
+        m_character.AnimAttack();
+
+        GameObject spellToCast = m_SpecialSpellPrefab[(int)m_HoldingElement];
+
         yield return new WaitForSeconds(0.2f); // Small delay waiting for the animation
+
+        // Spawn object
+        GameObject spell = Instantiate(spellToCast,
+            m_RegularSpellSpawnPosition.position,
+            m_RegularSpellSpawnPosition.rotation);
 
         UseMana(m_ManaCostSpecialSpell);
 

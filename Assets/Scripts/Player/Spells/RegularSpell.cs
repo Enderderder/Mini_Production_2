@@ -52,7 +52,7 @@ public class RegularSpell : MonoBehaviour
         // Check if the game object belongs to KillableEntity
         // Deal damage if it is
         KillableEntity killableEntity = other.gameObject.GetComponent<KillableEntity>();
-        if (killableEntity)
+        if (killableEntity != null)
         {
             killableEntity.TakeDamage(m_SpellDamage);
         }

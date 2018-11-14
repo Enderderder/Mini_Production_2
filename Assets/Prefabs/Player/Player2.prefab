@@ -3555,10 +3555,18 @@ MonoBehaviour:
   - {fileID: 1712611912207432, guid: 576dad23d1a90f54d99a40b24e031c80, type: 2}
   - {fileID: 1144537069864348, guid: e0ddf0a00972f7542b7ae6a18fba6d56, type: 2}
   - {fileID: 1658974320218792, guid: a50584ea9dc7c1742920065f06447607, type: 2}
+  m_SpecialSpellPrefab:
+  - {fileID: 1845205698017430, guid: c7bfe483715c384468f3f4112106e75e, type: 2}
+  - {fileID: 1743022022510808, guid: 273d8338e47f24f47b10315f316bbe65, type: 2}
+  - {fileID: 0}
+  - {fileID: 1682386015125230, guid: ba7ddc1d42fa781439c6ae270c246b9a, type: 2}
   m_RegularSpellSpawnPosition: {fileID: 4154091461516916}
   m_ManaCostRegSpell: 10
   m_ManaCostSpecialSpell: 30
   m_SpellCastDelay: 0.5
+  m_AudioBasicSpellCast: {fileID: 0}
+  m_AudioSpecialSpellCast: {fileID: 0}
+  m_AudioHurt: {fileID: 0}
 --- !u!114 &114201919838123548
 MonoBehaviour:
   m_ObjectHideFlags: 1

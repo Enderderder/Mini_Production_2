@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BigEnemy : MonoBehaviour {
-
+public class BigEnemy : MonoBehaviour, KillableEntity
+{
     [SerializeField] private float currentHealth;
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float attackDamageValue;
@@ -37,7 +37,7 @@ public class BigEnemy : MonoBehaviour {
     {
         if (currentHealth <= 0)
         {
-            Death();
+            Dead();
         }
         else
         {
@@ -107,14 +107,14 @@ public class BigEnemy : MonoBehaviour {
         isAttacking = false;
     }
 
-    private void Death()
-    {
-        navAgent.isStopped = true;
-        anim.SetBool("IsDead", true);
-    }
-
     public void DestroyEntity()
     {
         Destroy(gameObject);
+    }
+
+    public void Dead()
+    {
+        navAgent.isStopped = true;
+        anim.SetBool("IsDead", true);
     }
 }

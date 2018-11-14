@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class GoblinEnemy : KillableEntity {
+public class GoblinEnemy : MonoBehaviour, KillableEntity
+{
 
     [Header("Stats")]
-    //[SerializeField] private float currentHealth;
-    //[SerializeField] private float maxHealth = 20;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float maxHealth = 40;
     [SerializeField] private float attackDamageValue;
     [SerializeField] private float lookRadius = 10f;
     [SerializeField] private SkinnedMeshRenderer meshRenderer;
@@ -41,6 +42,9 @@ public class GoblinEnemy : KillableEntity {
 
     void Start ()
     {
+        currentHealth = maxHealth;
+
+
         player1 = GameObject.Find("Player1");
         player2 = GameObject.Find("Player2");
         player1Script = player1.GetComponent<Player>();
@@ -150,7 +154,7 @@ public class GoblinEnemy : KillableEntity {
         }
     }
 
-    override public void TakeDamage(float _fDamage)
+    public void TakeDamage(float _fDamage)
     {
         currentHealth -= _fDamage;
         StartCoroutine(DamageEffect());
@@ -183,7 +187,7 @@ public class GoblinEnemy : KillableEntity {
         isAttacking = false;
     }
 
-    public override void Dead()
+    public void Dead()
     {
         StopCoroutine(attackAction);
         Destroy(gameObject);
