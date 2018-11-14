@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using XInputDotNetPure;
 using InControl;
+using TMPro;
 
 public enum ElementType
 {
@@ -39,6 +40,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_ManaCostSpecialSpell = 30.0f;
     [SerializeField] private float m_SpellCastDelay = 0.5f;
 
+
+    [SerializeField] private GameObject damagetxt;
     // Stats in real time
     private float m_currentHealth;
     private float m_currentMana;
@@ -306,6 +309,9 @@ public class Player : MonoBehaviour
         if (m_currentHealth > 0.0f)
         {
             m_currentHealth = Mathf.Max(0.0f, m_currentHealth - _damageVal);
+            GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+            dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + _damageVal;
+            Destroy(dmgobject, 1);
             StartCoroutine(DamageEffect());
             UpdateUI();
             CheckDeath();
@@ -359,6 +365,11 @@ public class Player : MonoBehaviour
             return;
         }
 
+
+        GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+        dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + _value;
+        dmgobject.GetComponentInChildren<TextMeshPro>().color = Color.blue;
+        Destroy(dmgobject, 1);
         // Use the mana and check if it is below 0
         m_currentMana = Mathf.Max(0.0f, m_currentMana - _value);
         UpdateUI();

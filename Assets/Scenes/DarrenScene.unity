@@ -152,6 +152,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1122569323806102, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4925f0a4ef19c804ca02fd4d6e6c9429, type: 2}
   m_IsPrefabAsset: 0
@@ -717,6 +721,17 @@ Prefab:
     - target: {fileID: 4187745418909950, guid: 2b2e98100a3e4c44088d714e72302fe3, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114020632560588504, guid: 2b2e98100a3e4c44088d714e72302fe3,
+        type: 2}
+      propertyPath: damagetxt
+      value: 
+      objectReference: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c,
+        type: 2}
+    - target: {fileID: 114020632560588504, guid: 2b2e98100a3e4c44088d714e72302fe3,
+        type: 2}
+      propertyPath: m_HoldingElement
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b2e98100a3e4c44088d714e72302fe3, type: 2}
@@ -10037,6 +10052,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223435428646487214, guid: 98cc1f382b3425f4bbbf678dbc29aef7,
+        type: 2}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98cc1f382b3425f4bbbf678dbc29aef7, type: 2}
   m_IsPrefabAsset: 0
@@ -10825,6 +10845,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114020632560588504, guid: 2986545a337dd7d46a2dc8ee4a237e5a,
+        type: 2}
+      propertyPath: damagetxt
+      value: 
+      objectReference: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2986545a337dd7d46a2dc8ee4a237e5a, type: 2}
   m_IsPrefabAsset: 0
@@ -15632,7 +15658,7 @@ Prefab:
         type: 2}
       propertyPath: damagetxt
       value: 
-      objectReference: {fileID: 114483835419808460, guid: 5d0d0bbebf13f0d44980c84bdba96796,
+      objectReference: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcdb60b16c767204880105087794c740, type: 2}

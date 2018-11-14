@@ -210,6 +210,8 @@ MonoBehaviour:
   m_SpellLifeTime: 1.5
   m_HitEffectPrefab: {fileID: 1570932368799950, guid: f1a999cc24680ec47a409baf194aac9b,
     type: 2}
+  m_element: 1
+  damagetxt: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c, type: 2}
 --- !u!135 &135797490342471560
 SphereCollider:
   m_ObjectHideFlags: 1

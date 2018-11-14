@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerHeath : MonoBehaviour {
 
     [Header("Stats")]
@@ -21,6 +22,7 @@ public class PlayerHeath : MonoBehaviour {
 
     private Transform obelisk;
     private Obelisk obeliskScript;
+    
 
     private bool canGenerateMana = true;
 
@@ -67,6 +69,7 @@ public class PlayerHeath : MonoBehaviour {
         {
             currentHealth -= damageVal;
             StartCoroutine(DamageEffect());
+            
         }
     }
 
