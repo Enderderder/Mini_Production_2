@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198782012685416146}
   - component: {fileID: 199494961040934976}
   - component: {fileID: 114779337317568686}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ring Hold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4896480083769854}
   - component: {fileID: 198350348904748672}
   - component: {fileID: 199349094415330534}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Droplets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4499073487197980}
   - component: {fileID: 198430571348065624}
   - component: {fileID: 199849408694271030}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Swell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 135398036796086964}
   - component: {fileID: 54277117783825640}
   - component: {fileID: 114387484700942562}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaterHeavy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4444809544177702}
   - component: {fileID: 198078465369008414}
   - component: {fileID: 199682773967946640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MainColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4344686539682610}
   - component: {fileID: 198307722622944586}
   - component: {fileID: 199026327510703374}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 198565177260913038}
   - component: {fileID: 199856329851602530}
   - component: {fileID: 114373929831568762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}

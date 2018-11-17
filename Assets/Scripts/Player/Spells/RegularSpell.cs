@@ -15,11 +15,13 @@ public class RegularSpell : MonoBehaviour
 
     [SerializeField] private GameObject m_HitEffectPrefab;
     [SerializeField] private ElementType m_element;
+
     // References
     private ParticleSystem[] m_particles;
     private MeshRenderer m_meshRenderer;
     private Rigidbody m_rigidBody;
     [SerializeField] private GameObject damagetxt;
+
     // Flag
     private bool m_isDestroying = false;
 
@@ -56,7 +58,8 @@ public class RegularSpell : MonoBehaviour
         if (killableEntity != null)
         {
             killableEntity.TakeDamage(m_SpellDamage);
-            GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+            GameObject dmgobject = 
+                Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
             dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + m_SpellDamage;
 
             if (m_element == ElementType.Water) {
@@ -77,21 +80,18 @@ public class RegularSpell : MonoBehaviour
             Destroy(dmgobject, 1);
         }
 
-        // Destroy the projectile on any contact
-        StartCoroutine(DestroySpell());
+        if (other.gameObject.layer != LayerMask.GetMask("Spells"))
+        {
+            // Destroy the projectile on any contact
+            StartCoroutine(DestroySpell());
 
-        // Spawn a quick hit effect on to the thing
-        Instantiate(m_HitEffectPrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
-
-        //
-        //if (other.tag == "Enemy")
-        //{
-        //    other.GetComponent<GoblinEnemy>().TakeDamage(m_SpellDamage);
-        //}
-        //else if (other.tag == "BigEnemy")
-        //{
-        //    other.GetComponent<BigEnemy>().TakeDamage(m_SpellDamage);
-        //}
+            // Spawn a quick hit effect on to the thing
+            Instantiate(
+                m_HitEffectPrefab,
+                this.gameObject.transform.position,
+                this.gameObject.transform.rotation
+                );
+        }
     }
 
     private IEnumerator LifeTimeCountdown()

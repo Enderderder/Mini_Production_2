@@ -2777,7 +2777,8 @@ MonoBehaviour:
     type: 3}
   m_AudioSpecialSpellCast: {fileID: 0}
   m_AudioHurt: {fileID: 0}
-  damagetxt: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c, type: 2}
+  m_Damagetxt: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c,
+    type: 2}
 --- !u!114 &114201919838123548
 MonoBehaviour:
   m_ObjectHideFlags: 1

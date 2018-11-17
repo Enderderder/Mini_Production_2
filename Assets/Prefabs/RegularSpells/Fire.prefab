@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135131992148375412}
   - component: {fileID: 54751750972262302}
   - component: {fileID: 114199770186684046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4120838721185888}
   - component: {fileID: 198583703646438814}
   - component: {fileID: 199572578366465014}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4734535104960084}
   - component: {fileID: 198683273343001266}
   - component: {fileID: 199746898877549056}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4520598179122090}
   - component: {fileID: 198281187162877268}
   - component: {fileID: 199384719699694986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063972531698038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108.252556, y: 0.13732, z: 98.799}
+  m_LocalPosition: {x: -12.39, y: 2.22, z: -0.42}
   m_LocalScale: {x: 0.27464, y: 0.27464, z: 0.48005018}
   m_Children:
   - {fileID: 4520598179122090}

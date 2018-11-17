@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4212624845624304}
   - component: {fileID: 198305000534137046}
   - component: {fileID: 199338787088078876}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireSwell (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4698378245652194}
   - component: {fileID: 198452351934713972}
   - component: {fileID: 199497350888637508}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4414761724796126}
   - component: {fileID: 198596678490462672}
   - component: {fileID: 199955517571399946}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 199667490978939430}
   - component: {fileID: 114157048285549164}
   - component: {fileID: 135109900545429874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AirHeavy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4806417917817448}
   - component: {fileID: 198646964738559974}
   - component: {fileID: 199108359209818518}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireSwell
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -49,7 +49,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip m_AudioHurt;
 
     [Header("Visual")]
-    [SerializeField] private GameObject damagetxt;
+    [SerializeField] private GameObject m_Damagetxt;
+
     // Stats in real time
     private float m_currentHealth;
     private float m_currentMana;
@@ -351,7 +352,7 @@ public class Player : MonoBehaviour
             m_currentHealth = Mathf.Max(0.0f, m_currentHealth - _damageVal);
             m_currentHealth = Mathf.Min(m_MaxHealth, m_currentHealth); // Make sure when taking 
             GameObject dmgobject = 
-                Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+                Instantiate(m_Damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
             dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + _damageVal;
             Destroy(dmgobject, 1);
             StartCoroutine(DamageEffect());
@@ -366,7 +367,7 @@ public class Player : MonoBehaviour
         {
             m_currentHealth = Mathf.Min(m_MaxHealth, m_currentHealth + _healVal); // Make sure when taking
             GameObject dmgobject =
-                    Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+                    Instantiate(m_Damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
             dmgobject.GetComponentInChildren<TextMeshPro>().text = "+" + _healVal;
             dmgobject.GetComponentInChildren<TextMeshPro>().color = Color.green;
             Destroy(dmgobject, 1);
@@ -421,7 +422,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        GameObject dmgobject = Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+        GameObject dmgobject = Instantiate(m_Damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
         dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + _value;
         dmgobject.GetComponentInChildren<TextMeshPro>().color = Color.blue;
         Destroy(dmgobject, 1);
