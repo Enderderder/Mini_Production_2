@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
     private ThirdPersonCharacter m_character;
     private PlayerHealthBar m_healthBar;
     private Rigidbody m_rigidBody;
+    private AudioSource m_audioSource;
 
     // Player movement
     private float m_hMoveInput;
@@ -92,6 +93,7 @@ public class Player : MonoBehaviour
         m_character = GetComponent<ThirdPersonCharacter>();
         m_healthBar = GetComponent<PlayerHealthBar>();
         m_rigidBody = GetComponent<Rigidbody>();
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     private void Start ()
@@ -289,7 +291,8 @@ public class Player : MonoBehaviour
         GameObject spell = Instantiate(spellToCast,
             m_RegularSpellSpawnPosition.position,
             m_RegularSpellSpawnPosition.rotation);
-
+        m_audioSource.clip = m_AudioBasicSpellCast;
+        m_audioSource.Play();
         UseMana(m_ManaCostRegSpell);
 
         // Vibrate the controller
