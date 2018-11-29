@@ -117,6 +117,7 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
 
     private void OnTriggerEnter(Collider other)
     {
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         if (other.tag == "Bullet")
         {
             Destroy(other.gameObject);

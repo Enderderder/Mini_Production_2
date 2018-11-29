@@ -58,6 +58,7 @@ public class BigEnemy : MonoBehaviour, KillableEntity
 
     private void OnTriggerEnter(Collider other)
     {
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         if (!anim.GetBool("IsDead"))
         {
             if (other.tag == "Obelisk")

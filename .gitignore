@@ -34,3 +34,11 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Plugins/InControl/InControl/Source/XInput/x86_64.meta
+Assets/Plugins/InControl/InControl/Source/XInput.meta
+Assets/Plugins/InControl/InControl/Source.meta
+Assets/Plugins/InControl.meta
+Assets/Plugins.meta
+Assets/Plugins/InControl/InControl/Source/XInput/x86_64/XInputInterface.dll.meta
+Assets/Plugins/InControl/InControl.meta
+Assets/Plugins/InControl/InControl/Source/XInput/x86_64/XInputInterface.dll
