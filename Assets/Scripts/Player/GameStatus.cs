@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameStatus : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class GameStatus : MonoBehaviour {
     public Transform p1Spawn;
     public Transform p2Spawn;
     public Canvas gameOverCanvas;
+    public Text cointxt;
+    public Text turrettxt;
 
     [Header("Prefabs")]
     public GameObject player1Prefab;
@@ -29,6 +32,9 @@ public class GameStatus : MonoBehaviour {
     public Transform[] playerobjs;
     public Transform[] player2objs;
 
+    public int coin;
+    public int turret;
+
     private void Start()
     {
         player1Object = GameObject.Find("Player1");
@@ -45,6 +51,13 @@ public class GameStatus : MonoBehaviour {
 
     private void Update()
     {
+        if (obelisk.currentHealth > 0)
+        {
+            GameObject.FindGameObjectWithTag("Coin").GetComponent<Text>().text = coin.ToString();
+            cointxt.text = coin.ToString();
+            turrettxt.text = turret.ToString();
+        }
+
         if (obelisk.currentHealth <= 0 && !hasDied)
         {
             GameOver();

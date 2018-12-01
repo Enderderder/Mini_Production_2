@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class GoblinEnemy : MonoBehaviour, KillableEntity
 {
+
+    public bool canwalk;
+    public float stunamount;
+    public int coindrop;
+    private float speed;
 
     [Header("Stats")]
     [SerializeField] private float currentHealth;
@@ -44,8 +50,8 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
     void Start ()
     {
         currentHealth = maxHealth;
-
-
+        canwalk = true;
+        stunamount = 2;
         player1 = GameObject.Find("Player1");
         player2 = GameObject.Find("Player2");
         player1Script = player1.GetComponent<Player>();
@@ -61,13 +67,25 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
         // Set the initial target
         Target = obelisk;
         attackAction = StartCoroutine(AttackAction());
+        speed = Random.Range(navAgent.speed / 1.5f, navAgent.speed * 1.5f);
 
-        navAgent.speed = Random.Range(navAgent.speed / 1.5f, navAgent.speed * 1.5f);
+        navAgent.speed = speed;
 	}
 
 	void Update ()
     {
-        
+        if (navAgent.speed <= 0)
+        {
+            stunamount -= 1 * Time.deltaTime;
+            //anim.SetBool("isWalking", false);
+        }
+
+        if (stunamount <= 0)
+        {
+            navAgent.speed = speed;
+            //anim.SetBool("isWalking", true);
+            stunamount = 2;
+        }
 
         if (currentHealth <= 0)
         {
@@ -89,18 +107,20 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
         }
 
 
-        if (player1Distance < player2Distance && player1Distance < obeliskDistance)
-        {
-            Target = player1;
-        }
-        if (player2Distance < player1Distance && player2Distance < obeliskDistance)
-        {
-            Target = player2;
-        }
-        if (obeliskDistance <= player1Distance && obeliskDistance <= player2Distance)
-        {
-            Target = obelisk;
-        }
+            if (player1Distance < player2Distance && player1Distance < obeliskDistance)
+            {
+                Target = player1;
+            }
+            if (player2Distance < player1Distance && player2Distance < obeliskDistance)
+            {
+                Target = player2;
+            }
+            if (obeliskDistance <= player1Distance && obeliskDistance <= player2Distance)
+            {
+                Target = obelisk;
+            }
+
+
 
         // Check if the agent has reach the destination
         if (!navAgent.pathPending)
@@ -131,18 +151,20 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
 
     private void OnTriggerStay(Collider other)
     {
-        if (Target == other.gameObject)
-        {
-            isAttacking = true;
-            isInAtkRange = true;
+        if (other.tag != "Spawnable" && other.tag != "NonSpawnable") {
+            if (Target == other.gameObject)
+            {
+                isAttacking = true;
+                isInAtkRange = true;
 
 
-        }
-        else
-        {
-            Target = null;
-            isInAtkRange = false;
-            isAttacking = false;
+            }
+            else
+            {
+                Target = null;
+                isInAtkRange = false;
+                isAttacking = false;
+            }
         }
     }
 
@@ -197,7 +219,8 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
     public void Dead()
     {
         StopCoroutine(attackAction);
-        StartCoroutine(Death());
+        //StartCoroutine(Death());
+        GameObject.Find("GameStatusManager").GetComponent<GameStatus>().coin += coindrop;
         Destroy(gameObject);
     }
 
@@ -205,6 +228,7 @@ public class GoblinEnemy : MonoBehaviour, KillableEntity
     {
         audioSource.Play();
         yield return new WaitForSeconds(audioSource.clip.length);
+        
         Destroy(gameObject);
     }
 

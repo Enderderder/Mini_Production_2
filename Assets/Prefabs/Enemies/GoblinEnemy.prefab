@@ -1232,6 +1232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a5e7657cb43854ab27c849897e88a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canwalk: 0
+  stunamount: 2
+  coindrop: 5
   currentHealth: 0
   maxHealth: 40
   attackDamageValue: 5

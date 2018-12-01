@@ -2998,6 +2998,7 @@ MonoBehaviour:
   maxHealth: 200
   attackDamageValue: 50
   meshRenderer: {fileID: 137307748846974998}
+  coindrop: 10
 --- !u!136 &136905773175070166
 CapsuleCollider:
   m_ObjectHideFlags: 1

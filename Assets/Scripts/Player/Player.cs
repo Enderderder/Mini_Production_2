@@ -21,6 +21,7 @@ public enum ElementType
 [RequireComponent(typeof(PlayerHealthBar))]
 public class Player : MonoBehaviour
 {
+    public GameObject shop;
     [Header("Config")]
     [Range(0, 1)] public int m_PlayerID;
 
@@ -76,6 +77,13 @@ public class Player : MonoBehaviour
     // Player shooting
     private bool m_bCanCastSpell = true;
 
+    public Transform turretspawnpoint;
+    public GameObject turretholder;
+    public GameObject turret;
+    private bool spawningturret = false;
+    public bool canspawnturretzone = false;
+    private int presscount = 0;
+
     // Controls
     private InputControl m_controlMoveHorizontal;
     private InputControl m_controlMoveVertical;
@@ -84,6 +92,7 @@ public class Player : MonoBehaviour
     private InputControl m_controlFireRegular;
     private InputControl m_controlFireSpecial;
     private InputControl m_controlSkipWave;
+    private InputControl m_controlitemuse;
     public InputControl m_controlPickScroll;
 
     // Obelisk reference for mana regen
@@ -110,12 +119,34 @@ public class Player : MonoBehaviour
 
         countdown = GameObject.FindGameObjectWithTag("CoolDown");
 
+        turretholder.SetActive(false);
+
+        m_currentHealth = m_MaxHealth;
+
+        shop.SetActive(false);
+
         // Reset to make sure everything is fresh
         ResetStats();
     }
 
     private void Update ()
     {
+        if (m_healthBar.getenableShop() && m_controlPickScroll.WasReleased)
+        {
+            shop.SetActive(true);
+        }
+
+        if (shop.activeSelf && m_controlPickScroll.WasReleased && GameObject.Find("GameStatusManager").GetComponent<GameStatus>().coin >= 10)
+        {
+            GameObject.Find("GameStatusManager").GetComponent<GameStatus>().coin -= 10;
+            GameObject.Find("GameStatusManager").GetComponent<GameStatus>().turret++;
+        }
+
+        if (shop.activeSelf && m_controlSkipWave.WasReleased)
+        {
+            shop.SetActive(false);
+        }
+
         if (!m_bIsDead)
         {
             ProcessMovementControl();
@@ -190,6 +221,7 @@ public class Player : MonoBehaviour
         m_controlFireSpecial = m_controller.GetControl(InputControlType.LeftTrigger);
         m_controlSkipWave = m_controller.GetControl(InputControlType.Action4); // Y Button
         m_controlPickScroll = m_controller.GetControl(InputControlType.Action3); // X button
+        m_controlitemuse = m_controller.GetControl(InputControlType.LeftBumper);
     }
 
     private void ResetStats()
@@ -245,6 +277,38 @@ public class Player : MonoBehaviour
             AssignController();
             return;
         }
+
+        if (m_controlitemuse.WasReleased && GameObject.Find("GameStatusManager").GetComponent<GameStatus>().turret > 0)
+        {
+            presscount++;    
+        }
+        else if (m_controlitemuse.WasReleased && GameObject.Find("GameStatusManager").GetComponent<GameStatus>().turret <= 0)
+        {
+            presscount = 0;
+            turretholder.SetActive(false);
+            spawningturret = false;
+        }
+
+        if (m_controlitemuse.WasReleased && presscount == 1)
+        {
+            turretholder.SetActive(true);
+            spawningturret = true;
+        }
+        else if (m_controlitemuse.WasReleased && presscount == 2 && canspawnturretzone)
+        {
+            presscount = 0;
+            turretholder.SetActive(false);
+            spawningturret = false;
+            GameObject m_turret = Instantiate(turret, turretspawnpoint.position, this.transform.rotation) as GameObject;
+            GameObject.Find("GameStatusManager").GetComponent<GameStatus>().turret -= 1;
+        }
+        else if (presscount >= 2 && !canspawnturretzone)
+        {
+            presscount = 0;
+            turretholder.SetActive(false);
+            spawningturret = false;
+        }
+
 
         
 
@@ -320,8 +384,12 @@ public class Player : MonoBehaviour
         GameObject spell = Instantiate(spellToCast,
             m_RegularSpellSpawnPosition.position,
             m_RegularSpellSpawnPosition.rotation);
+        m_audioSource.clip = m_AudioSpecialSpellCast;
+        m_audioSource.Play();
 
         UseMana(m_ManaCostSpecialSpell);
+
+        StartCoroutine(ControllerVibrate(0.3f, 0.8f, 0.8f));
 
         yield return new WaitForSeconds(m_SpellCastDelay);
 
@@ -449,5 +517,18 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(_time);
 
         GamePad.SetVibration((PlayerIndex)m_PlayerID, 0.0f, 0.0f);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Obelisk")
+        {
+            m_rigidBody.velocity = Vector3.zero;
+            m_healthBar.EnableShop(true);
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        m_healthBar.EnableShop(false);
     }
 }

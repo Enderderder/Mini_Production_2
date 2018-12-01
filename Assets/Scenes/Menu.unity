@@ -1149,6 +1149,11 @@ Prefab:
       propertyPath: m_Name
       value: InControlManager
       objectReference: {fileID: 0}
+    - target: {fileID: 114581070884416112, guid: c5b3a8a4c7590c347b18b2c085aee6a0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5b3a8a4c7590c347b18b2c085aee6a0, type: 2}
   m_IsPrefabAsset: 0

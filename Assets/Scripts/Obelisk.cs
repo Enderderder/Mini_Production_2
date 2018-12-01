@@ -9,7 +9,7 @@ public class Obelisk : MonoBehaviour {
     [SerializeField] private float maxHealth = 1000;
     public float manaRegenRange;
 
-    public MeshRenderer[] meshRenderers;
+    public SkinnedMeshRenderer[] meshRenderers;
 
     private void Start()
     {
@@ -44,14 +44,14 @@ public class Obelisk : MonoBehaviour {
 
     private IEnumerator DamageEffect()
     {
-        foreach (MeshRenderer meshRenderer in meshRenderers)
+        foreach (SkinnedMeshRenderer meshRenderer in meshRenderers)
         {
             meshRenderer.material.color = new Color(1, 0, 0);
         }
 
         yield return new WaitForSeconds(0.1f);
 
-        foreach (MeshRenderer meshRenderer in meshRenderers)
+        foreach (SkinnedMeshRenderer meshRenderer in meshRenderers)
         {
             meshRenderer.material.color = new Color(1, 1, 1);
         }

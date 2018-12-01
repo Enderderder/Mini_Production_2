@@ -42,15 +42,16 @@ public class EnemySpawning : MonoBehaviour {
     private void Update()
     {
         WaveText.text = "- Wave " + currentWave + " -";
-
+        
         if (!isPaused)
         {
-            currentEnemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            currentEnemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("BigEnemy").Length;
 
             if (currentEnemyCount < maxEnemyCount && EnemiesSpawned < totalEnemyCount)
             {
                 SpawnEnemy();
             }
+
 
             if (EnemiesSpawned == totalEnemyCount && currentEnemyCount == 0)
             {

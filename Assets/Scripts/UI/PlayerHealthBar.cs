@@ -12,6 +12,7 @@ public class PlayerHealthBar : MonoBehaviour
     private Image m_healthFill;
     private Image m_manaFill;
     private RawImage m_elementIcon;
+    private Image m_entershop;
 
     private void Awake()
     {
@@ -23,6 +24,8 @@ public class PlayerHealthBar : MonoBehaviour
         m_healthFill = healthBarTransform.Find("HealthFill").GetComponent<Image>();
         m_manaFill = healthBarTransform.Find("ManaFill").GetComponent<Image>();
         m_elementIcon = healthBarTransform.Find("ElementIcon").GetComponent<RawImage>();
+        m_entershop = healthBarTransform.Find("EnterShop").GetComponent<Image>();
+        m_entershop.enabled = false;
     }
 
     private void Update()
@@ -58,5 +61,15 @@ public class PlayerHealthBar : MonoBehaviour
         {
             m_elementIcon.texture = _icon;
         }
+    }
+
+    public void EnableShop(bool _enable)
+    {
+        m_entershop.enabled = _enable;
+    }
+
+    public bool getenableShop()
+    {
+        return m_entershop.enabled;
     }
 }

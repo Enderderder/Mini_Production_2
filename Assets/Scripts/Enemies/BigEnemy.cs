@@ -9,7 +9,7 @@ public class BigEnemy : MonoBehaviour, KillableEntity
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float attackDamageValue;
     [SerializeField] private SkinnedMeshRenderer meshRenderer;
-
+    public int coindrop;
     private GameObject obelisk;
     private Animator anim;
 
@@ -110,6 +110,7 @@ public class BigEnemy : MonoBehaviour, KillableEntity
 
     public void DestroyEntity()
     {
+        GameObject.Find("GameStatusManager").GetComponent<GameStatus>().coin += coindrop;
         Destroy(gameObject);
     }
 

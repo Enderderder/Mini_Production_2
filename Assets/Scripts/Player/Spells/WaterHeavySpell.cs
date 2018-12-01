@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class WaterHeavySpell : SpecialSpell
 {
     [SerializeField] private float m_DamageTick = 0.5f;
     [SerializeField] private float m_HealingPerTick = 2.0f;
     [SerializeField] private float m_SlowMultiplier = 0.8f;
-
+    [SerializeField] private GameObject damagetxt;
     private List<KillableEntity> m_inRangeEntity;
     private List<Player> m_inRangePlayer;
     private Coroutine m_unleashDmgCoroutine;
@@ -48,6 +49,7 @@ public class WaterHeavySpell : SpecialSpell
     protected override void DamageEffectOnEnter(Collider other)
     {
         base.DamageEffectOnEnter(other);
+        
 
         KillableEntity enemy = other.gameObject.GetComponent<KillableEntity>();
         if (enemy != null && !m_inRangeEntity.Contains(enemy))
@@ -102,10 +104,18 @@ public class WaterHeavySpell : SpecialSpell
                     if (((MonoBehaviour)enemy).gameObject.tag == "BigEnemy")
                     {
                         enemy.TakeDamage(m_SpellDamage * m_BigEnemyDmgMulplier);
+                        GameObject dmgobject =
+                Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+                        dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + m_SpellDamage * m_BigEnemyDmgMulplier;
+                        dmgobject.GetComponentInChildren<TextMeshPro>().color = new Color(0.5F, 1.0F, 1.0F);
                     }
                     else
                     {
                         enemy.TakeDamage(m_SpellDamage);
+                        GameObject dmgobject =
+                Instantiate(damagetxt, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.Euler(0, 45, 0));
+                        dmgobject.GetComponentInChildren<TextMeshPro>().text = "-" + m_SpellDamage;
+                        dmgobject.GetComponentInChildren<TextMeshPro>().color = new Color(0.5F, 1.0F, 1.0F);
                     }
                 }
             }

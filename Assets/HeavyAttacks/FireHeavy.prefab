@@ -245,6 +245,7 @@ MonoBehaviour:
   m_BigEnemyDmgMulplier: 1.25
   m_SpawnOffsetHeight: 0.2
   m_DamageTick: 0.5
+  damagetxt: {fileID: 1517259318137594, guid: 1c62e9795df472b4fb8abee11458f79c, type: 2}
 --- !u!114 &114276718399713892
 MonoBehaviour:
   m_ObjectHideFlags: 1

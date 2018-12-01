@@ -21,10 +21,13 @@ public class ScrollUI : MonoBehaviour {
     public GameObject waterpartices;
     public GameObject firepartices;
     public GameObject airpartices;
+    private AudioSource m_audioSource;
     public Text Info;
+    [SerializeField] private AudioClip m_AudioScrollPickUp;
     // Use this for initialization
     void Start () {
         anim = this.GetComponent<Animator>();
+        m_audioSource = GetComponent<AudioSource>();
         buttonImage = Instantiate(button, GameObject.Find("/HealthUI_Global").transform).GetComponent<Image>();
         buttonImage.enabled = false;
         Info = Instantiate(Textprefab, GameObject.Find("/HealthUI_Global").transform).GetComponent<Text>();
@@ -120,6 +123,8 @@ public class ScrollUI : MonoBehaviour {
             if (player.m_controlPickScroll.IsPressed)
             {
                 anim.SetTrigger("Unfiold");
+                m_audioSource.clip = m_AudioScrollPickUp;
+                m_audioSource.Play();
                 player.ChangeElement(element);
                 if (element == ElementType.Earth) {
                     GameObject partices = Instantiate(earthpartices, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), Quaternion.identity);

@@ -79,18 +79,19 @@ public class RegularSpell : MonoBehaviour
             }
             Destroy(dmgobject, 1);
         }
+        if (other.tag != "Spawnable" && other.tag != "NonSpawnable") {
+            if (other.gameObject.layer != LayerMask.GetMask("Spells"))
+            {
+                // Destroy the projectile on any contact
+                StartCoroutine(DestroySpell());
 
-        if (other.gameObject.layer != LayerMask.GetMask("Spells"))
-        {
-            // Destroy the projectile on any contact
-            StartCoroutine(DestroySpell());
-
-            // Spawn a quick hit effect on to the thing
-            Instantiate(
-                m_HitEffectPrefab,
-                this.gameObject.transform.position,
-                this.gameObject.transform.rotation
-                );
+                // Spawn a quick hit effect on to the thing
+                Instantiate(
+                    m_HitEffectPrefab,
+                    this.gameObject.transform.position,
+                    this.gameObject.transform.rotation
+                    );
+            }
         }
     }
 

@@ -18,6 +18,9 @@ TagManager:
   - CoolDown
   - BigEnemy
   - EnemyWave
+  - Spawnable
+  - Coin
+  - NonSpawnable
   layers:
   - Default
   - TransparentFX
